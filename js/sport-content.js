@@ -17,7 +17,7 @@
         {
           icon: '🎯',
           title: 'Individual skill',
-          body: 'Day-one evaluation. Custom plan covering handle, footwork, finishing, and shot mechanics — including dedicated time in the Shot Lab with our shooting coach.'
+          body: 'Day-one evaluation. Custom plan covering handle, footwork, finishing, and shot mechanics. Every athlete gets one-on-one feedback from a coach inside the cohort, plus regular dedicated time in the Shot Lab with our shooting coach.'
         },
         {
           icon: '🧠',
@@ -27,19 +27,19 @@
         {
           icon: '⚡',
           title: 'Mental performance',
-          body: 'Weekly work with sports performance coach Dr. Bobby Low. Focus, composure, confidence under pressure.'
+          body: 'Weekly access to Dr. Bobby Low\u2019s Training Room mental performance app. He comes in regularly to work with athletes in person — focus, composure, confidence under pressure.'
         },
         {
           icon: '💨',
           title: 'Strength & speed',
-          body: 'Athletic foundation built for basketball. Movement patterns, speed, strength, and mobility that transfer to the court.'
+          body: 'A specialist S&C coach builds an individual program for every athlete. Movement patterns, speed, strength, and mobility that transfer to the court.'
         }
       ],
-      coaches: [
-        { initials: 'HC', name: 'Head Coach', role: 'Basketball' },
-        { initials: 'HS', name: 'High School Coach', role: 'HS Academy' },
-        { initials: 'SC', name: 'Shooting Coach', role: 'Shot Lab' },
-        { initials: 'BL', name: 'Dr. Bobby Low', role: 'Mental Performance' }
+      team: [
+        { image: 'coach-placeholder-1.svg', name: 'Coach name', role: 'Head coach · Basketball', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-placeholder-2.svg', name: 'Coach name', role: 'High School coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-placeholder-3.svg', name: 'Coach name', role: 'Shooting coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-bobby-low.svg', name: 'Dr. Bobby Low', role: 'Mental performance', bio: 'Sports performance coach behind the Training Room app. Works with academy athletes throughout the year.' }
       ],
       testimonial: {
         quote: "This is the best decision we've made for our son.",
@@ -83,7 +83,7 @@
         {
           icon: '🎯',
           title: 'Individual skill',
-          body: 'Day-one evaluation. Custom plan covering first touch, footwork, ball control under pressure, finishing, and passing in tight spaces. Position-specific work — defenders, midfielders, and attackers train differently.'
+          body: 'Day-one evaluation. Custom plan covering first touch, footwork, ball control under pressure, finishing, and passing in tight spaces. Position-specific work, with one-on-one coach feedback inside the cohort — defenders, midfielders, and attackers train differently.'
         },
         {
           icon: '🧠',
@@ -93,19 +93,19 @@
         {
           icon: '⚡',
           title: 'Mental performance',
-          body: 'Weekly work with sports performance coach Dr. Bobby Low. Focus through 90 minutes. Composure after a mistake. Confidence to demand the ball when it matters.'
+          body: 'Weekly access to Dr. Bobby Low\u2019s Training Room mental performance app, plus in-person sessions throughout the year. Focus through 90 minutes. Composure after a mistake. Confidence to demand the ball when it matters.'
         },
         {
           icon: '💨',
           title: 'Strength & speed',
-          body: 'Soccer-specific athletic development. Repeat sprint capacity, change of direction, deceleration, and the lower-body strength that protects against common youth injuries.'
+          body: 'A specialist S&C coach builds an individual program for every athlete. Repeat sprint capacity, change of direction, deceleration, and the lower-body strength that protects against common youth injuries.'
         }
       ],
-      coaches: [
-        { initials: 'HC', name: 'Head Coach', role: 'Soccer' },
-        { initials: 'HS', name: 'High School Coach', role: 'HS Academy' },
-        { initials: 'SK', name: 'Skills Coach', role: 'Position Work' },
-        { initials: 'BL', name: 'Dr. Bobby Low', role: 'Mental Performance' }
+      team: [
+        { image: 'coach-placeholder-1.svg', name: 'Coach name', role: 'Head coach · Soccer', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-placeholder-2.svg', name: 'Coach name', role: 'High School coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-placeholder-3.svg', name: 'Coach name', role: 'Skills coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-bobby-low.svg', name: 'Dr. Bobby Low', role: 'Mental performance', bio: 'Sports performance coach behind the Training Room app. Works with academy athletes throughout the year.' }
       ],
       testimonial: null,
       comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
@@ -147,7 +147,7 @@
         {
           icon: '🎯',
           title: 'Individual skill',
-          body: 'Day-one evaluation. Custom plan covering passing, setting, hitting approach, swing mechanics, blocking, and serve. Position-specific work — outsides, middles, setters, and liberos get different programs from day one.'
+          body: 'Day-one evaluation. Custom plan covering passing, setting, hitting approach, swing mechanics, blocking, and serve. Position-specific work, with one-on-one coach feedback inside the cohort — outsides, middles, setters, and liberos get different programs from day one.'
         },
         {
           icon: '🧠',
@@ -157,19 +157,19 @@
         {
           icon: '⚡',
           title: 'Mental performance',
-          body: 'Weekly work with sports performance coach Dr. Bobby Low. Focus point-to-point. Composure after an error. Confidence to take the big swing in the big moment.'
+          body: 'Weekly access to Dr. Bobby Low\u2019s Training Room mental performance app, plus in-person sessions throughout the year. Focus point-to-point. Composure after an error. Confidence to take the big swing in the big moment.'
         },
         {
           icon: '💨',
           title: 'Strength & speed',
-          body: 'Volleyball-specific athletic development. Vertical jump, repeat jump capacity, shoulder health, core stability, and the explosive patterns that show up on every contact.'
+          body: 'A specialist S&C coach builds an individual program for every athlete. Vertical jump, repeat jump capacity, shoulder health, core stability, and the explosive patterns that show up on every contact.'
         }
       ],
-      coaches: [
-        { initials: 'HC', name: 'Head Coach', role: 'Volleyball' },
-        { initials: 'HS', name: 'High School Coach', role: 'HS Academy' },
-        { initials: 'SK', name: 'Skills Coach', role: 'Position Work' },
-        { initials: 'BL', name: 'Dr. Bobby Low', role: 'Mental Performance' }
+      team: [
+        { image: 'coach-placeholder-1.svg', name: 'Coach name', role: 'Head coach · Volleyball', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-placeholder-2.svg', name: 'Coach name', role: 'High School coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-placeholder-3.svg', name: 'Coach name', role: 'Skills coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
+        { image: 'coach-bobby-low.svg', name: 'Dr. Bobby Low', role: 'Mental performance', bio: 'Sports performance coach behind the Training Room app. Works with academy athletes throughout the year.' }
       ],
       testimonial: null,
       comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
@@ -222,16 +222,24 @@
     }).join('');
   }
 
-  function renderCoaches(data) {
-    const grid = document.getElementById('coach-grid');
+  function renderTeam(data) {
+    const grid = document.getElementById('team-grid');
     if (!grid) return;
-    grid.innerHTML = data.coaches.map(function (c) {
+    if (!data.team || data.team.length === 0) {
+      grid.innerHTML = '';
+      return;
+    }
+    grid.innerHTML = data.team.map(function (m) {
+      const imgSrc = '/images/coaches/' + m.image;
       return (
-        '<div class="coach">' +
-          '<div class="coach__avatar" aria-hidden="true">' + escapeHtml(c.initials) + '</div>' +
-          '<div class="coach__name">' + escapeHtml(c.name) + '</div>' +
-          '<div class="coach__role">' + escapeHtml(c.role) + '</div>' +
-        '</div>'
+        '<article class="team-member">' +
+          '<div class="team-member__photo">' +
+            '<img src="' + imgSrc + '" alt="' + escapeHtml(m.name) + ', ' + escapeHtml(m.role) + '" loading="lazy" />' +
+          '</div>' +
+          '<h3 class="team-member__name">' + escapeHtml(m.name) + '</h3>' +
+          '<p class="team-member__role">' + escapeHtml(m.role) + '</p>' +
+          '<p class="team-member__bio">' + escapeHtml(m.bio) + '</p>' +
+        '</article>'
       );
     }).join('');
   }
@@ -295,7 +303,7 @@
     }
     document.body.dataset.sport = sport;
     renderPillars(data);
-    renderCoaches(data);
+    renderTeam(data);
     renderResults(data);
     renderFAQ(data);
     wireSportTabs(sport);

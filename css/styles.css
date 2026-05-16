@@ -495,63 +495,83 @@ button {
 }
 
 /* ========================================================================
-   COACHES — 4-up grid with initials avatars
+   CREDENTIALS BLOCK — text-only trust signal
    ======================================================================== */
-.coaches {
+.credentials {
+  max-width: 720px;
+}
+.credentials p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.credentials p:last-child {
+  margin-bottom: 0;
+}
+.credentials strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ========================================================================
+   TEAM GRID — 2025/26 coaches with headshots + bios
+   ======================================================================== */
+.team {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
-.coach {
+.team-member {
   background: var(--bg-card);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
-  padding: 24px;
-  text-align: center;
-}
-.coach__avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #1e1e1e;
-  margin: 0 auto 12px;
-  border: 2px solid var(--tz-orange);
+  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+.team-member__photo {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #1e1e1e;
+  margin-bottom: 16px;
+}
+.team-member__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.1);
+  transition: filter 0.2s ease;
+}
+.team-member:hover .team-member__photo img {
+  filter: grayscale(0);
+}
+.team-member__name {
   font-size: 15px;
   font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+.team-member__role {
+  font-size: 11px;
   color: var(--tz-orange);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
-.coach__name {
-  font-size: 14px;
-  font-weight: 600;
-}
-.coach__role {
-  font-size: 11px;
-  color: var(--text-dim);
-  margin-top: 4px;
-}
-.placeholder-note {
-  font-size: 11px;
-  color: var(--text-faint);
-  font-style: italic;
-  margin-top: 16px;
+.team-member__bio {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-/* Sport-specific coach ring color */
-body[data-sport="basketball"] .coach__avatar {
-  border-color: var(--basketball);
-  color: var(--basketball);
-}
-body[data-sport="soccer"] .coach__avatar {
-  border-color: var(--soccer);
-  color: var(--soccer);
-}
-body[data-sport="volleyball"] .coach__avatar {
-  border-color: var(--volleyball);
-  color: var(--volleyball);
-}
+/* Sport-specific accent on role */
+body[data-sport="basketball"] .team-member__role { color: var(--basketball); }
+body[data-sport="soccer"] .team-member__role { color: var(--soccer); }
+body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 
 /* ========================================================================
    RESULTS / TESTIMONIAL
@@ -1021,7 +1041,7 @@ body[data-sport="volleyball"] .coach__avatar {
   .pricing {
     grid-template-columns: 1fr;
   }
-  .coaches {
+  .team {
     grid-template-columns: 1fr 1fr;
   }
   .utility-bar {
@@ -1049,8 +1069,8 @@ body[data-sport="volleyball"] .coach__avatar {
   .hero__title {
     font-size: 34px;
   }
-  .coaches {
-    grid-template-columns: 1fr 1fr;
+  .team {
+    grid-template-columns: 1fr;
   }
   .nav__logo {
     height: 28px;
