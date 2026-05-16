@@ -183,15 +183,36 @@ button {
    ======================================================================== */
 .hero {
   background: var(--bg-base);
-  padding: 80px var(--section-pad-x);
+  padding: 64px var(--section-pad-x);
   border-bottom: 3px solid var(--tz-orange);
   position: relative;
   overflow: hidden;
 }
-.hero__inner {
-  max-width: 600px;
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.hero__copy {
   position: relative;
   z-index: 2;
+  min-width: 0;
+}
+.hero__media {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-2xl);
+  max-width: 720px;
 }
 .eyebrow {
   color: var(--tz-orange);
@@ -221,24 +242,35 @@ button {
 .hero__ctas {
   display: flex;
   gap: 12px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 .hero__stats {
   display: flex;
-  gap: 40px;
+  gap: 32px;
   flex-wrap: wrap;
 }
+.stat {
+  min-width: 0;
+}
 .stat__num {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
+  line-height: 1.1;
 }
 .stat__label {
   font-size: 11px;
   color: var(--text-dim);
   letter-spacing: 0.5px;
-  margin-top: 2px;
+  margin-top: 4px;
   text-transform: uppercase;
+}
+#countdown-stat .stat__num {
+  color: var(--tz-orange);
+}
+#countdown-stat.is-live .stat__num {
+  color: var(--success);
+  font-size: 22px;
 }
 
 /* ========================================================================
@@ -833,7 +865,17 @@ body[data-sport="volleyball"] .coach__avatar {
     display: inline-flex;
   }
   .hero {
-    padding: 56px var(--section-pad-x);
+    padding: 40px var(--section-pad-x) 56px;
+  }
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero__media {
+    order: -1;
+  }
+  .hero__image {
+    max-width: 100%;
   }
   .hero__title {
     font-size: 40px;

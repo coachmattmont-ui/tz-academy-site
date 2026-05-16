@@ -312,7 +312,48 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', wireMobileNav);
+  // Countdown to Year 2 launch (9/1/2026, Mountain Time)
+  function wireCountdown() {
+    const stat = document.getElementById('countdown-stat');
+    const num = document.getElementById('countdown-num');
+    const label = document.getElementById('countdown-label');
+    if (!stat || !num || !label) return;
+
+    const target = new Date(stat.dataset.countdownTarget).getTime();
+    if (Number.isNaN(target)) return;
+
+    function tick() {
+      const now = Date.now();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        stat.classList.add('is-live');
+        num.textContent = 'LIVE';
+        label.textContent = 'Year 2 has begun';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      if (days >= 1) {
+        num.textContent = String(days);
+        label.textContent = days === 1 ? 'Day to Year 2' : 'Days to Year 2';
+      } else {
+        num.textContent = String(hours);
+        label.textContent = hours === 1 ? 'Hour to Year 2' : 'Hours to Year 2';
+      }
+    }
+
+    tick();
+    // Update every 60s — sub-minute precision unnecessary for a date countdown
+    setInterval(tick, 60000);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    wireMobileNav();
+    wireCountdown();
+  });
 
   window.TZAcademy = { init: init };
 })();
