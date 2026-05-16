@@ -312,6 +312,66 @@
     });
   }
 
+  // Kit form submission — posts to Kit's hosted endpoint, shows inline success
+  function wireKitForms() {
+    document.querySelectorAll('form.tz-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const successEl = form.querySelector('.tz-form__success');
+        const errorEl = form.querySelector('.tz-form__error');
+        const submitBtn = form.querySelector('.tz-form__submit');
+
+        // Reset any prior error
+        if (errorEl) {
+          errorEl.hidden = true;
+          errorEl.textContent = '';
+        }
+
+        // Native HTML5 validation
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        form.classList.add('is-submitting');
+        if (submitBtn) submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // Kit doesn't return CORS headers; opaque response is fine
+        })
+        .then(function () {
+          // With no-cors, we can't read the response, but a non-network error means Kit got it
+          form.classList.remove('is-submitting');
+          form.classList.add('is-success');
+          if (successEl) successEl.hidden = false;
+          if (submitBtn) submitBtn.disabled = false;
+
+          // Push to dataLayer if present (for future analytics)
+          if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+            window.dataLayer.push({
+              event: 'form_submit',
+              form_type: form.dataset.tzForm || 'unknown'
+            });
+          }
+        })
+        .catch(function (err) {
+          form.classList.remove('is-submitting');
+          if (submitBtn) submitBtn.disabled = false;
+          if (errorEl) {
+            errorEl.textContent = "Something went wrong sending that. Please try again, or call us at 385-786-9324.";
+            errorEl.hidden = false;
+          }
+          console.error('Kit form submission failed:', err);
+        });
+      });
+    });
+  }
+
   // Countdown to Year 2 launch (9/1/2026, Mountain Time)
   function wireCountdown() {
     const stat = document.getElementById('countdown-stat');
@@ -353,6 +413,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     wireMobileNav();
     wireCountdown();
+    wireKitForms();
   });
 
   window.TZAcademy = { init: init };

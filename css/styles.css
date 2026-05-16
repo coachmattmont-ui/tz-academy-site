@@ -742,57 +742,180 @@ body[data-sport="volleyball"] .coach__avatar {
 }
 
 /* ========================================================================
-   INTEREST FORM
+   TZ FORMS (Waiting List + Book a Call)
+   Custom-built, posts directly to Kit. Brand-native styling.
    ======================================================================== */
-.interest-form {
+.tz-form {
   background: var(--bg-card);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
-  padding: 24px;
-  max-width: 560px;
+  padding: 28px;
+  max-width: 720px;
 }
-.interest-form__row {
+.tz-form--cta {
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: left;
+}
+.tz-form__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 16px 14px;
 }
-.interest-form input,
-.interest-form select {
+.tz-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.tz-form__label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.tz-form__req {
+  color: var(--tz-orange);
+  margin-left: 2px;
+}
+.tz-form__field input,
+.tz-form__field select {
   background: var(--bg-base);
   border: 1px solid var(--border-input);
   color: var(--text-primary);
-  padding: 11px 12px;
+  padding: 12px 14px;
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: 14px;
   font-family: inherit;
   width: 100%;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-.interest-form input::placeholder {
-  color: var(--text-dim);
+.tz-form__field input::placeholder {
+  color: var(--text-dimmer);
 }
-.interest-form select {
-  color: var(--text-dim);
+.tz-form__field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
 }
-.interest-form select:focus {
-  color: var(--text-primary);
+.tz-form__field select:invalid {
+  color: var(--text-dimmer);
 }
-.interest-form__submit {
-  margin-top: 14px;
+.tz-form__field input:focus,
+.tz-form__field select:focus {
+  outline: none;
+  border-color: var(--tz-orange);
+  background: var(--bg-card-soft);
+}
+.tz-form__field input:hover,
+.tz-form__field select:hover {
+  border-color: #333;
+}
+
+.tz-form__submit {
+  margin-top: 20px;
   background: var(--tz-orange);
-  color: #fff !important;
-  padding: 11px 26px;
+  color: #fff;
+  padding: 13px 28px;
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  position: relative;
+}
+.tz-form__submit:hover:not(:disabled) {
+  background: var(--tz-orange-hover);
+}
+.tz-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.tz-form__submit--large {
+  padding: 15px 36px;
+  font-size: 15px;
+}
+.tz-form__submit-spinner {
+  display: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: tz-form-spin 0.7s linear infinite;
+}
+.tz-form.is-submitting .tz-form__submit-spinner {
   display: inline-block;
 }
+.tz-form.is-submitting .tz-form__submit-label {
+  opacity: 0.7;
+}
+@keyframes tz-form-spin {
+  to { transform: rotate(360deg); }
+}
+
+.tz-form__success {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: var(--radius-md);
+  color: #6ee7b7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.tz-form__error {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  color: #fca5a5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* When form is in success state, hide the inputs */
+.tz-form.is-success .tz-form__grid,
+.tz-form.is-success .tz-form__submit {
+  display: none;
+}
+
+/* Mobile: single column */
+@media (max-width: 720px) {
+  .tz-form__grid {
+    grid-template-columns: 1fr;
+  }
+  .tz-form {
+    padding: 22px;
+  }
+}
+
+/* Legacy class kept for the interest copy paragraph */
 .interest-form__copy {
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.7;
   margin-bottom: 20px;
-  max-width: 560px;
+  max-width: 720px;
+}
+.final-cta__copy {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 28px;
 }
 
 /* ========================================================================
@@ -910,9 +1033,6 @@ body[data-sport="volleyball"] .coach__avatar {
   }
   .final-cta .section__title {
     font-size: 26px;
-  }
-  .interest-form__row {
-    grid-template-columns: 1fr;
   }
 }
 

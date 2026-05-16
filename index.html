@@ -197,27 +197,52 @@
       <div class="faq" id="faq-list"></div>
     </section>
 
-    <!-- INTEREST FORM -->
+    <!-- INTEREST FORM (Waiting List) -->
     <section class="section section--elevated" id="interest">
       <p class="eyebrow">Other sports</p>
       <h2 class="section__title">Be first to know.</h2>
       <p class="interest-form__copy">We're expanding the academy model into more sports. Tell us what your athlete plays and we'll let you know the moment registration opens.</p>
-      <!-- Phase 3: Replace inline form with Kit native embed -->
-      <form class="interest-form" data-form="interest-capture">
-        <div class="interest-form__row">
-          <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
-          <input type="email" name="email" placeholder="Email" required autocomplete="email" />
-          <input type="text" name="grade" placeholder="Athlete's grade" />
-          <select name="sport_interest" required>
-            <option value="">Sport of interest</option>
-            <option value="football">Football</option>
-            <option value="baseball">Baseball</option>
-            <option value="lacrosse">Lacrosse</option>
-            <option value="junior_academy">Junior Academy (3rd–5th)</option>
-            <option value="other">Something else</option>
-          </select>
+      <form
+        class="tz-form"
+        action="https://app.kit.com/forms/9451552/subscriptions"
+        method="post"
+        data-tz-form="waiting-list"
+        data-sv-form="9451552"
+        data-uid="dea8684d64"
+      >
+        <div class="tz-form__grid">
+          <label class="tz-form__field">
+            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">First name</span>
+            <input type="text" name="fields[first_name]" autocomplete="given-name" placeholder="Your first name" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Athlete's grade</span>
+            <input type="text" name="fields[athlete_s_grade]" placeholder="e.g. 5th, 8th, 10th" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Sport of interest</span>
+            <select name="fields[sport_of_interest]">
+              <option value="">Pick a sport</option>
+              <option value="Football">Football</option>
+              <option value="Baseball">Baseball</option>
+              <option value="Lacrosse">Lacrosse</option>
+              <option value="Junior Academy (3rd–5th)">Junior Academy (3rd–5th)</option>
+              <option value="Other">Something else</option>
+            </select>
+          </label>
         </div>
-        <button type="submit" class="interest-form__submit">Notify me →</button>
+        <button type="submit" class="tz-form__submit">
+          <span class="tz-form__submit-label">Notify me →</span>
+          <span class="tz-form__submit-spinner" aria-hidden="true"></span>
+        </button>
+        <p class="tz-form__success" role="status" aria-live="polite" hidden>
+          You're on the list. We'll be in touch the moment registration opens — check your email to confirm.
+        </p>
+        <p class="tz-form__error" role="alert" aria-live="polite" hidden></p>
       </form>
     </section>
 
@@ -225,9 +250,55 @@
     <section class="final-cta" id="book-a-call">
       <p class="eyebrow">Ready to talk?</p>
       <h2 class="section__title">Book a call.</h2>
-      <p>Give us your info and we'll reach out. We'll learn about your athlete, answer your questions, and help you figure out if the academy is the right fit.</p>
-      <!-- Phase 3: Replace this anchor with Kit form modal or inline embed -->
-      <a href="#book-form-placeholder" class="btn btn--primary">Book a Call</a>
+      <p class="final-cta__copy">Give us your info and we'll reach out. We'll learn about your athlete, answer your questions, and help you figure out if the academy is the right fit.</p>
+      <form
+        class="tz-form tz-form--cta"
+        action="https://app.kit.com/forms/9451557/subscriptions"
+        method="post"
+        data-tz-form="phone-call"
+        data-sv-form="9451557"
+        data-uid="273d13f418"
+      >
+        <div class="tz-form__grid">
+          <label class="tz-form__field">
+            <span class="tz-form__label">First name <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="text" name="fields[first_name]" required autocomplete="given-name" placeholder="Your first name" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Phone <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="tel" name="fields[phone_number]" required autocomplete="tel" placeholder="(801) 555-0100" inputmode="tel" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Sport of interest <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <select name="fields[sport_of_interest]" required>
+              <option value="">Pick a sport</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Soccer">Soccer</option>
+              <option value="Volleyball">Volleyball</option>
+            </select>
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Athlete's grade</span>
+            <input type="text" name="fields[athlete_s_grade]" placeholder="e.g. 7th, 11th" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Best time to call</span>
+            <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
+          </label>
+        </div>
+        <button type="submit" class="tz-form__submit tz-form__submit--large">
+          <span class="tz-form__submit-label">Request a call →</span>
+          <span class="tz-form__submit-spinner" aria-hidden="true"></span>
+        </button>
+        <p class="tz-form__success" role="status" aria-live="polite" hidden>
+          Got it. We'll reach out at the time you mentioned — usually within one business day. Check your email to confirm we have the right address.
+        </p>
+        <p class="tz-form__error" role="alert" aria-live="polite" hidden></p>
+      </form>
     </section>
 
   </main>
