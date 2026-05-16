@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trainingzoneutah.com/academy/sitemap.xml
