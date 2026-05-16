@@ -1,0 +1,12 @@
+# Cloudflare Workers config — Static Assets only
+# https://developers.cloudflare.com/workers/static-assets/
+
+name = "tz-academy-site"
+compatibility_date = "2026-05-01"
+
+# Serve everything in the repo root as static assets.
+# When we add server-side code later (Phase 3, Kit form proxy),
+# we'll add a `main` entrypoint here.
+[assets]
+directory = "./"
+not_found_handling = "404-page"
