@@ -15,6 +15,7 @@
 
   <link rel="icon" type="image/svg+xml" href="images/logos/TZ_Logomark_White.svg" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
@@ -203,12 +204,16 @@
       <h2 class="section__title">Be first to know.</h2>
       <p class="interest-form__copy">We're expanding the academy model into more sports. Tell us what your athlete plays and we'll let you know the moment registration opens.</p>
       <form
-        class="tz-form"
+        class="tz-form formkit-form"
         action="https://app.kit.com/forms/9451552/subscriptions"
         method="post"
         data-tz-form="waiting-list"
         data-sv-form="9451552"
         data-uid="dea8684d64"
+        data-format="inline"
+        data-version="5"
+        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"You're on the list. Check your email to confirm your subscription.","redirect_url":""}},"version":"5"}'
+        min-width="400 500 600 700 800"
       >
         <div class="tz-form__grid">
           <label class="tz-form__field">
@@ -235,14 +240,11 @@
             </select>
           </label>
         </div>
-        <button type="submit" class="tz-form__submit">
+        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
+        <button type="submit" class="tz-form__submit formkit-submit" data-element="submit">
           <span class="tz-form__submit-label">Notify me →</span>
-          <span class="tz-form__submit-spinner" aria-hidden="true"></span>
+          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
         </button>
-        <p class="tz-form__success" role="status" aria-live="polite" hidden>
-          You're on the list. We'll be in touch the moment registration opens — check your email to confirm.
-        </p>
-        <p class="tz-form__error" role="alert" aria-live="polite" hidden></p>
       </form>
     </section>
 
@@ -252,12 +254,16 @@
       <h2 class="section__title">Book a call.</h2>
       <p class="final-cta__copy">Give us your info and we'll reach out. We'll learn about your athlete, answer your questions, and help you figure out if the academy is the right fit.</p>
       <form
-        class="tz-form tz-form--cta"
+        class="tz-form tz-form--cta formkit-form"
         action="https://app.kit.com/forms/9451557/subscriptions"
         method="post"
         data-tz-form="phone-call"
         data-sv-form="9451557"
         data-uid="273d13f418"
+        data-format="inline"
+        data-version="5"
+        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Got it. We'll reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}},"version":"5"}'
+        min-width="400 500 600 700 800"
       >
         <div class="tz-form__grid">
           <label class="tz-form__field">
@@ -290,14 +296,11 @@
             <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
           </label>
         </div>
-        <button type="submit" class="tz-form__submit tz-form__submit--large">
+        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
+        <button type="submit" class="tz-form__submit tz-form__submit--large formkit-submit" data-element="submit">
           <span class="tz-form__submit-label">Request a call →</span>
-          <span class="tz-form__submit-spinner" aria-hidden="true"></span>
+          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
         </button>
-        <p class="tz-form__success" role="status" aria-live="polite" hidden>
-          Got it. We'll reach out at the time you mentioned — usually within one business day. Check your email to confirm we have the right address.
-        </p>
-        <p class="tz-form__error" role="alert" aria-live="polite" hidden></p>
       </form>
     </section>
 
