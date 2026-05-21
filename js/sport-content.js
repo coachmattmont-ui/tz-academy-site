@@ -55,7 +55,7 @@
           bio: 'College coach, former D1 player, trainer.'
         },
         {
-          image: 'Bobby-Low.webp',
+          image: 'Bobby-Low-3.webp',
           name: 'Dr. Bobby Low',
           role: 'Mental Performance',
           bio: 'Former D1 athlete and mental performance coach.'
@@ -135,7 +135,7 @@
           bio: 'Former D1 college player.'
         },
         {
-          image: 'Bobby-Low.webp',
+          image: 'Bobby-Low-3.webp',
           name: 'Dr. Bobby Low',
           role: 'Mental Performance',
           bio: 'Former D1 athlete and mental performance coach.'
@@ -213,7 +213,7 @@
           bio: 'Former D1 volleyball player and high school coach.'
         },
         {
-          image: 'Bobby-Low.webp',
+          image: 'Bobby-Low-3.webp',
           name: 'Dr. Bobby Low',
           role: 'Mental Performance',
           bio: 'Former D1 athlete and mental performance coach.'

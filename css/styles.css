@@ -418,12 +418,34 @@ button {
 }
 
 /* ========================================================================
-   WHO IT'S FOR — two-up cohort cards
+   WHO IT'S FOR — two-up cohort cards with image caps
    ======================================================================== */
 .cohort-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+.cohort-card {
+  background: var(--bg-card-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cohort-card__photo {
+  aspect-ratio: 16 / 9;
+  background: #1e1e1e;
+  overflow: hidden;
+}
+.cohort-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cohort-card__body {
+  padding: 22px 24px 24px;
 }
 
 /* ========================================================================
@@ -556,6 +578,8 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Anchor to upper portion so portraits with subject in the top half don't crop the head off */
+  object-position: center 20%;
   display: block;
   filter: grayscale(0.1);
   transition: filter 0.2s ease;
