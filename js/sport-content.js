@@ -76,7 +76,7 @@
         },
         {
           q: 'Why does High School cost more?',
-          a: "HS athletes get a dedicated coach working with them 1-on-1 or in small groups of 2–3, plus custom programming built around their A/B day schedule. It's a more personalized model than the Junior High cohort."
+          a: "HS athletes get a dedicated coach working with them 1-on-1 training and small groups of 3–6, plus custom programming built around their A/B day schedule. It's a more personalized model than the Junior High cohort."
         },
         {
           q: 'Is this the right fit for my athlete?',
@@ -158,7 +158,7 @@
         },
         {
           q: 'Why does High School cost more?',
-          a: "HS athletes get a dedicated coach working with them 1-on-1 or in small groups of 2–3, plus custom programming built around their A/B day schedule. It's a more personalized model than the Junior High cohort."
+          a: "HS athletes get a dedicated coach working with them 1-on-1 training and small groups of 3–6, plus custom programming built around their A/B day schedule. It's a more personalized model than the Junior High cohort."
         },
         {
           q: 'Is this the right fit for my athlete?',
@@ -236,7 +236,7 @@
         },
         {
           q: 'Why does High School cost more?',
-          a: "HS athletes get a dedicated coach working with them 1-on-1 or in small groups of 2–3, plus custom programming built around their A/B day schedule. It's a more personalized model than the Junior High cohort."
+          a: "HS athletes get a dedicated coach working with them 1-on-1 training and small groups of 3–6, plus custom programming built around their A/B day schedule. It's a more personalized model than the Junior High cohort."
         },
         {
           q: 'Is this the right fit for my athlete?',
