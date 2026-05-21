@@ -199,7 +199,7 @@ def build_page(sport_key, cfg):
     </section>
 
     <!-- 2025/26 TEAM — the actual people, framed seasonally -->
-    <section class="section section--base">
+    <section class="section section--base" id="team-section">
       <p class="eyebrow">2025/26 Team</p>
       <h2 class="section__title">Meet the coaches.</h2>
       <p class="section__sub">The people working with this year\u2019s cohort.</p>

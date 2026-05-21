@@ -36,10 +36,30 @@
         }
       ],
       team: [
-        { image: 'coach-placeholder-1.svg', name: 'Coach name', role: 'Head coach · Basketball', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-placeholder-2.svg', name: 'Coach name', role: 'High School coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-placeholder-3.svg', name: 'Coach name', role: 'Shooting coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-bobby-low.svg', name: 'Dr. Bobby Low', role: 'Mental performance', bio: 'Sports performance coach behind the Training Room app. Works with academy athletes throughout the year.' }
+        {
+          image: 'Matt-Michelle.webp',
+          name: 'Matt Montgomery',
+          role: 'Academy Director',
+          bio: 'High school coach, club coach, 10 years training.'
+        },
+        {
+          image: 'Jeff-2.webp',
+          name: 'Jeff Yan',
+          role: 'Trainer',
+          bio: 'Pro athlete and former D1 player.'
+        },
+        {
+          image: 'Will.webp',
+          name: 'Will Joyce',
+          role: 'Trainer',
+          bio: 'College coach, former D1 player, trainer.'
+        },
+        {
+          image: 'Bobby-2.webp',
+          name: 'Dr. Bobby Low',
+          role: 'Mental Performance',
+          bio: 'Former D1 athlete and mental performance coach.'
+        }
       ],
       testimonial: {
         quote: "This is the best decision we've made for our son.",
@@ -101,12 +121,7 @@
           body: 'A specialist S&C coach builds an individual program for every athlete. Repeat sprint capacity, change of direction, deceleration, and the lower-body strength that protects against common youth injuries.'
         }
       ],
-      team: [
-        { image: 'coach-placeholder-1.svg', name: 'Coach name', role: 'Head coach · Soccer', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-placeholder-2.svg', name: 'Coach name', role: 'High School coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-placeholder-3.svg', name: 'Coach name', role: 'Skills coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-bobby-low.svg', name: 'Dr. Bobby Low', role: 'Mental performance', bio: 'Sports performance coach behind the Training Room app. Works with academy athletes throughout the year.' }
-      ],
+      team: [],
       testimonial: null,
       comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
       faq: [
@@ -165,12 +180,7 @@
           body: 'A specialist S&C coach builds an individual program for every athlete. Vertical jump, repeat jump capacity, shoulder health, core stability, and the explosive patterns that show up on every contact.'
         }
       ],
-      team: [
-        { image: 'coach-placeholder-1.svg', name: 'Coach name', role: 'Head coach · Volleyball', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-placeholder-2.svg', name: 'Coach name', role: 'High School coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-placeholder-3.svg', name: 'Coach name', role: 'Skills coach', bio: 'Short bio placeholder — replace with real bio when ready.' },
-        { image: 'coach-bobby-low.svg', name: 'Dr. Bobby Low', role: 'Mental performance', bio: 'Sports performance coach behind the Training Room app. Works with academy athletes throughout the year.' }
-      ],
+      team: [],
       testimonial: null,
       comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
       faq: [
@@ -224,11 +234,17 @@
 
   function renderTeam(data) {
     const grid = document.getElementById('team-grid');
+    const section = document.getElementById('team-section');
     if (!grid) return;
+
+    // If no team yet (e.g. soccer/volleyball pre-launch), hide the whole section
     if (!data.team || data.team.length === 0) {
       grid.innerHTML = '';
+      if (section) section.style.display = 'none';
       return;
     }
+
+    if (section) section.style.display = '';
     grid.innerHTML = data.team.map(function (m) {
       const imgSrc = '/images/coaches/' + m.image;
       return (
