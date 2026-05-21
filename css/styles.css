@@ -493,6 +493,71 @@ button {
 }
 
 /* ========================================================================
+   ORIGIN STORY — Kaylee section, split layout
+   ======================================================================== */
+.origin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+  margin-top: 8px;
+}
+.origin__photo {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #1e1e1e;
+}
+.origin__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.origin__story {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.origin__story p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+.origin__result {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--tz-orange);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  margin: 4px 0;
+}
+.origin__result-label {
+  font-size: 11px !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+.origin__result-body {
+  font-size: 17px !important;
+  color: var(--text-primary) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+.origin__result-body strong {
+  color: var(--tz-orange);
+  font-weight: 700;
+}
+.origin__bridge {
+  font-style: italic;
+  color: var(--text-secondary) !important;
+}
+
+/* ========================================================================
    PILLARS — 2x2 grid
    ======================================================================== */
 .pillars {
@@ -1052,6 +1117,14 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   :root {
     --section-pad-y: 48px;
     --section-pad-x: 20px;
+  }
+  .origin {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .origin__photo {
+    aspect-ratio: 4 / 3;
+    max-width: 480px;
   }
   .nav__links {
     display: none;

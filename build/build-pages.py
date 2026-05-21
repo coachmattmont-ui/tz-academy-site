@@ -172,6 +172,26 @@ def build_page(sport_key, cfg):
       </div>
     </section>
 
+    <!-- ORIGIN STORY — built it for Kaylee first -->
+    <section class="section section--deep" id="origin">
+      <p class="eyebrow">How this started</p>
+      <h2 class="section__title">Built for our daughter first.</h2>
+      <div class="origin">
+        <div class="origin__photo">
+          <img src="{asset}images/origin/kaylee.webp" alt="Kaylee Montgomery being introduced as a starter for the Sentinels" loading="lazy" />
+        </div>
+        <div class="origin__story">
+          <p>Kaylee was a 7th grader competing at a top level in both soccer and basketball. We watched her run out of hours in the day — training, school, recovery, family time, friends. The traditional schedule wasn\u2019t built for it.</p>
+          <p>So we built her a different week. Hybrid school. Mornings in the gym. Afternoons in class. Evenings free for homework, family, and being a kid. We tested it with her for three years before opening the academy.</p>
+          <div class="origin__result">
+            <p class="origin__result-label">Junior year, age 17</p>
+            <p class="origin__result-body">First Team All-State <strong>in both soccer and basketball.</strong></p>
+          </div>
+          <p class="origin__bridge">We just wrapped year one of the Academy with the same model. Same results.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- THE ACADEMY MODEL -->
     <section class="section section--base" id="model">
       <p class="eyebrow">The academy model</p>
