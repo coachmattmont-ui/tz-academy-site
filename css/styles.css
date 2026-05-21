@@ -516,11 +516,26 @@ button {
 
 /* ========================================================================
    TEAM GRID — 2025/26 coaches with headshots + bios
+   Grid adapts to count: 4 cards = 4-up, 3 cards = 3-up, etc.
    ======================================================================== */
 .team {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+}
+.team[data-count="4"] {
+  grid-template-columns: repeat(4, 1fr);
+}
+.team[data-count="3"] {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+}
+.team[data-count="2"] {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 760px;
+}
+.team[data-count="1"] {
+  grid-template-columns: 1fr;
+  max-width: 380px;
 }
 .team-member {
   background: var(--bg-card);

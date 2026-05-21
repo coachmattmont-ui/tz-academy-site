@@ -55,7 +55,7 @@
           bio: 'College coach, former D1 player, trainer.'
         },
         {
-          image: 'Bobby-2.webp',
+          image: 'Bobby-Low.webp',
           name: 'Dr. Bobby Low',
           role: 'Mental Performance',
           bio: 'Former D1 athlete and mental performance coach.'
@@ -121,7 +121,26 @@
           body: 'A specialist S&C coach builds an individual program for every athlete. Repeat sprint capacity, change of direction, deceleration, and the lower-body strength that protects against common youth injuries.'
         }
       ],
-      team: [],
+      team: [
+        {
+          image: 'Matt-Michelle.webp',
+          name: 'Matt Montgomery',
+          role: 'Academy Director',
+          bio: 'High school coach, club coach, 10 years training.'
+        },
+        {
+          image: 'Nik.webp',
+          name: 'Nik Kizerian',
+          role: 'Soccer Trainer',
+          bio: 'Former D1 college player.'
+        },
+        {
+          image: 'Bobby-Low.webp',
+          name: 'Dr. Bobby Low',
+          role: 'Mental Performance',
+          bio: 'Former D1 athlete and mental performance coach.'
+        }
+      ],
       testimonial: null,
       comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
       faq: [
@@ -180,7 +199,26 @@
           body: 'A specialist S&C coach builds an individual program for every athlete. Vertical jump, repeat jump capacity, shoulder health, core stability, and the explosive patterns that show up on every contact.'
         }
       ],
-      team: [],
+      team: [
+        {
+          image: 'Matt-Michelle.webp',
+          name: 'Matt Montgomery',
+          role: 'Academy Director',
+          bio: 'High school coach, club coach, 10 years training.'
+        },
+        {
+          image: 'Jessica.webp',
+          name: 'Jessica Finai',
+          role: 'Director of Volleyball',
+          bio: 'Former D1 volleyball player and high school coach.'
+        },
+        {
+          image: 'Bobby-Low.webp',
+          name: 'Dr. Bobby Low',
+          role: 'Mental Performance',
+          bio: 'Former D1 athlete and mental performance coach.'
+        }
+      ],
       testimonial: null,
       comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
       faq: [
@@ -245,6 +283,7 @@
     }
 
     if (section) section.style.display = '';
+    grid.setAttribute('data-count', String(data.team.length));
     grid.innerHTML = data.team.map(function (m) {
       const imgSrc = '/images/coaches/' + m.image;
       return (
