@@ -16,21 +16,25 @@
       pillars: [
         {
           icon: '🎯',
+          image: 'individual-skill.webp',
           title: 'Individual skill',
           body: 'Day-one evaluation. Custom plan covering handle, footwork, finishing, and shot mechanics. Every athlete gets one-on-one feedback from a coach inside the cohort, plus regular dedicated time in the Shot Lab with our shooting coach.'
         },
         {
           icon: '🧠',
+          image: 'game-iq.webp',
           title: 'Game IQ & reads',
           body: 'Daily 1v1, 3v3, and 5v5 game work. Film study. Athletes practice reading the game in real time, not just drilling in isolation.'
         },
         {
           icon: '⚡',
+          image: 'mental-performance.webp',
           title: 'Mental performance',
           body: 'Weekly access to Dr. Bobby Low\u2019s Training Room mental performance app. He comes in regularly to work with athletes in person — focus, composure, confidence under pressure.'
         },
         {
           icon: '💨',
+          image: 'strength-speed.webp',
           title: 'Strength & speed',
           body: 'A specialist S&C coach builds an individual program for every athlete. Movement patterns, speed, strength, and mobility that transfer to the court.'
         }
@@ -260,11 +264,26 @@
     const grid = document.getElementById('pillar-grid');
     if (!grid) return;
     grid.innerHTML = data.pillars.map(function (p) {
+      const hasImage = !!p.image;
+      const imageMarkup = hasImage
+        ? (
+            '<div class="pillar__photo">' +
+              '<img src="/images/pillars/' + p.image + '" alt="' + escapeHtml(p.title) + '" loading="lazy" />' +
+            '</div>'
+          )
+        : '';
+      const iconMarkup = hasImage
+        ? ''
+        : '<div class="pillar__icon" aria-hidden="true">' + p.icon + '</div>';
+      const cardClass = hasImage ? 'card pillar pillar--with-photo' : 'card pillar';
       return (
-        '<article class="card pillar">' +
-          '<div class="pillar__icon" aria-hidden="true">' + p.icon + '</div>' +
-          '<h3 class="pillar__title">' + escapeHtml(p.title) + '</h3>' +
-          '<p class="pillar__body">' + escapeHtml(p.body) + '</p>' +
+        '<article class="' + cardClass + '">' +
+          imageMarkup +
+          '<div class="pillar__body-wrap">' +
+            iconMarkup +
+            '<h3 class="pillar__title">' + escapeHtml(p.title) + '</h3>' +
+            '<p class="pillar__body">' + escapeHtml(p.body) + '</p>' +
+          '</div>' +
         '</article>'
       );
     }).join('');
