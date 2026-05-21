@@ -541,26 +541,6 @@ button {
 }
 
 /* ========================================================================
-   CREDENTIALS BLOCK — text-only trust signal
-   ======================================================================== */
-.credentials {
-  max-width: 720px;
-}
-.credentials p {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 14px;
-}
-.credentials p:last-child {
-  margin-bottom: 0;
-}
-.credentials strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* ========================================================================
    TEAM GRID — 2025/26 coaches with headshots + bios
    Grid adapts to count: 4 cards = 4-up, 3 cards = 3-up, etc.
    ======================================================================== */
