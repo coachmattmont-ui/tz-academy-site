@@ -70,6 +70,71 @@ SPORTS = {
 }
 
 
+def build_book_a_call_section():
+    """The phone-call form. Same content regardless of page — used as the primary
+    CTA on every page, but positioned differently:
+    - Basketball: between Pricing and FAQ (right after the buyer sees price)
+    - Soccer/Volleyball: at the bottom (after the launch section, as the only CTA)
+    """
+    return """
+    <!-- BOOK A CALL -->
+    <section class="final-cta" id="book-a-call">
+      <p class="eyebrow">Ready to talk?</p>
+      <h2 class="section__title">Book a call.</h2>
+      <p class="final-cta__copy">Give us your info and we'll reach out. We'll learn about your athlete, answer your questions, and help you figure out if the academy is the right fit.</p>
+      <form
+        class="tz-form tz-form--cta formkit-form"
+        action="https://app.kit.com/forms/9451557/subscriptions"
+        method="post"
+        data-tz-form="phone-call"
+        data-sv-form="9451557"
+        data-uid="273d13f418"
+        data-format="inline"
+        data-version="5"
+        data-options='{{"settings":{{"after_subscribe":{{"action":"message","success_message":"Got it. We\u0027ll reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}}}},"version":"5"}}'
+        min-width="400 500 600 700 800"
+      >
+        <div class="tz-form__grid">
+          <label class="tz-form__field">
+            <span class="tz-form__label">First name <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="text" name="fields[first_name]" required autocomplete="given-name" placeholder="Your first name" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Phone <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="tel" name="fields[phone_number]" required autocomplete="tel" placeholder="(801) 555-0100" inputmode="tel" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Sport of interest <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <select name="fields[sport_of_interest]" required>
+              <option value="">Pick a sport</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Soccer">Soccer</option>
+              <option value="Volleyball">Volleyball</option>
+            </select>
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Athlete's grade</span>
+            <input type="text" name="fields[athlete_s_grade]" placeholder="e.g. 7th, 11th" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Best time to call</span>
+            <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
+          </label>
+        </div>
+        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
+        <button type="submit" class="tz-form__submit tz-form__submit--large formkit-submit" data-element="submit">
+          <span class="tz-form__submit-label">Request a call →</span>
+          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
+        </button>
+      </form>
+    </section>
+"""
+
+
 def build_launch_section(cfg, asset):
     """Slim 'launching September' section for soccer/volleyball.
 
@@ -351,8 +416,17 @@ def build_page(sport_key, cfg):
         <p class="included-strip__heading">Included with every academy membership</p>
         <p class="included-strip__body">Full gym access (5am–midnight, Mon–Sat) · Shot Lab access · All large-group trainings · Family Pass for siblings</p>
       </div>
+      <div class="pricing__cta-jump">
+        <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
+      </div>
     </section>
+"""
 
+        # Book a Call sits right after pricing on the basketball page —
+        # immediately convertible after the buyer sees the price.
+        html += build_book_a_call_section()
+
+        html += """
     <!-- FAQ (rendered by JS) -->
     <section class="section section--base">
       <p class="eyebrow">FAQ</p>
@@ -420,64 +494,13 @@ def build_page(sport_key, cfg):
     </section>
 """
 
-    # ===== PHONE CALL FORM (shared) =====
-    html += f"""
-    <!-- FINAL CTA / BOOK A CALL -->
-    <section class="final-cta" id="book-a-call">
-      <p class="eyebrow">Ready to talk?</p>
-      <h2 class="section__title">Book a call.</h2>
-      <p class="final-cta__copy">Give us your info and we'll reach out. We'll learn about your athlete, answer your questions, and help you figure out if the academy is the right fit.</p>
-      <form
-        class="tz-form tz-form--cta formkit-form"
-        action="https://app.kit.com/forms/9451557/subscriptions"
-        method="post"
-        data-tz-form="phone-call"
-        data-sv-form="9451557"
-        data-uid="273d13f418"
-        data-format="inline"
-        data-version="5"
-        data-options='{{"settings":{{"after_subscribe":{{"action":"message","success_message":"Got it. We\u0027ll reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}}}},"version":"5"}}'
-        min-width="400 500 600 700 800"
-      >
-        <div class="tz-form__grid">
-          <label class="tz-form__field">
-            <span class="tz-form__label">First name <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="text" name="fields[first_name]" required autocomplete="given-name" placeholder="Your first name" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Phone <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="tel" name="fields[phone_number]" required autocomplete="tel" placeholder="(801) 555-0100" inputmode="tel" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Sport of interest <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <select name="fields[sport_of_interest]" required>
-              <option value="">Pick a sport</option>
-              <option value="Basketball">Basketball</option>
-              <option value="Soccer">Soccer</option>
-              <option value="Volleyball">Volleyball</option>
-            </select>
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Athlete's grade</span>
-            <input type="text" name="fields[athlete_s_grade]" placeholder="e.g. 7th, 11th" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Best time to call</span>
-            <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
-          </label>
-        </div>
-        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
-        <button type="submit" class="tz-form__submit tz-form__submit--large formkit-submit" data-element="submit">
-          <span class="tz-form__submit-label">Request a call →</span>
-          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
-        </button>
-      </form>
-    </section>
+    # ===== PHONE CALL FORM (soccer/volleyball only — basketball got it
+    # earlier, between pricing and FAQ) =====
+    if not is_bb:
+        html += build_book_a_call_section()
 
+    # ===== FOOTER (shared) =====
+    html += f"""
   </main>
 
   <!-- FOOTER -->

@@ -841,6 +841,11 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   color: var(--text-muted);
   line-height: 1.7;
 }
+/* Jump button under pricing — for the buyer who's ready right now */
+.pricing__cta-jump {
+  margin-top: 24px;
+  text-align: center;
+}
 
 /* ========================================================================
    FAQ
