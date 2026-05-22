@@ -197,8 +197,11 @@ def build_page(sport_key, cfg):
       <p class="eyebrow">The academy model</p>
       <h2 class="section__title">More training. More sleep.<br /><span class="hero__title-accent">Still a kid.</span></h2>
       <div class="model__copy">
-        <p>Most serious young athletes are stuck choosing: train hard <em>or</em> keep up in school <em>or</em> get enough sleep <em>or</em> have time to be a kid. Pick three.</p>
-        <p>The Academy is built so they don't have to pick. Our athletes use a hybrid school schedule — taking some classes on campus and some online through their district. They train during the school day, when the gym is open and the coaches are fresh. Evenings stay open for homework, rest, family, and being a kid.</p>
+        <p>The lie they tell you is that to be great — to chase real dreams — your athlete has to sacrifice the rest of their childhood. <em>Pick three.</em></p>
+        <p>There's actually another way. Our athletes love it.</p>
+        <p>With the Academy, your athlete still has time for all the things that matter — even a little extra sleep. Our athletes use a hybrid school schedule, taking some classes on campus and some online through their district. They train during the school day, when their mind and energy are fresh. Evenings stay open.</p>
+        <p class="model__copy-list">Time to be a kid. Time to excel in multiple sports. Time to keep up academically. Time for church, youth groups, family.</p>
+        <p class="model__copy-close">Once you come to the Academy, you'll wonder why you didn't start sooner.</p>
       </div>
       <div class="schedule">
         <p class="schedule__label">A typical Junior High week</p>

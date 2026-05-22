@@ -452,7 +452,7 @@ button {
    MODEL SECTION — typical week card
    ======================================================================== */
 .model__copy {
-  max-width: 620px;
+  max-width: 720px;
 }
 .model__copy p {
   color: var(--text-muted);
@@ -461,8 +461,24 @@ button {
   margin-bottom: 14px;
 }
 .model__copy p em {
-  color: var(--text-secondary);
+  color: var(--tz-orange);
   font-style: italic;
+  font-weight: 600;
+}
+/* Rhythmic list paragraph — gets a left accent + slightly tighter type */
+.model__copy-list {
+  border-left: 2px solid var(--tz-orange);
+  padding-left: 18px;
+  color: var(--text-primary) !important;
+  font-weight: 500;
+  margin-top: 18px !important;
+  margin-bottom: 18px !important;
+}
+/* Closing zinger — italic, dimmer color, more space above */
+.model__copy-close {
+  font-style: italic;
+  color: var(--text-secondary) !important;
+  margin-top: 18px !important;
 }
 
 /* New 3-column schedule grid (replaces old label/value list) */
