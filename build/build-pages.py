@@ -64,6 +64,7 @@ SPORTS = {
         "training_photos": [
             ("vball-training.webp", "Volleyball athlete in a defensive position"),
             ("vball-training-2.webp", "Volleyball athlete jumping for an attack"),
+            ("jessica-college-2.webp", "Jessica Finai celebrating with college teammates"),
         ],
     },
 }
