@@ -721,26 +721,44 @@ body[data-sport="soccer"] .team-member__role { color: var(--soccer); }
 body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 
 /* ========================================================================
-   RESULTS / TESTIMONIAL
+   RESULTS / TESTIMONIALS
    ======================================================================== */
+.testimonials {
+  display: grid;
+  gap: 16px;
+}
+.testimonials[data-count="3"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+.testimonials[data-count="2"] {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 880px;
+}
+.testimonials[data-count="1"] {
+  max-width: 720px;
+}
 .testimonial {
   background: var(--bg-card);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
 }
 .testimonial__quote {
-  font-size: 22px;
+  font-size: 18px;
   color: var(--text-primary);
-  line-height: 1.4;
-  margin-bottom: 14px;
+  line-height: 1.5;
+  margin-bottom: 18px;
   font-style: italic;
+  flex: 1;
 }
 .testimonial__attr {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-dim);
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .results-coming-soon {
   background: var(--bg-card);
@@ -1241,6 +1259,11 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
     max-width: 480px;
   }
   .schedule__grid {
+    grid-template-columns: 1fr;
+  }
+  /* Testimonials stack to single column on mobile */
+  .testimonials[data-count="3"],
+  .testimonials[data-count="2"] {
     grid-template-columns: 1fr;
   }
   /* Launch section stacks photo above intro on mobile */

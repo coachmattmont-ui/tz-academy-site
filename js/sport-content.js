@@ -65,10 +65,20 @@
           bio: 'Former D1 athlete and mental performance coach.'
         }
       ],
-      testimonial: {
-        quote: "This is the best decision we've made for our son.",
-        attr: 'Tom, academy parent'
-      },
+      testimonials: [
+        {
+          quote: "It's literally his favorite part of the day.",
+          attr: 'Academy parent'
+        },
+        {
+          quote: "Thank you for all you've done to help her shot! She's shooting with so much confidence.",
+          attr: 'Academy parent'
+        },
+        {
+          quote: "Can't believe how much he's grown. The reads he's making, the confidence… Grateful.",
+          attr: 'Academy parent'
+        }
+      ],
       faq: [
         {
           q: 'What actually happens at the academy?',
@@ -321,14 +331,16 @@
   function renderResults(data) {
     const block = document.getElementById('results-block');
     if (!block) return;
-    if (data.testimonial) {
-      block.innerHTML = (
-        '<blockquote class="testimonial">' +
-          '<p class="testimonial__quote">&ldquo;' + escapeHtml(data.testimonial.quote) + '&rdquo;</p>' +
-          '<footer class="testimonial__attr">— ' + escapeHtml(data.testimonial.attr.toUpperCase()) + '</footer>' +
-        '</blockquote>' +
-        '<p class="placeholder-note">Placeholder — video testimonial + parent screenshots go here.</p>'
-      );
+    if (data.testimonials && data.testimonials.length > 0) {
+      const cards = data.testimonials.map(function (t) {
+        return (
+          '<blockquote class="testimonial">' +
+            '<p class="testimonial__quote">&ldquo;' + escapeHtml(t.quote) + '&rdquo;</p>' +
+            '<footer class="testimonial__attr">— ' + escapeHtml(t.attr.toUpperCase()) + '</footer>' +
+          '</blockquote>'
+        );
+      }).join('');
+      block.innerHTML = '<div class="testimonials" data-count="' + data.testimonials.length + '">' + cards + '</div>';
     } else {
       block.innerHTML = (
         '<div class="results-coming-soon">' +
