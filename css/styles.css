@@ -768,17 +768,6 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   border-radius: var(--radius-2xl);
   padding: 28px;
 }
-.price-card--featured {
-  background: #1a0f06;
-  border: 1.5px solid var(--tz-orange);
-}
-.price-card__pop-label {
-  font-size: 10px;
-  color: var(--tz-orange);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
 .price-card__badge {
   background: var(--border-strong);
   color: var(--text-muted);
@@ -790,10 +779,6 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   margin-bottom: 14px;
   display: inline-block;
   text-transform: uppercase;
-}
-.price-card--featured .price-card__badge {
-  background: var(--tz-orange);
-  color: #fff;
 }
 .price-card__name {
   font-size: 17px;
@@ -814,9 +799,6 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   color: var(--text-dim);
   margin-bottom: 16px;
 }
-.price-card--featured .price-card__desc {
-  color: #aaa;
-}
 .price-card__features {
   list-style: none;
   padding: 0;
@@ -830,10 +812,6 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   align-items: center;
   gap: 8px;
   border-top: 1px solid #1e1e1e;
-}
-.price-card--featured .price-card__features li {
-  color: var(--text-secondary);
-  border-top-color: #2a1810;
 }
 .price-card__features li::before {
   content: "";
