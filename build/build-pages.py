@@ -19,6 +19,7 @@ SPORTS = {
         "hero_eyebrow": "BASKETBALL ACADEMY",
         "hero_accent": "BASKETBALL.",
         "og_image": "/images/og/basketball.jpg",
+        "is_basketball": True,
     },
     "soccer": {
         "label": "Soccer",
@@ -26,10 +27,22 @@ SPORTS = {
         "out": "soccer/index.html",
         "asset_prefix": "../",
         "title": "TZ Academy — Soccer | Launching September 2026",
-        "description": "Train like a pro. Still be a kid. Hybrid-school soccer academy in Herriman, Utah. Launching September 2026. Junior High + High School cohorts, capped at 25.",
+        "description": "Hybrid-school soccer academy in Herriman, Utah, launching September 2026. Led by former D1 player Nik Kizerian. 25 seats per cohort. Reserve yours now.",
         "hero_eyebrow": "SOCCER ACADEMY",
         "hero_accent": "SOCCER.",
         "og_image": "/images/og/soccer.jpg",
+        "is_basketball": False,
+        "launch_headline": "The Soccer Academy launches September.",
+        "launch_body": "<strong>Nik Kizerian</strong>, former D1 college player, will be one of our featured Soccer Trainers. The Academy model — hybrid school, four-pillar training, capped at 25 athletes — comes to soccer this fall.",
+        "coach_hero_image": "Nik-College.webp",
+        "coach_hero_image_dir": "coaches",
+        "coach_hero_alt": "Nik Kizerian playing college soccer",
+        "training_dir": "soccer",
+        "training_photos": [
+            ("nik-training.webp", "Nik coaching young soccer players on the field"),
+            ("emma-training.webp", "Young athlete dribbling through cones"),
+            ("soccer-training.webp", "Soccer training session"),
+        ],
     },
     "volleyball": {
         "label": "Volleyball",
@@ -37,16 +50,70 @@ SPORTS = {
         "out": "volleyball/index.html",
         "asset_prefix": "../",
         "title": "TZ Academy — Volleyball | Launching September 2026",
-        "description": "Train like a pro. Still be a kid. Hybrid-school volleyball academy in Herriman, Utah. Launching September 2026. Junior High + High School cohorts, capped at 25.",
+        "description": "Hybrid-school volleyball academy in Herriman, Utah, launching September 2026. Led by former D1 player Jessica Finai. 25 seats per cohort. Reserve yours now.",
         "hero_eyebrow": "VOLLEYBALL ACADEMY",
         "hero_accent": "VOLLEYBALL.",
         "og_image": "/images/og/volleyball.jpg",
+        "is_basketball": False,
+        "launch_headline": "The Volleyball Academy launches September.",
+        "launch_body": "<strong>Jessica Finai</strong>, former D1 college player and high school coach, will be leading the Volleyball Academy. The Academy model — hybrid school, four-pillar training, capped at 25 athletes — comes to volleyball this fall.",
+        "coach_hero_image": "Jessica.webp",
+        "coach_hero_image_dir": "coaches",
+        "coach_hero_alt": "Jessica Finai mid-block at the net",
+        "training_dir": "volleyball",
+        "training_photos": [
+            ("vball-training.webp", "Volleyball athlete in a defensive position"),
+            ("vball-training-2.webp", "Volleyball athlete jumping for an attack"),
+        ],
     },
 }
 
 
+def build_launch_section(cfg, asset):
+    """Slim 'launching September' section for soccer/volleyball.
+
+    Strategy: one bold launch headline + 1-2 line coach intro + coach hero photo +
+    a small training-photo strip + urgency line + CTAs. The whole section sells
+    'we're filling seats now for September' rather than 'coming soon, no info yet.'
+    """
+    sport_label = cfg["label"]
+    photo_strip = "\n".join([
+        f'<figure class="launch__photo-item"><img src="{asset}images/{cfg["training_dir"]}/{fn}" alt="{alt}" loading="lazy" /></figure>'
+        for fn, alt in cfg["training_photos"]
+    ])
+    return f"""
+    <!-- LAUNCH SECTION (soccer/volleyball) — actively selling for September -->
+    <section class="section section--elevated" id="launch">
+      <div class="launch">
+        <div class="launch__intro">
+          <p class="eyebrow">Launching September 2026</p>
+          <h2 class="section__title">{cfg['launch_headline']}</h2>
+          <p class="launch__body">{cfg['launch_body']}</p>
+        </div>
+        <div class="launch__coach-photo">
+          <img src="{asset}images/{cfg['coach_hero_image_dir']}/{cfg['coach_hero_image']}" alt="{cfg['coach_hero_alt']}" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="launch__urgency">
+        <p class="launch__urgency-line">We have 25 seats. <strong>We're filling them now.</strong></p>
+        <p class="launch__urgency-sub">If you wait until September, you'll be on a waitlist for 2027.</p>
+        <div class="launch__ctas">
+          <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
+          <a href="/" class="btn btn--secondary">See how the Academy works →</a>
+        </div>
+      </div>
+
+      <div class="launch__photo-strip" aria-label="{sport_label} training">
+        {photo_strip}
+      </div>
+    </section>
+"""
+
+
 def build_page(sport_key, cfg):
     asset = cfg["asset_prefix"]
+    is_bb = cfg.get("is_basketball", False)
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,7 +209,11 @@ def build_page(sport_key, cfg):
         <button class="sport-tab" data-sport="volleyball" role="tab"><span aria-hidden="true">🏐</span>Volleyball</button>
       </div>
     </section>
+"""
 
+    # ===== MAIN CONTENT (basketball gets the full academy story; soccer/vball get the slim launch section) =====
+    if is_bb:
+        html += f"""
     <!-- WHO IT'S FOR -->
     <section class="section section--elevated" id="who">
       <p class="eyebrow">Who it's for</p>
@@ -294,6 +365,15 @@ def build_page(sport_key, cfg):
       <p class="eyebrow">Other sports</p>
       <h2 class="section__title">Be first to know.</h2>
       <p class="interest-form__copy">We're expanding the academy model into more sports. Tell us what your athlete plays and we'll let you know the moment registration opens.</p>
+"""
+    else:
+        # Soccer / Volleyball: slim launch section, skip cohorts/origin/model/pillars/team/results/pricing/FAQ
+        html += build_launch_section(cfg, asset)
+
+    # ===== BOTTOM: phone form + footer (shared by all pages) =====
+    # Note: for basketball the interest form is still open above; we close it here.
+    if is_bb:
+        html += f"""
       <form
         class="tz-form formkit-form"
         action="https://app.kit.com/forms/9451552/subscriptions"
@@ -338,7 +418,10 @@ def build_page(sport_key, cfg):
         </button>
       </form>
     </section>
+"""
 
+    # ===== PHONE CALL FORM (shared) =====
+    html += f"""
     <!-- FINAL CTA / BOOK A CALL -->
     <section class="final-cta" id="book-a-call">
       <p class="eyebrow">Ready to talk?</p>
