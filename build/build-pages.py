@@ -319,7 +319,7 @@ def build_page(sport_key, cfg):
           </div>
           <div class="origin__result">
             <p class="origin__result-label">Now</p>
-            <p class="origin__result-body">Fielding <strong>college offers to play at the next level.</strong></p>
+            <p class="origin__result-body">Has <strong>college offers to play at the next level.</strong></p>
           </div>
           <p class="origin__bridge">We just wrapped year one of the Academy with the same model. Same results.</p>
         </div>
