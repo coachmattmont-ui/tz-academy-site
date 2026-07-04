@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trainingzoneutah.com/academy/sitemap.xml
+Sitemap: https://academy.trainingzoneutah.com/sitemap.xml

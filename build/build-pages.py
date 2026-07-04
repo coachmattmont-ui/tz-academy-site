@@ -191,8 +191,8 @@ def build_page(sport_key, cfg):
   <meta property="og:title" content="{cfg['title']}" />
   <meta property="og:description" content="{cfg['description']}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://trainingzoneutah.com/academy{cfg['url_path'] if cfg['url_path'] != '/' else ''}" />
-  <meta property="og:image" content="https://trainingzoneutah.com/academy{cfg['og_image']}" />
+  <meta property="og:url" content="https://academy.trainingzoneutah.com{cfg['url_path']}" />
+  <meta property="og:image" content="https://academy.trainingzoneutah.com{cfg['og_image']}" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="{asset}images/logos/TZ_Logomark_White.svg" />
