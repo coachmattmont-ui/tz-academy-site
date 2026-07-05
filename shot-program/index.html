@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Shot Program — 90 Days. A Rebuilt Shot. | Training Zone Utah</title>
+  <meta name="description" content="The Shot Program: a 90-day shooting transformation for serious athletes, 7th grade and up. 8 trainings a month, video breakdown, custom workouts, tracked metrics. 10 spots." />
+
+  <meta property="og:title" content="The Shot Program — 90 Days. A Rebuilt Shot." />
+  <meta property="og:description" content="A 90-day shooting transformation for serious athletes. 8 trainings a month, video breakdown, tracked metrics. 10 spots per cohort." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://academy.trainingzoneutah.com/shot-program/" />
+  <meta property="og:image" content="https://academy.trainingzoneutah.com/images/og/shot-program.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="../images/logos/TZ_Logomark_White.svg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
+
+  <style>
+    /* Page-scoped additions — built on the shared design tokens */
+    .proof-banner { max-width: 960px; margin: 0 auto; }
+    .proof-banner__media { border: 1px solid var(--border-default); border-radius: var(--radius-2xl); overflow: hidden; }
+    .proof-banner__media img { display: block; width: 100%; height: auto; }
+    .proof-banner__caption { margin-top: 14px; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
+    .proof-banner__caption strong { color: var(--text-primary); }
+
+    .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 32px auto 0; }
+    .phase-card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px 24px; }
+    .phase-card__num { color: var(--tz-orange); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.12em; }
+    .phase-card__name { margin: 8px 0 4px; font-size: 1.35rem; color: var(--text-primary); }
+    .phase-card__weeks { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 12px; }
+    .phase-card__body { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.55; }
+
+    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1120px; margin: 32px auto 0; }
+    .case-card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px 24px; display: flex; flex-direction: column; }
+    .case-card__name { font-size: 1.3rem; color: var(--text-primary); }
+    .case-card__stat { color: var(--tz-orange); font-weight: 700; margin: 10px 0 12px; font-size: 1.02rem; line-height: 1.45; }
+    .case-card__quote { color: var(--text-secondary); font-style: italic; line-height: 1.55; flex: 1; }
+    .case-card__attr { margin-top: 10px; color: var(--text-dim); font-size: 0.88rem; }
+    .case-card__link { margin-top: 16px; color: var(--tz-orange); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .case-card__link:hover { color: var(--tz-orange-hover); }
+
+    .lineage { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; max-width: 1080px; margin: 32px auto 0; align-items: start; }
+    .lineage__photos { display: grid; gap: 16px; }
+    .lineage__photos img { width: 100%; border-radius: var(--radius-xl); border: 1px solid var(--border-default); display: block; }
+    .lineage__story p { color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+    .lineage__quote { background: var(--bg-card); border: 1px solid var(--border-default); border-left: 3px solid var(--tz-orange); border-radius: var(--radius-lg); padding: 20px 22px; margin-top: 8px; }
+    .lineage__quote-text { color: var(--text-primary); font-style: italic; font-size: 1.05rem; line-height: 1.5; }
+    .lineage__quote-attr { color: var(--text-dim); margin-top: 8px; font-size: 0.9rem; }
+
+    .maint-strip { max-width: 860px; margin: 28px auto 0; background: var(--bg-card-soft); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 22px 26px; text-align: center; }
+    .maint-strip__heading { color: var(--tz-orange); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .maint-strip__body { color: var(--text-secondary); margin-top: 8px; line-height: 1.55; }
+
+    @media (max-width: 900px) {
+      .phase-grid, .case-grid { grid-template-columns: 1fr; }
+      .lineage { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="utility-bar" role="contentinfo">
+    <span>📞 385-786-9324 · 5639 Mirabella Dr, Herriman, UT 84096</span>
+    <span class="utility-bar__status" aria-label="Status">
+      <span class="utility-bar__dot" aria-hidden="true"></span>Now Enrolling — 10 Spots
+    </span>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <a href="/" class="nav__brand" aria-label="Academy home">
+      <img src="../images/logos/TZ_Horizontal_Lockup_White.svg" alt="Training Zone" class="nav__logo" />
+    </a>
+    <a href="#book-a-call" class="nav__cta">Book a Call →</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">THE SHOT PROGRAM</p>
+          <h1 class="hero__title">90 DAYS.<br />A <span class="hero__title-accent">REBUILT</span> SHOT.</h1>
+          <p class="hero__sub">A shooting transformation for serious athletes — not a camp, not a clinic. Ninety days inside the TZ Shot System: hands-on coaching, video breakdown of your shot, custom workouts, and metrics we track together. When it's done, your shot is different. Provably.</p>
+          <div class="hero__ctas">
+            <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
+            <a href="#system" class="btn btn--secondary">How It Works</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__num">90</div>
+              <div class="stat__label">Days</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">8</div>
+              <div class="stat__label">Trainings / Month</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">10</div>
+              <div class="stat__label">Spots</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img
+            src="../images/shot-program/training-1on1.webp"
+            alt="One-on-one shot coaching at Training Zone — coach adjusting a young athlete's shooting form"
+            class="hero__image"
+            width="1200"
+            height="900"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF BANNER — Kayla broadcast -->
+    <section class="section section--deep">
+      <p class="eyebrow">Heard on the broadcast</p>
+      <h2 class="section__title">&ldquo;One of the top shooters in the state.&rdquo;</h2>
+      <div class="proof-banner">
+        <div class="proof-banner__media">
+          <!-- TODO(Matt): swap for the highlight video embed when the Kayla edit is ready -->
+          <img src="../images/shot-program/kayla-broadcast.webp" alt="KSL broadcast of a Utah state playoff game — the announcer calls Kayla Montgomery one of the top shooters in the state" loading="lazy" />
+        </div>
+        <p class="proof-banner__caption">State playoffs, Huntsman Center. The announcer's words, not ours — <strong>&ldquo;Kayla Montgomery, one of the top shooters in the state.&rdquo;</strong> Kayla trains inside the TZ Shot System.</p>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="section section--elevated" id="who">
+      <p class="eyebrow">Who it's for</p>
+      <h2 class="section__title">We don't accept everyone.</h2>
+      <p class="section__sub">Ten spots per cohort. 7th grade and up. Here's who this is built for:</p>
+      <div class="model__copy">
+        <p>The athlete who's decided their shot is the thing holding them back — and is done waiting for it to fix itself. The player whose coach says &ldquo;shoot with confidence&rdquo; but nobody has ever shown them <em>how</em> a confident shot is actually built.</p>
+        <p>This is not a drop-in class. It's ninety days of structured work with a start, a middle, and a finish line — and we only take athletes ready to do all ninety. That's why every spot starts with a call, not a checkout page.</p>
+      </div>
+    </section>
+
+    <!-- THE TZ SHOT SYSTEM -->
+    <section class="section section--base" id="system">
+      <p class="eyebrow">The TZ Shot System</p>
+      <h2 class="section__title">Three phases. One rebuilt shot.</h2>
+      <p class="section__sub">A staged progression — because a shot isn't fixed all at once. It's rebuilt in order.</p>
+      <div class="phase-grid">
+        <article class="phase-card">
+          <p class="phase-card__num">PHASE 1</p>
+          <h3 class="phase-card__name">Rebuild</h3>
+          <p class="phase-card__weeks">Weeks 1–4</p>
+          <p class="phase-card__body">We film your shot, break it down frame by frame, and identify exactly what's costing you makes. Then we rebuild the mechanics — base, hand placement, release — with hands-on reps until the new motion holds.</p>
+        </article>
+        <article class="phase-card">
+          <p class="phase-card__num">PHASE 2</p>
+          <h3 class="phase-card__name">Rep</h3>
+          <p class="phase-card__weeks">Weeks 5–8</p>
+          <p class="phase-card__body">Volume with the new shot. Custom workouts assigned in our training app, every session tracked and measured, so you and your parents can see the numbers move — not just feel like they're moving.</p>
+        </article>
+        <article class="phase-card">
+          <p class="phase-card__num">PHASE 3</p>
+          <h3 class="phase-card__name">Range</h3>
+          <p class="phase-card__weeks">Weeks 9–12</p>
+          <p class="phase-card__body">Game speed, game range. Off the catch, off the move, off the dribble — and game film breakdown so the new shot shows up where it counts: in games.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="section section--elevated">
+      <p class="eyebrow">What's included</p>
+      <h2 class="section__title">Ninety days, fully instrumented.</h2>
+      <div class="pricing">
+        <article class="price-card">
+          <span class="price-card__badge">The Work</span>
+          <h3 class="price-card__name">On the Floor</h3>
+          <div class="price-card__price">8<span class="price-card__period">&nbsp;trainings / month</span></div>
+          <p class="price-card__desc">Hands-on, small-format coaching.</p>
+          <ul class="price-card__features">
+            <li>24 coached sessions across 90 days</li>
+            <li>Video breakdown of your shot</li>
+            <li>Game film review in Phase 3</li>
+          </ul>
+        </article>
+        <article class="price-card">
+          <span class="price-card__badge">The System</span>
+          <h3 class="price-card__name">Off the Floor</h3>
+          <div class="price-card__price">24/7<span class="price-card__period">&nbsp;in the app</span></div>
+          <p class="price-card__desc">The part no other gym can offer.</p>
+          <ul class="price-card__features">
+            <li>Custom workouts assigned in the TZ training app</li>
+            <li>Every session tracked and measured</li>
+            <li>Progress you and your parents can see</li>
+            <li>Maintenance plan available after graduation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="section section--deep">
+      <p class="eyebrow">Results</p>
+      <h2 class="section__title">Athletes who did the work.</h2>
+      <div class="case-grid">
+        <article class="case-card">
+          <h3 class="case-card__name">Cailin</h3>
+          <p class="case-card__stat">From zero confidence in 8th grade to 39% from three as a varsity freshman — a 15% jump in one year.</p>
+          <p class="case-card__quote">&ldquo;The growth in her confidence, and willingness to shoot&hellip; Doesn't happen without Tzone!&rdquo;</p>
+          <p class="case-card__attr">— Cailin's dad</p>
+          <!-- TODO(Matt): uncomment + add YouTube URL for "Case Study Red"-style video
+          <a class="case-card__link" href="YOUTUBE_URL_CAILIN" target="_blank" rel="noopener">Watch her case study →</a>
+          -->
+        </article>
+        <article class="case-card">
+          <h3 class="case-card__name">Connor</h3>
+          <p class="case-card__stat">At 6'5&Prime; he was the default post player. Today he's a shooting guard.</p>
+          <p class="case-card__quote">&ldquo;Matt is hands down one of the best shooting coaches&hellip; HE builds CONFIDENCE!&rdquo;</p>
+          <p class="case-card__attr">— Connor's mom</p>
+          <!-- TODO(Matt): uncomment + add YouTube URL
+          <a class="case-card__link" href="YOUTUBE_URL_CONNOR" target="_blank" rel="noopener">Watch his case study →</a>
+          -->
+        </article>
+        <article class="case-card">
+          <h3 class="case-card__name">Jayce</h3>
+          <p class="case-card__stat">After months inside the system rebuilding his shot, he hit 80% from three at his team camp.</p>
+          <p class="case-card__quote">&ldquo;Yes, he's my son. That's the point — this is the exact system I run my own kids through.&rdquo;</p>
+          <p class="case-card__attr">— Coach Matt</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LINEAGE / THE COACH -->
+    <section class="section section--base" id="coach">
+      <p class="eyebrow">The coach behind the system</p>
+      <h2 class="section__title">Trained with the best.<br /><span class="hero__title-accent">Built his own.</span></h2>
+      <div class="lineage">
+        <div class="lineage__photos">
+          <img src="../images/shot-program/matt-and-mike.webp" alt="Coach Matt with fellow coaches" loading="lazy" />
+          <img src="../images/shot-program/training-detail.webp" alt="On-court shooting instruction" loading="lazy" />
+        </div>
+        <div class="lineage__story">
+          <p>Matt has spent years training under and alongside some of the best shooting coaches in the country — flying out to work with them, putting his own kids through their gyms, testing everything firsthand.</p>
+          <p>Then he did what most coaches never do: kept only what produced results he could measure, threw out the rest, and built his own system around it. That's the TZ Shot System — and then he went one step further and built the technology to track it, so every athlete's progress lives in data, not opinions.</p>
+          <div class="lineage__quote">
+            <p class="lineage__quote-text">&ldquo;If you're looking for a shooting coach in Utah, Matt's your guy.&rdquo;</p>
+            <p class="lineage__quote-attr">— Mike Dunn, shooting coach</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section--elevated" id="pricing">
+      <p class="eyebrow">Investment</p>
+      <h2 class="section__title">One cohort. Ten spots.</h2>
+      <p class="section__sub">7th grade and older. Every spot starts with a call.</p>
+      <div class="pricing">
+        <article class="price-card">
+          <span class="price-card__badge">Paid in Full</span>
+          <h3 class="price-card__name">The Shot Program</h3>
+          <div class="price-card__price">$2,997</div>
+          <p class="price-card__desc">90 days, everything included.</p>
+          <ul class="price-card__features">
+            <li>24 coached sessions (8/month)</li>
+            <li>Video breakdown + game film review</li>
+            <li>Custom workouts, tracked in the app</li>
+            <li>Best value — save $603</li>
+          </ul>
+        </article>
+        <article class="price-card">
+          <span class="price-card__badge">Financed</span>
+          <h3 class="price-card__name">3 Payments</h3>
+          <div class="price-card__price">$1,200<span class="price-card__period">&nbsp;×&nbsp;3</span></div>
+          <p class="price-card__desc">Same program, monthly payments.</p>
+          <ul class="price-card__features">
+            <li>Everything in the full program</li>
+            <li>One payment at each phase</li>
+          </ul>
+        </article>
+      </div>
+      <div class="maint-strip">
+        <p class="maint-strip__heading">After the 90 days</p>
+        <p class="maint-strip__body">Graduates unlock the <strong>Maintenance Plan</strong> — custom workouts, tracked metrics, and continued access to the system that rebuilt your shot. $349/mo, optional, graduates only.</p>
+      </div>
+      <div class="pricing__cta-jump">
+        <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
+      </div>
+    </section>
+
+    <!-- BOOK A CALL -->
+    <section class="final-cta" id="book-a-call">
+      <p class="eyebrow">Ready to talk?</p>
+      <h2 class="section__title">Book a call.</h2>
+      <p class="final-cta__copy">Ten spots means every athlete starts with a conversation. Give us your info and Coach Matt will reach out — we'll talk about your athlete's shot, where it is today, and whether the program is the right fit.</p>
+      <form
+        class="tz-form tz-form--cta formkit-form"
+        action="https://app.kit.com/forms/9451557/subscriptions"
+        method="post"
+        data-tz-form="phone-call"
+        data-sv-form="9451557"
+        data-uid="273d13f418"
+        data-format="inline"
+        data-version="5"
+        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Got it. Coach Matt will reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}},"version":"5"}'
+        min-width="400 500 600 700 800"
+      >
+        <input type="hidden" name="fields[sport_of_interest]" value="Shot Program" />
+        <div class="tz-form__grid">
+          <label class="tz-form__field">
+            <span class="tz-form__label">First name <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="text" name="fields[first_name]" required autocomplete="given-name" placeholder="Your first name" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Phone <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="tel" name="fields[phone_number]" required autocomplete="tel" placeholder="(801) 555-0100" inputmode="tel" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Athlete's grade <span aria-hidden="true" class="tz-form__req">*</span></span>
+            <input type="text" name="fields[athlete_s_grade]" required placeholder="7th grade or older" />
+          </label>
+          <label class="tz-form__field">
+            <span class="tz-form__label">Best time to call</span>
+            <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
+          </label>
+        </div>
+        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
+        <button type="submit" class="tz-form__submit tz-form__submit--large formkit-submit" data-element="submit">
+          <span class="tz-form__submit-label">Request a call →</span>
+          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
+        </button>
+      </form>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--base">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section__title">Frequently asked.</h2>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>Who is this for?</summary>
+          <p>Athletes in 7th grade and older who are serious about changing their shot. Younger players: we run Jr Shot Camps and individual sessions — ask about those on the call.</p>
+        </details>
+        <details class="faq__item">
+          <summary>How is this different from Shot Camp?</summary>
+          <p>Shot Camp is a 3-day introduction to how we think about shooting. The Shot Program is the full transformation — 90 days, 24 coached sessions, video breakdown, and a tracked, staged progression. Camp shows you the system; the Program rebuilds your shot with it.</p>
+        </details>
+        <details class="faq__item">
+          <summary>What if my athlete plays other sports or has team practice?</summary>
+          <p>Eight trainings a month is deliberate — it's enough volume to change a shot while leaving room for team practice and games. We'll build the schedule around your athlete's season on the call.</p>
+        </details>
+        <details class="faq__item">
+          <summary>How do we know it's working?</summary>
+          <p>Every session is tracked in our training app. You'll see the workouts assigned, the sessions completed, and the numbers moving — plus video of the shot at the start and as it changes. Progress here is measured, not promised.</p>
+        </details>
+        <details class="faq__item">
+          <summary>What happens after the 90 days?</summary>
+          <p>Graduates can continue on the Maintenance Plan ($349/mo, optional): custom workouts, tracked metrics, and continued access to the system. Most athletes keep going — a rebuilt shot stays sharp with structured reps.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Why do I have to book a call to sign up?</summary>
+          <p>Ten spots per cohort means fit matters more than speed. The call is where we learn about your athlete's shot and goals — and where you get to ask us anything before committing to 90 days.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__row">
+      <div class="footer__brand">
+        <img src="../images/logos/TZ_Horizontal_Lockup_White.svg" alt="Training Zone" class="footer__logo" />
+        <span class="footer__brand-text">LOVE THE WORK</span>
+      </div>
+      <span class="footer__copy">© 2026 Training Zone. All rights reserved.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
