@@ -35,6 +35,8 @@
 
     .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1120px; margin: 32px auto 0; }
     .case-card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px 24px; display: flex; flex-direction: column; }
+    .case-card__media { margin: -26px -24px 18px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; }
+    .case-card__media img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
     .case-card__name { font-size: 1.3rem; color: var(--text-primary); }
     .case-card__stat { color: var(--tz-orange); font-weight: 700; margin: 10px 0 12px; font-size: 1.02rem; line-height: 1.45; }
     .case-card__quote { color: var(--text-secondary); font-style: italic; line-height: 1.55; flex: 1; }
@@ -231,6 +233,7 @@
       <h2 class="section__title">Athletes who did the work.</h2>
       <div class="case-grid">
         <article class="case-card">
+          <div class="case-card__media"><img src="../images/shot-program/case-cailin.webp" alt="Cailin rising into a jump shot at Training Zone while two teammates watch" loading="lazy" /></div>
           <h3 class="case-card__name">Cailin</h3>
           <p class="case-card__stat">From zero confidence in 8th grade to 39% from three as a varsity freshman — a 15% jump in one year.</p>
           <p class="case-card__quote">&ldquo;The growth in her confidence, and willingness to shoot&hellip; Doesn't happen without Tzone!&rdquo;</p>
@@ -238,6 +241,7 @@
           <a class="case-card__link" href="https://youtu.be/-zLt8abVZY8" target="_blank" rel="noopener">Watch her case study →</a>
         </article>
         <article class="case-card">
+          <div class="case-card__media"><img src="../images/shot-program/case-connor.webp" alt="Connor in his Copper Hills uniform, spinning a basketball on his finger" loading="lazy" /></div>
           <h3 class="case-card__name">Connor</h3>
           <p class="case-card__stat">At 6'5&Prime; he was the default post player. Today he's a shooting guard.</p>
           <p class="case-card__quote">&ldquo;Matt is hands down one of the best shooting coaches&hellip; HE builds CONFIDENCE!&rdquo;</p>
@@ -245,6 +249,7 @@
           <a class="case-card__link" href="https://youtu.be/XyhsgLTHIBw" target="_blank" rel="noopener">Watch his case study →</a>
         </article>
         <article class="case-card">
+          <div class="case-card__media"><img src="../images/shot-program/case-jayce.webp" alt="Jayce working on the shot line at Training Zone" loading="lazy" /></div>
           <h3 class="case-card__name">Jayce</h3>
           <p class="case-card__stat">After months inside the system rebuilding his shot, he hit 80% from three at his team camp.</p>
           <p class="case-card__quote">&ldquo;Yes, he's my son. That's the point — this is the exact system I run my own kids through.&rdquo;</p>
