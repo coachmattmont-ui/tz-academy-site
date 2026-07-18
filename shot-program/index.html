@@ -22,6 +22,7 @@
     .proof-banner { max-width: 960px; margin: 0 auto; }
     .proof-banner__media { border: 1px solid var(--border-default); border-radius: var(--radius-2xl); overflow: hidden; }
     .proof-banner__media img { display: block; width: 100%; height: auto; }
+    .proof-banner__media iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
     .proof-banner__caption { margin-top: 14px; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
     .proof-banner__caption strong { color: var(--text-primary); }
 
@@ -128,10 +129,15 @@
       <h2 class="section__title">&ldquo;One of the top shooters in the state.&rdquo;</h2>
       <div class="proof-banner">
         <div class="proof-banner__media">
-          <!-- TODO(Matt): swap for the highlight video embed when the Kaylee edit is ready -->
-          <img src="../images/shot-program/kaylee-broadcast.webp" alt="KSL broadcast of a Utah state playoff game — the announcer calls Kaylee Montgomery one of the top shooters in the state" loading="lazy" />
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Qfc-HTAwbwg"
+            title="Kaylee's case study — inside the TZ Shot System"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
-        <p class="proof-banner__caption">State playoffs, Huntsman Center. The announcer's words, not ours — <strong>&ldquo;Kaylee Montgomery, one of the top shooters in the state.&rdquo;</strong> Kaylee trains inside the TZ Shot System.</p>
+        <p class="proof-banner__caption">Press play. State playoffs, Huntsman Center — the announcer's words, not ours: <strong>&ldquo;Kaylee Montgomery, one of the top shooters in the state.&rdquo;</strong> Kaylee trains inside the TZ Shot System.</p>
       </div>
     </section>
 
