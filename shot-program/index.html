@@ -14,385 +14,834 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="../images/logos/TZ_Logomark_White.svg" />
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
 
   <style>
-    /* Page-scoped additions — built on the shared design tokens */
-    .proof-banner { max-width: 960px; margin: 0 auto; }
-    .proof-banner__media { border: 1px solid var(--border-default); border-radius: var(--radius-2xl); overflow: hidden; }
-    .proof-banner__media img { display: block; width: 100%; height: auto; }
-    .proof-banner__media iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
-    .proof-banner__caption { margin-top: 14px; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
-    .proof-banner__caption strong { color: var(--text-primary); }
+    /* ============ THE SHOT PROGRAM — standalone dark/gold system ============ */
+    :root {
+      --bg: #0a0a0b;
+      --panel: #0e0e0e;
+      --panel-2: #121110;
+      --band: #131009;
+      --line: rgba(255, 255, 255, 0.08);
+      --gold: #c9a86a;
+      --gold-hi: #e6d5ab;
+      --gold-dim: rgba(201, 168, 106, 0.35);
+      --ink: #f7f4ee;
+      --body: #b6b1a6;
+      --body-hi: #d3cec3;
+      --mut: #79746a;
+      --disp: "Bebas Neue", "Arial Narrow", sans-serif;
+      --sans: "Hanken Grotesk", -apple-system, "Segoe UI", sans-serif;
+      --r: 14px;
+      --r-lg: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+    body {
+      background: var(--bg);
+      color: var(--body);
+      font-family: var(--sans);
+      font-size: 16.5px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--gold); }
+    :focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 3px; border-radius: 4px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-    .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 32px auto 0; }
-    .phase-card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px 24px; }
-    .phase-card__num { color: var(--tz-orange); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.12em; }
-    .phase-card__name { margin: 8px 0 4px; font-size: 1.35rem; color: var(--text-primary); }
-    .phase-card__weeks { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 12px; }
-    .phase-card__body { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.55; }
+    /* Display type */
+    h1, h2, h3, .disp {
+      font-family: var(--disp);
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      line-height: 0.98;
+      text-transform: uppercase;
+    }
+    h2 { font-size: clamp(38px, 5.2vw, 58px); }
+    h3 { font-size: 26px; letter-spacing: 0.04em; }
 
-    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1120px; margin: 32px auto 0; }
-    .case-card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px 24px; display: flex; flex-direction: column; }
-    .case-card__media { margin: -26px -24px 18px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; }
-    .case-card__media img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .case-card__name { font-size: 1.3rem; color: var(--text-primary); }
-    .case-card__stat { color: var(--tz-orange); font-weight: 700; margin: 10px 0 12px; font-size: 1.02rem; line-height: 1.45; }
-    .case-card__quote { color: var(--text-secondary); font-style: italic; line-height: 1.55; flex: 1; }
-    .case-card__attr { margin-top: 10px; color: var(--text-dim); font-size: 0.88rem; }
-    .case-card__link { margin-top: 16px; color: var(--tz-orange); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-    .case-card__link:hover { color: var(--tz-orange-hover); }
+    .eyebrow {
+      font-family: var(--sans);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .sub { color: var(--body); max-width: 620px; margin: 18px auto 0; }
+    .center { text-align: center; }
+    .center .sub { margin-left: auto; margin-right: auto; }
 
-    .lineage { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; max-width: 1080px; margin: 32px auto 0; align-items: start; }
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 13.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 17px 30px;
+      transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.18s;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+    .btn--gold { background: var(--gold); color: #0a0a0b; }
+    .btn--gold:hover { background: var(--gold-hi); transform: translateY(-1px); }
+    .btn--ghost { background: transparent; color: var(--gold); border-color: var(--gold-dim); }
+    .btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+    /* Layout */
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 88px 0; }
+    .alt { background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    /* Announcement bar */
+    .announce {
+      background: var(--band);
+      border-bottom: 1px solid var(--gold-dim);
+      color: var(--gold-hi);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px 16px;
+    }
+    .announce a { color: var(--gold-hi); text-decoration: none; }
+
+    /* Sticky header */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(10, 10, 11, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav__logo { height: 30px; width: auto; }
+    .nav .btn { padding: 12px 22px; }
+
+    /* Hero */
+    .hero { padding: 84px 0 72px; }
+    .hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+    .hero__badge {
+      display: inline-block;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      margin-bottom: 22px;
+    }
+    .hero h1 { font-size: clamp(58px, 8.5vw, 108px); }
+    .hero h1 .au { color: var(--gold); }
+    .hero__sub { margin: 22px 0 30px; max-width: 520px; color: var(--body-hi); font-size: 17.5px; }
+    .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero__stats {
+      display: flex;
+      gap: 44px;
+      margin-top: 42px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+    .stat__num { font-family: var(--disp); font-size: 44px; color: var(--gold); line-height: 1; }
+    .stat__label { color: var(--mut); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px; }
+    .hero__media img { border-radius: var(--r-lg); border: 1px solid var(--line); width: 100%; height: auto; }
+
+    /* Video lightbox posters */
+    .video-poster {
+      position: relative;
+      display: block;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--panel-2);
+      padding: 0;
+      aspect-ratio: 16 / 9;
+    }
+    .video-poster img { width: 100%; height: 100%; object-fit: cover; opacity: 0.92; transition: opacity 0.2s, transform 0.4s; }
+    .video-poster:hover img { opacity: 1; transform: scale(1.015); }
+    .video-poster__play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(10,10,11,0) 40%, rgba(10,10,11,0.55) 100%);
+    }
+    .video-poster__btn {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 40px rgba(201, 168, 106, 0.35);
+      transition: transform 0.18s, background 0.18s;
+    }
+    .video-poster:hover .video-poster__btn { transform: scale(1.07); background: var(--gold-hi); }
+    .video-poster__btn svg { margin-left: 5px; }
+    .video-poster__hint {
+      position: absolute;
+      left: 0; right: 0; bottom: 18px;
+      text-align: center;
+      color: var(--gold-hi);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .video-poster--film { display: grid; place-items: center; }
+    .video-poster--film .video-poster__film-label {
+      position: absolute;
+      top: 22px; left: 0; right: 0;
+      text-align: center;
+      color: var(--mut);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+    .proof-media { max-width: 920px; margin: 36px auto 0; }
+    .proof-caption { max-width: 720px; margin: 16px auto 0; text-align: center; color: var(--mut); font-size: 15px; }
+    .proof-caption strong { color: var(--body-hi); }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 5, 6, 0.92);
+      padding: 24px;
+    }
+    .lightbox.is-open { display: flex; }
+    .lightbox__frame { width: min(1020px, 100%); aspect-ratio: 16 / 9; border-radius: var(--r); overflow: hidden; border: 1px solid var(--gold-dim); background: #000; }
+    .lightbox__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .lightbox__close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold-hi);
+      border-radius: 999px;
+      width: 44px; height: 44px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .lightbox__close:hover { border-color: var(--gold); }
+
+    /* Who it's for */
+    .who__copy { max-width: 700px; margin: 28px auto 0; }
+    .who__copy p { margin-bottom: 18px; color: var(--body-hi); font-size: 17px; }
+    .who__copy em { color: var(--ink); font-style: italic; }
+
+    /* Phases */
+    .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .phase-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r); padding: 30px 26px; }
+    .phase-card__num { color: var(--gold); font-size: 11.5px; font-weight: 700; letter-spacing: 0.26em; }
+    .phase-card__name { margin: 10px 0 2px; font-size: 34px; }
+    .phase-card__weeks { color: var(--mut); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+    .phase-card__body { font-size: 15.5px; }
+
+    /* Cards (included / pricing) */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 44px auto 0; }
+    .card { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 34px 30px; }
+    .card--gold { border-color: var(--gold-dim); box-shadow: 0 0 60px rgba(201, 168, 106, 0.07) inset; }
+    .card__badge {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      margin-bottom: 16px;
+    }
+    .card__name { font-size: 28px; }
+    .card__price { font-family: var(--disp); font-size: 52px; color: var(--gold); margin: 12px 0 2px; line-height: 1; }
+    .card__price span { font-family: var(--sans); font-size: 15px; color: var(--mut); letter-spacing: 0.04em; text-transform: none; }
+    .card__desc { color: var(--mut); font-size: 14.5px; margin-bottom: 18px; }
+    .card ul { list-style: none; }
+    .card li { padding: 9px 0 9px 26px; position: relative; border-top: 1px solid var(--line); font-size: 15px; color: var(--body-hi); }
+    .card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+
+    /* Case studies */
+    .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .case-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; }
+    .case-card img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+    .case-card__body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+    .case-card__name { font-size: 30px; }
+    .case-card__stat { color: var(--gold-hi); font-weight: 600; font-size: 15px; margin: 10px 0 12px; line-height: 1.5; }
+    .case-card__quote { font-style: italic; font-size: 15px; flex: 1; border-left: 2px solid var(--gold-dim); padding-left: 14px; }
+    .case-card__attr { color: var(--mut); font-size: 13px; margin-top: 10px; }
+    .case-card__link { margin-top: 16px; text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .case-card__link:hover { color: var(--gold-hi); }
+
+    /* Bands (Spencer / Founder) */
+    .band { background: linear-gradient(180deg, var(--band) 0%, var(--panel) 100%); border-top: 1px solid var(--gold-dim); border-bottom: 1px solid var(--line); }
+    .band__grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
+    .band__figure { position: relative; }
+    .band__figure img { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; border-radius: var(--r-lg); border: 1px solid var(--gold-dim); }
+    .band__badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: var(--gold);
+      color: #0a0a0b;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 7px 12px;
+    }
+    .band h2 { font-size: clamp(36px, 4.6vw, 52px); }
+    .band__body { margin-top: 18px; color: var(--body-hi); font-size: 17px; }
+    .placeholder-quote {
+      margin-top: 24px;
+      border: 1.5px dashed var(--gold-dim);
+      border-radius: var(--r);
+      padding: 22px 24px;
+      color: var(--mut);
+      font-style: italic;
+      font-size: 15.5px;
+    }
+    .founder-quote { margin-top: 20px; }
+    .founder-quote p { color: var(--body-hi); font-size: 17px; margin-bottom: 16px; }
+    .founder-quote strong { color: var(--gold-hi); font-weight: 700; }
+    .founder-quote__sig { font-family: var(--disp); font-size: 24px; color: var(--ink); letter-spacing: 0.05em; }
+    .founder-quote__role { color: var(--mut); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .band .btn { margin-top: 26px; }
+
+    /* Lineage / coach */
+    .lineage { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; margin-top: 44px; }
     .lineage__photos { display: grid; gap: 16px; }
-    .lineage__photos img { width: 100%; border-radius: var(--radius-xl); border: 1px solid var(--border-default); display: block; }
-    .lineage__story p { color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
-    .lineage__quote { background: var(--bg-card); border: 1px solid var(--border-default); border-left: 3px solid var(--tz-orange); border-radius: var(--radius-lg); padding: 20px 22px; margin-top: 8px; }
-    .lineage__quote-text { color: var(--text-primary); font-style: italic; font-size: 1.05rem; line-height: 1.5; }
-    .lineage__quote-attr { color: var(--text-dim); margin-top: 8px; font-size: 0.9rem; }
+    .lineage__photos img { border-radius: var(--r); border: 1px solid var(--line); width: 100%; }
+    .lineage__story p { margin-bottom: 16px; color: var(--body-hi); }
+    .pull-quote { border-left: 3px solid var(--gold); padding: 6px 0 6px 22px; margin-top: 22px; }
+    .pull-quote__text { color: var(--ink); font-style: italic; font-size: 19px; line-height: 1.45; }
+    .pull-quote__attr { color: var(--mut); font-size: 13.5px; margin-top: 8px; }
 
-    .maint-strip { max-width: 860px; margin: 28px auto 0; background: var(--bg-card-soft); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 22px 26px; text-align: center; }
-    .maint-strip__heading { color: var(--tz-orange); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    .maint-strip__body { color: var(--text-secondary); margin-top: 8px; line-height: 1.55; }
+    /* Maintenance strip */
+    .maint {
+      max-width: 820px;
+      margin: 32px auto 0;
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      text-align: center;
+    }
+    .maint__head { color: var(--gold); font-size: 11.5px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; }
+    .maint__body { margin-top: 8px; font-size: 15.5px; }
+    .maint__body strong { color: var(--ink); }
+    .pricing-cta { text-align: center; margin-top: 36px; }
 
+    /* Form */
+    .book { background: var(--panel); border-top: 1px solid var(--gold-dim); }
+    .book__copy { max-width: 620px; margin: 18px auto 0; text-align: center; }
+    .tz-form { max-width: 760px; margin: 40px auto 0; }
+    .tz-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .tz-form__field { display: flex; flex-direction: column; gap: 7px; }
+    .tz-form__field:last-child { grid-column: 1 / -1; }
+    .tz-form__label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--body-hi); }
+    .tz-form__req { color: var(--gold); }
+    .tz-form input {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      padding: 14px 16px;
+      transition: border-color 0.15s;
+    }
+    .tz-form input::placeholder { color: var(--mut); }
+    .tz-form input:focus { outline: none; border-color: var(--gold); }
+    .tz-form__submit {
+      margin-top: 26px;
+      width: 100%;
+      background: var(--gold);
+      color: #0a0a0b;
+      border: 0;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 19px;
+      cursor: pointer;
+      transition: background 0.18s;
+      position: relative;
+    }
+    .tz-form__submit:hover { background: var(--gold-hi); }
+    .tz-form__kit-errors { list-style: none; color: #e08f8f; margin-top: 14px; font-size: 14.5px; }
+    .formkit-spinner { display: none; }
+    .formkit-form[data-active] .formkit-spinner { display: inline-block; }
+    .formkit-spinner div { display: inline-block; width: 6px; height: 6px; margin: 0 2px; border-radius: 50%; background: #0a0a0b; animation: pulse 1s infinite ease-in-out; }
+    .formkit-spinner div:nth-child(2) { animation-delay: 0.15s; }
+    .formkit-spinner div:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    /* FAQ */
+    .faq { max-width: 760px; margin: 40px auto 0; }
+    .faq details { border-top: 1px solid var(--line); }
+    .faq details:last-child { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 36px 20px 4px;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 16.5px;
+      position: relative;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 400;
+    }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { padding: 0 4px 22px; font-size: 15.5px; }
+
+    /* Final strip + footer */
+    .final {
+      background: var(--band);
+      border-top: 1px solid var(--gold-dim);
+      padding: 60px 0;
+      text-align: center;
+    }
+    .final h2 { font-size: clamp(34px, 4.5vw, 48px); }
+    .final p { margin: 12px auto 26px; max-width: 520px; }
+    .footer { padding: 36px 24px; border-top: 1px solid var(--line); }
+    .footer__row { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer__brand { display: flex; align-items: center; gap: 14px; }
+    .footer__logo { height: 26px; width: auto; }
+    .footer__tag { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; }
+    .footer__copy { color: var(--mut); font-size: 13px; }
+
+    /* Responsive */
     @media (max-width: 900px) {
-      .phase-grid, .case-grid { grid-template-columns: 1fr; }
-      .lineage { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+      .hero { padding: 52px 0 56px; }
+      .hero__grid, .band__grid, .lineage { grid-template-columns: 1fr; gap: 36px; }
+      .phase-grid, .case-grid, .duo { grid-template-columns: 1fr; }
+      .tz-form__grid { grid-template-columns: 1fr; }
+      .tz-form__field:last-child { grid-column: auto; }
+      .hero__stats { gap: 30px; }
+      .band__grid { align-items: start; }
+      .video-poster__btn { width: 66px; height: 66px; }
     }
   </style>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- TOP UTILITY BAR -->
-  <div class="utility-bar" role="contentinfo">
-    <span>📞 385-786-9324 · 5639 Mirabella Dr, Herriman, UT 84096</span>
-    <span class="utility-bar__status" aria-label="Status">
-      <span class="utility-bar__dot" aria-hidden="true"></span>Now Enrolling — 10 Spots
-    </span>
-  </div>
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce">Now Enrolling — Only 10 Spots &nbsp;·&nbsp; Herriman, Utah &nbsp;·&nbsp; <a href="tel:3857869324">385-786-9324</a></div>
 
-  <!-- NAV -->
+  <!-- STICKY HEADER -->
   <nav class="nav" aria-label="Primary">
-    <a href="/" class="nav__brand" aria-label="Academy home">
+    <a href="/" aria-label="Academy home">
       <img src="../images/logos/TZ_Horizontal_Lockup_White.svg" alt="Training Zone" class="nav__logo" />
     </a>
-    <a href="#book-a-call" class="nav__cta">Book a Call →</a>
+    <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
   </nav>
 
   <main id="main">
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow">THE SHOT PROGRAM</p>
-          <h1 class="hero__title">90 DAYS.<br />BE A <span class="hero__title-accent">SHOOTER</span>.</h1>
+      <div class="wrap hero__grid">
+        <div>
+          <span class="hero__badge">The Shot Program · Only 10 Spots</span>
+          <h1>90 Days.<br />Be a <span class="au">Shooter</span>.</h1>
           <p class="hero__sub">A shooting transformation for serious athletes — not a camp, not a clinic. Ninety days inside the Shot Program: hands-on coaching, video breakdown of your shot, custom workouts, and metrics we track together. When it's done, you'll be a shooter.</p>
           <div class="hero__ctas">
-            <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
-            <a href="#system" class="btn btn--secondary">How It Works</a>
+            <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
+            <a href="#system" class="btn btn--ghost">How It Works</a>
           </div>
           <div class="hero__stats">
-            <div class="stat">
-              <div class="stat__num">90</div>
-              <div class="stat__label">Days</div>
-            </div>
-            <div class="stat">
-              <div class="stat__num">1-on-1</div>
-              <div class="stat__label">Sessions</div>
-            </div>
-            <div class="stat">
-              <div class="stat__num">10</div>
-              <div class="stat__label">Spots</div>
-            </div>
+            <div><div class="stat__num">90</div><div class="stat__label">Days</div></div>
+            <div><div class="stat__num">1-on-1</div><div class="stat__label">Sessions</div></div>
+            <div><div class="stat__num">10</div><div class="stat__label">Spots</div></div>
           </div>
         </div>
         <div class="hero__media">
-          <img
-            src="../images/shot-program/shot-camp-drake.webp"
-            alt="Shot Camp at Training Zone — an athlete rises into a jumper while Coach Matt watches"
-            class="hero__image"
-            width="1284"
-            height="845"
-            fetchpriority="high"
-          />
+          <img src="../images/shot-program/shot-camp-drake.webp" alt="Shot Camp at Training Zone — an athlete rises into a jumper while Coach Matt watches" width="1284" height="845" fetchpriority="high" />
         </div>
       </div>
     </section>
 
-    <!-- PROOF BANNER — Kaylee broadcast -->
-    <section class="section section--deep">
-      <p class="eyebrow">Heard on the broadcast</p>
-      <h2 class="section__title">&ldquo;One of the top shooters in the state.&rdquo;</h2>
-      <div class="proof-banner">
-        <div class="proof-banner__media">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/Qfc-HTAwbwg"
-            title="Kaylee's case study — inside the Shot Program"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+    <!-- BROADCAST PROOF -->
+    <section class="alt center">
+      <div class="wrap">
+        <p class="eyebrow">Heard on the broadcast</p>
+        <h2>&ldquo;One of the top shooters in the state.&rdquo;</h2>
+        <div class="proof-media">
+          <button type="button" class="video-poster" data-video="Qfc-HTAwbwg" aria-label="Play Kaylee's case study video">
+            <img src="../images/shot-program/poster-broadcast.webp" alt="State playoff broadcast frame — Kaylee bringing the ball up at the Huntsman Center" loading="lazy" />
+            <span class="video-poster__play"><span class="video-poster__btn"><svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true"><path d="M26 15 0 30V0l26 15Z" fill="#0a0a0b"/></svg></span></span>
+            <span class="video-poster__hint">Watch the case study</span>
+          </button>
+          <p class="proof-caption">Kaylee's a longtime member of the Shot Program.</p>
         </div>
-        <p class="proof-banner__caption">Kaylee's a longtime member of the Shot Program.</p>
       </div>
     </section>
 
     <!-- WHO IT'S FOR -->
-    <section class="section section--elevated" id="who">
-      <p class="eyebrow">Who it's for</p>
-      <h2 class="section__title">We don't accept everyone.</h2>
-      <p class="section__sub">Limited to 10 spots. 7th grade and up. Here's who this is built for:</p>
-      <div class="model__copy">
-        <p>The athlete who's decided their shot is the thing holding them back — and is done waiting for it to fix itself. The player whose coach says &ldquo;shoot with confidence&rdquo; but nobody has ever shown them <em>how</em> a confident shot is actually built.</p>
-        <p>This is not a drop-in class. It's ninety days of structured work with a start, a middle, and a finish line — and we only take athletes ready to do all ninety. That's why every spot starts with a call, not a checkout page.</p>
+    <section class="center" id="who">
+      <div class="wrap">
+        <p class="eyebrow">Who it's for</p>
+        <h2>We don't accept everyone.</h2>
+        <p class="sub">Limited to 10 spots. 7th grade and up. Here's who this is built for:</p>
+        <div class="who__copy">
+          <p>The athlete who's decided their shot is the thing holding them back — and is done waiting for it to fix itself. The player whose coach says &ldquo;shoot with confidence&rdquo; but nobody has ever shown them <em>how</em> a confident shot is actually built.</p>
+          <p>This is not a drop-in class. It's ninety days of structured work with a start, a middle, and a finish line — and we only take athletes ready to do all ninety. That's why every spot starts with a call, not a checkout page.</p>
+        </div>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section section--base" id="system">
-      <p class="eyebrow">How it works</p>
-      <h2 class="section__title">Three phases. One rebuilt shot.</h2>
-      <p class="section__sub">A staged progression — because a shot isn't fixed all at once. It's rebuilt in order.</p>
-      <div class="phase-grid">
-        <article class="phase-card">
-          <p class="phase-card__num">PHASE 1</p>
-          <h3 class="phase-card__name">Discovery</h3>
-          <p class="phase-card__weeks">Weeks 1–4</p>
-          <p class="phase-card__body">We film your shot, break it down frame by frame, and identify the areas you can improve your shot. Then we build the mechanics — base, hand placement, release — with hands-on reps until the new motion holds.</p>
-        </article>
-        <article class="phase-card">
-          <p class="phase-card__num">PHASE 2</p>
-          <h3 class="phase-card__name">Build</h3>
-          <p class="phase-card__weeks">Weeks 5–8</p>
-          <p class="phase-card__body">Volume with the new shot. Custom workouts assigned and progress measured, so you and your parents can see the numbers move — not just feel like they're moving.</p>
-        </article>
-        <article class="phase-card">
-          <p class="phase-card__num">PHASE 3</p>
-          <h3 class="phase-card__name">Range</h3>
-          <p class="phase-card__weeks">Weeks 9–12</p>
-          <p class="phase-card__body">Game speed, game range. Off the catch, off the move, off the dribble — and game film breakdown so the new shot shows up where it counts: in games.</p>
-        </article>
+    <section class="alt center" id="system">
+      <div class="wrap">
+        <p class="eyebrow">How it works</p>
+        <h2>Three phases. One rebuilt shot.</h2>
+        <p class="sub">A staged progression — because a shot isn't fixed all at once. It's rebuilt in order.</p>
+        <div class="phase-grid">
+          <article class="phase-card">
+            <p class="phase-card__num">PHASE 1</p>
+            <h3 class="phase-card__name">Discovery</h3>
+            <p class="phase-card__weeks">Weeks 1–4</p>
+            <p class="phase-card__body">We film your shot, break it down frame by frame, and identify the areas you can improve your shot. Then we build the mechanics — base, hand placement, release — with hands-on reps until the new motion holds.</p>
+          </article>
+          <article class="phase-card">
+            <p class="phase-card__num">PHASE 2</p>
+            <h3 class="phase-card__name">Build</h3>
+            <p class="phase-card__weeks">Weeks 5–8</p>
+            <p class="phase-card__body">Volume with the new shot. Custom workouts assigned and progress measured, so you and your parents can see the numbers move — not just feel like they're moving.</p>
+          </article>
+          <article class="phase-card">
+            <p class="phase-card__num">PHASE 3</p>
+            <h3 class="phase-card__name">Range</h3>
+            <p class="phase-card__weeks">Weeks 9–12</p>
+            <p class="phase-card__body">Game speed, game range. Off the catch, off the move, off the dribble — and game film breakdown so the new shot shows up where it counts: in games.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- WHAT'S INCLUDED -->
-    <section class="section section--elevated">
-      <p class="eyebrow">What's included</p>
-      <h2 class="section__title">Ninety days, fully instrumented.</h2>
-      <div class="pricing">
-        <article class="price-card">
-          <span class="price-card__badge">The Work</span>
-          <h3 class="price-card__name">On the Floor</h3>
-          <div class="price-card__price">1-on-1<span class="price-card__period">&nbsp;sessions</span></div>
-          <p class="price-card__desc">Hands-on coaching.</p>
-          <ul class="price-card__features">
-            <li>One-on-one sessions across all 90 days</li>
-            <li>Video breakdown of your shot</li>
-            <li>Game film review in Phase 3</li>
-          </ul>
-        </article>
-        <article class="price-card">
-          <span class="price-card__badge">The System</span>
-          <h3 class="price-card__name">Off the Floor</h3>
-          <div class="price-card__price">24/7<span class="price-card__period">&nbsp;in the app</span></div>
-          <p class="price-card__desc">The part no other gym can offer.</p>
-          <ul class="price-card__features">
-            <li>Custom workouts assigned in the TZ training app</li>
-            <li>Every session tracked and measured</li>
-            <li>Progress you and your parents can see</li>
-            <li>Maintenance plan available after graduation</li>
-          </ul>
-        </article>
+    <section class="center">
+      <div class="wrap">
+        <p class="eyebrow">What's included</p>
+        <h2>Ninety days, fully instrumented.</h2>
+        <div class="duo" style="text-align: left;">
+          <article class="card">
+            <span class="card__badge">The Work</span>
+            <h3 class="card__name">On the Floor</h3>
+            <div class="card__price">1-on-1<span> sessions</span></div>
+            <p class="card__desc">Hands-on coaching.</p>
+            <ul>
+              <li>One-on-one sessions across all 90 days</li>
+              <li>Video breakdown of your shot</li>
+              <li>Game film review in Phase 3</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="card__badge">The System</span>
+            <h3 class="card__name">Off the Floor</h3>
+            <div class="card__price">24/7<span> in the app</span></div>
+            <p class="card__desc">The part no other gym can offer.</p>
+            <ul>
+              <li>Custom workouts assigned in the TZ training app</li>
+              <li>Every session tracked and measured</li>
+              <li>Progress you and your parents can see</li>
+              <li>Maintenance plan available after graduation</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- FILM BREAKDOWN PROOF -->
-    <section class="section section--base">
-      <p class="eyebrow">Inside the film room</p>
-      <h2 class="section__title">This is what a breakdown looks like.</h2>
-      <div class="proof-banner">
-        <div class="proof-banner__media">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/h04o8QER5ko"
-            title="Real Shot Film Breakdown footage from the Shot Program"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+    <!-- FILM ROOM -->
+    <section class="alt center">
+      <div class="wrap">
+        <p class="eyebrow">Inside the film room</p>
+        <h2>This is what a breakdown looks like.</h2>
+        <div class="proof-media">
+          <button type="button" class="video-poster video-poster--film" data-video="h04o8QER5ko" aria-label="Play a real Shot Film Breakdown">
+            <span class="video-poster__film-label">The Film Room · Shot Program</span>
+            <span class="video-poster__play"><span class="video-poster__btn"><svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true"><path d="M26 15 0 30V0l26 15Z" fill="#0a0a0b"/></svg></span></span>
+            <span class="video-poster__hint">Press play</span>
+          </button>
+          <p class="proof-caption">Real footage from a Shot Film Breakdown — the film review every athlete in the Program gets after we shoot with them.</p>
         </div>
-        <p class="proof-banner__caption">Real footage from a Shot Film Breakdown — the film review every athlete in the Program gets after we shoot with them.</p>
       </div>
     </section>
 
     <!-- CASE STUDIES -->
-    <section class="section section--deep">
-      <p class="eyebrow">Results</p>
-      <h2 class="section__title">Athletes who did the work.</h2>
-      <div class="case-grid">
-        <article class="case-card">
-          <div class="case-card__media"><img src="../images/shot-program/case-cailin.webp" alt="Cailin rising into a jump shot at Training Zone while two teammates watch" loading="lazy" /></div>
-          <h3 class="case-card__name">Cailin</h3>
-          <p class="case-card__stat">From zero confidence in 8th grade to 39% from three as a varsity freshman — a 15% jump in one year.</p>
-          <p class="case-card__quote">&ldquo;The growth in her confidence, and willingness to shoot&hellip; Doesn't happen without Tzone!&rdquo;</p>
-          <p class="case-card__attr">— Cailin's dad</p>
-          <a class="case-card__link" href="https://youtu.be/-zLt8abVZY8" target="_blank" rel="noopener">Watch her case study →</a>
-        </article>
-        <article class="case-card">
-          <div class="case-card__media"><img src="../images/shot-program/case-connor.webp" alt="Connor in his Copper Hills uniform, spinning a basketball on his finger" loading="lazy" /></div>
-          <h3 class="case-card__name">Connor</h3>
-          <p class="case-card__stat">At 6'5&Prime; he was the default post player. Today he's a shooting guard.</p>
-          <p class="case-card__quote">&ldquo;Matt is hands down one of the best shooting coaches&hellip; HE builds CONFIDENCE!&rdquo;</p>
-          <p class="case-card__attr">— Connor's mom</p>
-          <a class="case-card__link" href="https://youtu.be/XyhsgLTHIBw" target="_blank" rel="noopener">Watch his case study →</a>
-        </article>
-        <article class="case-card">
-          <div class="case-card__media"><img src="../images/shot-program/case-jayce.webp" alt="Jayce working on the shot line at Training Zone" loading="lazy" /></div>
-          <h3 class="case-card__name">Jayce</h3>
-          <p class="case-card__stat">After months inside the system rebuilding his shot, he hit 80% from three at his team camp.</p>
-          <p class="case-card__quote">&ldquo;Yes, he's my son. That's the point — this is the exact system I run my own kids through.&rdquo;</p>
-          <p class="case-card__attr">— Coach Matt</p>
-        </article>
+    <section class="center">
+      <div class="wrap">
+        <p class="eyebrow">Results</p>
+        <h2>Athletes who did the work.</h2>
+        <div class="case-grid" style="text-align: left;">
+          <article class="case-card">
+            <img src="../images/shot-program/case-cailin.webp" alt="Cailin rising into a jump shot at Training Zone while two teammates watch" loading="lazy" />
+            <div class="case-card__body">
+              <h3 class="case-card__name">Cailin</h3>
+              <p class="case-card__stat">From zero confidence in 8th grade to 39% from three as a varsity freshman — a 15% jump in one year.</p>
+              <p class="case-card__quote">&ldquo;The growth in her confidence, and willingness to shoot&hellip; Doesn't happen without Tzone!&rdquo;</p>
+              <p class="case-card__attr">— Cailin's dad</p>
+              <a class="case-card__link" href="https://youtu.be/-zLt8abVZY8" target="_blank" rel="noopener">Watch her case study →</a>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="../images/shot-program/case-connor.webp" alt="Connor in his Copper Hills uniform, spinning a basketball on his finger" loading="lazy" />
+            <div class="case-card__body">
+              <h3 class="case-card__name">Connor</h3>
+              <p class="case-card__stat">At 6'5&Prime; he was the default post player. Today he's a shooting guard.</p>
+              <p class="case-card__quote">&ldquo;Matt is hands down one of the best shooting coaches&hellip; HE builds CONFIDENCE!&rdquo;</p>
+              <p class="case-card__attr">— Connor's mom</p>
+              <a class="case-card__link" href="https://youtu.be/XyhsgLTHIBw" target="_blank" rel="noopener">Watch his case study →</a>
+            </div>
+          </article>
+          <article class="case-card">
+            <img src="../images/shot-program/case-jayce.webp" alt="Jayce working on the shot line at Training Zone" loading="lazy" />
+            <div class="case-card__body">
+              <h3 class="case-card__name">Jayce</h3>
+              <p class="case-card__stat">After months inside the system rebuilding his shot, he hit 80% from three at his team camp.</p>
+              <p class="case-card__quote">&ldquo;Yes, he's my son. That's the point — this is the exact system I run my own kids through.&rdquo;</p>
+              <p class="case-card__attr">— Coach Matt</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- LINEAGE / THE COACH -->
-    <section class="section section--base" id="coach">
-      <p class="eyebrow">The coach behind the system</p>
-      <h2 class="section__title">Trained with the best.<br /><span class="hero__title-accent">Built his own.</span></h2>
-      <div class="lineage">
-        <div class="lineage__photos">
-          <img src="../images/shot-program/matt-and-mike.webp" alt="Coach Matt with fellow coaches" loading="lazy" />
-          <img src="../images/shot-program/training-detail.webp" alt="On-court shooting instruction" loading="lazy" />
+    <!-- COLLEGE PROOF — SPENCER -->
+    <section class="band">
+      <div class="wrap band__grid">
+        <div class="band__figure">
+          <img src="../images/shot-program/proof-spencer.webp" alt="Spencer, a college athlete, rising into a jump shot at Training Zone" loading="lazy" />
+          <span class="band__badge">College Athlete</span>
         </div>
-        <div class="lineage__story">
-          <p>Matt has spent years training under and alongside some of the best shooting coaches in the country — flying out to work with them, putting his own kids through their gyms, testing everything firsthand.</p>
-          <p>Then he did what most coaches never do: kept only what produced results he could measure, threw out the rest, and built his own system around it. That's the Shot Program — and then he went one step further and built the technology to track it, so every athlete's progress lives in data, not opinions.</p>
-          <div class="lineage__quote">
-            <p class="lineage__quote-text">&ldquo;If you're looking for a shooting coach in Utah, Matt's your guy.&rdquo;</p>
-            <p class="lineage__quote-attr">— Mike Dunn, shooting coach</p>
+        <div>
+          <p class="eyebrow">Proof at every level</p>
+          <h2>Not just kids.<br />The college level.</h2>
+          <p class="band__body">The same system that rebuilds a 7th grader's shot is the one Spencer trained in on his way to playing at the college level. Different level, same work.</p>
+          <div class="placeholder-quote">[ Spencer's testimonial goes here — what the training did for his shot and his game at the college level. ] — Spencer, [ College / Team ]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE COACH -->
+    <section class="center" id="coach">
+      <div class="wrap">
+        <p class="eyebrow">The coach behind the system</p>
+        <h2>Trained with the best.<br /><span style="color: var(--gold);">Built his own.</span></h2>
+        <div class="lineage" style="text-align: left;">
+          <div class="lineage__photos">
+            <img src="../images/shot-program/matt-and-mike.webp" alt="Coach Matt with fellow coaches" loading="lazy" />
+            <img src="../images/shot-program/training-detail.webp" alt="On-court shooting instruction" loading="lazy" />
+          </div>
+          <div class="lineage__story">
+            <p>Matt has spent years training under and alongside some of the best shooting coaches in the country — flying out to work with them, putting his own kids through their gyms, testing everything firsthand.</p>
+            <p>Then he did what most coaches never do: kept only what produced results he could measure, threw out the rest, and built his own system around it. That's the Shot Program — and then he went one step further and built the technology to track it, so every athlete's progress lives in data, not opinions.</p>
+            <div class="pull-quote">
+              <p class="pull-quote__text">&ldquo;If you're looking for a shooting coach in Utah, Matt's your guy.&rdquo;</p>
+              <p class="pull-quote__attr">— Mike Dunn, shooting coach</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section class="section section--elevated" id="pricing">
-      <p class="eyebrow">Investment</p>
-      <h2 class="section__title">Limited to 10 spots.</h2>
-      <p class="section__sub">7th grade and older. Every spot starts with a call.</p>
-      <div class="pricing">
-        <article class="price-card">
-          <span class="price-card__badge">Paid in Full</span>
-          <h3 class="price-card__name">The Shot Program</h3>
-          <div class="price-card__price">$2,997</div>
-          <p class="price-card__desc">90 days, everything included.</p>
-          <ul class="price-card__features">
-            <li>One-on-one coached sessions</li>
-            <li>Video breakdown + game film review</li>
-            <li>Custom workouts, tracked in the app</li>
-            <li>Best value — save $603</li>
-          </ul>
-        </article>
-        <article class="price-card">
-          <span class="price-card__badge">Financed</span>
-          <h3 class="price-card__name">3 Payments</h3>
-          <div class="price-card__price">$1,200<span class="price-card__period">&nbsp;×&nbsp;3</span></div>
-          <p class="price-card__desc">Same program, monthly payments.</p>
-          <ul class="price-card__features">
-            <li>Everything in the full program</li>
-            <li>One payment at each phase</li>
-          </ul>
-        </article>
+    <section class="alt center" id="pricing">
+      <div class="wrap">
+        <p class="eyebrow">Investment</p>
+        <h2>Limited to 10 spots.</h2>
+        <p class="sub">7th grade and older. Every spot starts with a call.</p>
+        <div class="duo" style="text-align: left;">
+          <article class="card card--gold">
+            <span class="card__badge">Paid in Full</span>
+            <h3 class="card__name">The Shot Program</h3>
+            <div class="card__price">$2,997</div>
+            <p class="card__desc">90 days, everything included.</p>
+            <ul>
+              <li>One-on-one coached sessions</li>
+              <li>Video breakdown + game film review</li>
+              <li>Custom workouts, tracked in the app</li>
+              <li>Best value — save $603</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="card__badge">Financed</span>
+            <h3 class="card__name">3 Payments</h3>
+            <div class="card__price">$1,200<span> × 3</span></div>
+            <p class="card__desc">Same program, monthly payments.</p>
+            <ul>
+              <li>Everything in the full program</li>
+              <li>One payment at each phase</li>
+            </ul>
+          </article>
+        </div>
+        <div class="maint">
+          <p class="maint__head">After the 90 days</p>
+          <p class="maint__body">Graduates unlock the <strong>Maintenance Plan</strong> — custom workouts, tracked metrics, and continued access to the system that rebuilt your shot. $497/mo, optional, graduates only.</p>
+        </div>
+        <div class="pricing-cta">
+          <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
+        </div>
       </div>
-      <div class="maint-strip">
-        <p class="maint-strip__heading">After the 90 days</p>
-        <p class="maint-strip__body">Graduates unlock the <strong>Maintenance Plan</strong> — custom workouts, tracked metrics, and continued access to the system that rebuilt your shot. $497/mo, optional, graduates only.</p>
-      </div>
-      <div class="pricing__cta-jump">
-        <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
+    </section>
+
+    <!-- FOUNDER STORY -->
+    <section class="band">
+      <div class="wrap band__grid">
+        <div class="band__figure">
+          <img src="../images/shot-program/founder-matt-kaylee.webp" alt="Coach Matt hugging Kaylee after a game" loading="lazy" />
+          <span class="band__badge">From Coach Matt</span>
+        </div>
+        <div>
+          <p class="eyebrow">Why it's worth it</p>
+          <h2>The investment that started it all.</h2>
+          <div class="founder-quote">
+            <p>&ldquo;When Kaylee was in 6th grade, I spent over <strong>$5,000</strong> to take her to New Jersey for 3 days to work with Mike Dunn. People thought I was crazy. It's the single most important investment we made in her journey.</p>
+            <p>Today she's one of the top shooters in the state, will finish top-3 all-time three-point shooter at her school, and has received her first offers. That initial investment put her on the path to get there.</p>
+            <p>The best part? Here you don't have to travel, and it's not 3 days — it's <strong>90 days of work</strong> to put your athlete on the right path to becoming an elite shooter. <strong>It's worth the investment.</strong>&rdquo;</p>
+            <p class="founder-quote__sig">Coach Matt</p>
+            <p class="founder-quote__role">Founder, Training Zone</p>
+          </div>
+          <a href="#book-a-call" class="btn btn--gold">Start Your Athlete's 90 Days →</a>
+        </div>
       </div>
     </section>
 
     <!-- BOOK A CALL -->
-    <section class="final-cta" id="book-a-call">
-      <p class="eyebrow">Ready to talk?</p>
-      <h2 class="section__title">Book a call.</h2>
-      <p class="final-cta__copy">Ten spots means every athlete starts with a conversation. Give us your info and Coach Matt will reach out — we'll talk about your athlete's shot, where it is today, and whether the program is the right fit.</p>
-      <form
-        class="tz-form tz-form--cta formkit-form"
-        action="https://app.kit.com/forms/9451557/subscriptions"
-        method="post"
-        data-tz-form="phone-call"
-        data-sv-form="9451557"
-        data-uid="273d13f418"
-        data-format="inline"
-        data-version="5"
-        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Got it. Coach Matt will reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}},"version":"5"}'
-        min-width="400 500 600 700 800"
-      >
-        <input type="hidden" name="fields[sport_of_interest]" value="Shot Program" />
-        <div class="tz-form__grid">
-          <label class="tz-form__field">
-            <span class="tz-form__label">First name <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="text" name="fields[first_name]" required autocomplete="given-name" placeholder="Your first name" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Phone <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="tel" name="fields[phone_number]" required autocomplete="tel" placeholder="(801) 555-0100" inputmode="tel" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Athlete's grade <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="text" name="fields[athlete_s_grade]" required placeholder="7th grade or older" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Best time to call</span>
-            <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
-          </label>
-        </div>
-        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
-        <button type="submit" class="tz-form__submit tz-form__submit--large formkit-submit" data-element="submit">
-          <span class="tz-form__submit-label">Request a call →</span>
-          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
-        </button>
-      </form>
+    <section class="book center" id="book-a-call">
+      <div class="wrap">
+        <p class="eyebrow">Ready to talk?</p>
+        <h2>Book a call.</h2>
+        <p class="book__copy">Ten spots means every athlete starts with a conversation. Give us your info and Coach Matt will reach out — we'll talk about your athlete's shot, where it is today, and whether the program is the right fit.</p>
+        <form
+          class="tz-form tz-form--cta formkit-form"
+          action="https://app.kit.com/forms/9451557/subscriptions"
+          method="post"
+          data-tz-form="phone-call"
+          data-sv-form="9451557"
+          data-uid="273d13f418"
+          data-format="inline"
+          data-version="5"
+          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Got it. Coach Matt will reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}},"version":"5"}'
+          min-width="400 500 600 700 800"
+        >
+          <input type="hidden" name="fields[sport_of_interest]" value="Shot Program" />
+          <div class="tz-form__grid" style="text-align: left;">
+            <label class="tz-form__field">
+              <span class="tz-form__label">First name <span aria-hidden="true" class="tz-form__req">*</span></span>
+              <input type="text" name="fields[first_name]" required autocomplete="given-name" placeholder="Your first name" />
+            </label>
+            <label class="tz-form__field">
+              <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
+              <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
+            </label>
+            <label class="tz-form__field">
+              <span class="tz-form__label">Phone <span aria-hidden="true" class="tz-form__req">*</span></span>
+              <input type="tel" name="fields[phone_number]" required autocomplete="tel" placeholder="(801) 555-0100" inputmode="tel" />
+            </label>
+            <label class="tz-form__field">
+              <span class="tz-form__label">Athlete's grade <span aria-hidden="true" class="tz-form__req">*</span></span>
+              <input type="text" name="fields[athlete_s_grade]" required placeholder="7th grade or older" />
+            </label>
+            <label class="tz-form__field">
+              <span class="tz-form__label">Best time to call</span>
+              <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
+            </label>
+          </div>
+          <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
+          <button type="submit" class="tz-form__submit formkit-submit" data-element="submit">
+            <span class="tz-form__submit-label">Request a call →</span>
+            <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section section--base">
-      <p class="eyebrow">FAQ</p>
-      <h2 class="section__title">Frequently asked.</h2>
-      <div class="faq">
-        <details class="faq__item">
-          <summary>Who is this for?</summary>
-          <p>Athletes in 7th grade and older who are serious about changing their shot. Younger players: we run Jr Shot Camps and individual sessions — ask about those on the call.</p>
-        </details>
-        <details class="faq__item">
-          <summary>How is this different from Shot Camp?</summary>
-          <p>Shot Camp is a 3-day introduction to how we think about shooting. The Shot Program is the full transformation — 90 days, one-on-one coached sessions, video breakdown, and a tracked, staged progression. Camp shows you the system; the Program rebuilds your shot with it.</p>
-        </details>
-        <details class="faq__item">
-          <summary>What if my athlete plays other sports or has team practice?</summary>
-          <p>We build the schedule around your athlete's season — team practice and games come first, and the sessions fit around them. We'll map it out together on the call.</p>
-        </details>
-        <details class="faq__item">
-          <summary>How do we know it's working?</summary>
-          <p>Every session is tracked in our training app. You'll see the workouts assigned, the sessions completed, and the numbers moving — plus video of the shot at the start and as it changes. Progress here is measured, not promised.</p>
-        </details>
-        <details class="faq__item">
-          <summary>What happens after the 90 days?</summary>
-          <p>Graduates can continue on the Maintenance Plan ($497/mo, optional): custom workouts, tracked metrics, and continued access to the system. Most athletes keep going — a rebuilt shot stays sharp with structured reps.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Why do I have to book a call to sign up?</summary>
-          <p>Ten spots means fit matters more than speed. The call is where we learn about your athlete's shot and goals — and where you get to ask us anything before committing to 90 days.</p>
-        </details>
+    <section class="center">
+      <div class="wrap">
+        <p class="eyebrow">FAQ</p>
+        <h2>Frequently asked.</h2>
+        <div class="faq" style="text-align: left;">
+          <details>
+            <summary>Who is this for?</summary>
+            <p>Athletes in 7th grade and older who are serious about changing their shot. Younger players: we run Jr Shot Camps and individual sessions — ask about those on the call.</p>
+          </details>
+          <details>
+            <summary>How is this different from Shot Camp?</summary>
+            <p>Shot Camp is a 3-day introduction to how we think about shooting. The Shot Program is the full transformation — 90 days, one-on-one coached sessions, video breakdown, and a tracked, staged progression. Camp shows you the system; the Program rebuilds your shot with it.</p>
+          </details>
+          <details>
+            <summary>What if my athlete plays other sports or has team practice?</summary>
+            <p>We build the schedule around your athlete's season — team practice and games come first, and the sessions fit around them. We'll map it out together on the call.</p>
+          </details>
+          <details>
+            <summary>How do we know it's working?</summary>
+            <p>Every session is tracked in our training app. You'll see the workouts assigned, the sessions completed, and the numbers moving — plus video of the shot at the start and as it changes. Progress here is measured, not promised.</p>
+          </details>
+          <details>
+            <summary>What happens after the 90 days?</summary>
+            <p>Graduates can continue on the Maintenance Plan ($497/mo, optional): custom workouts, tracked metrics, and continued access to the system. Most athletes keep going — a rebuilt shot stays sharp with structured reps.</p>
+          </details>
+          <details>
+            <summary>Why do I have to book a call to sign up?</summary>
+            <p>Ten spots means fit matters more than speed. The call is where we learn about your athlete's shot and goals — and where you get to ask us anything before committing to 90 days.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL STRIP -->
+    <section class="final">
+      <div class="wrap">
+        <h2>Only 10 spots. Every one starts with a call.</h2>
+        <p>90 days. One-on-one coaching. A shooter at the end of it.</p>
+        <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
       </div>
     </section>
 
@@ -403,11 +852,49 @@
     <div class="footer__row">
       <div class="footer__brand">
         <img src="../images/logos/TZ_Horizontal_Lockup_White.svg" alt="Training Zone" class="footer__logo" />
-        <span class="footer__brand-text">LOVE THE WORK</span>
+        <span class="footer__tag">Love the Work</span>
       </div>
-      <span class="footer__copy">© 2026 Training Zone. All rights reserved.</span>
+      <span class="footer__copy">© 2026 Training Zone. All rights reserved. · 5639 Mirabella Dr, Herriman, UT 84096 · <a href="tel:3857869324" style="color: var(--mut); text-decoration: none;">385-786-9324</a></span>
     </div>
   </footer>
 
+  <!-- VIDEO LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player">
+    <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close video">✕</button>
+    <div class="lightbox__frame" id="lightbox-frame"></div>
+  </div>
+
+  <script>
+    (function () {
+      var lb = document.getElementById("lightbox");
+      var frame = document.getElementById("lightbox-frame");
+      var closeBtn = document.getElementById("lightbox-close");
+      var lastFocus = null;
+
+      function openVideo(id) {
+        lastFocus = document.activeElement;
+        frame.innerHTML =
+          '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+          '?autoplay=1" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        lb.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      }
+      function closeVideo() {
+        lb.classList.remove("is-open");
+        frame.innerHTML = "";
+        document.body.style.overflow = "";
+        if (lastFocus) lastFocus.focus();
+      }
+      document.querySelectorAll(".video-poster").forEach(function (btn) {
+        btn.addEventListener("click", function () { openVideo(btn.getAttribute("data-video")); });
+      });
+      closeBtn.addEventListener("click", closeVideo);
+      lb.addEventListener("click", function (e) { if (e.target === lb) closeVideo(); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lb.classList.contains("is-open")) closeVideo();
+      });
+    })();
+  </script>
 </body>
 </html>
