@@ -292,9 +292,39 @@
     .card li { padding: 9px 0 9px 26px; position: relative; border-top: 1px solid var(--line); font-size: 15px; color: var(--body-hi); }
     .card li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
 
+    .case-chip {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--gold);
+      color: #0a0a0b;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+    .card__badge--fill { background: var(--gold); color: #0a0a0b; border-color: var(--gold); margin-right: 6px; }
+    .tz-form select {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      padding: 14px 16px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a86a' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+    .tz-form select:focus { outline: none; border-color: var(--gold); }
+    .tz-form__micro { margin-top: 14px; color: var(--mut); font-size: 13.5px; text-align: center; }
+
     /* Case studies */
     .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
-    .case-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; }
+    .case-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; position: relative; }
     .case-card img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
     .case-card__body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
     .case-card__name { font-size: 30px; }
@@ -487,17 +517,17 @@
     <section class="hero">
       <div class="wrap hero__grid">
         <div>
-          <span class="hero__badge">The Shot Program · Only 10 Spots</span>
+          <span class="hero__badge">The Shot Program · By Application</span>
           <h1>90 Days.<br />Be a <span class="au">Shooter</span>.</h1>
-          <p class="hero__sub">A shooting transformation for serious athletes — not a camp, not a clinic. Ninety days inside the Shot Program: hands-on coaching, video breakdown of your shot, custom workouts, and metrics we track together. When it's done, you'll be a shooter.</p>
+          <p class="hero__sub">A shooting transformation for serious athletes — not a camp, not a clinic. Ninety days of hands-on coaching, frame-by-frame video breakdown, custom workouts, and metrics we track together. When it's done, you'll be a shooter.</p>
           <div class="hero__ctas">
-            <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
+            <a href="#book-a-call" class="btn btn--gold">Book Your Call →</a>
             <a href="#system" class="btn btn--ghost">How It Works</a>
           </div>
           <div class="hero__stats">
             <div><div class="stat__num">90</div><div class="stat__label">Days</div></div>
             <div><div class="stat__num">1-on-1</div><div class="stat__label">Sessions</div></div>
-            <div><div class="stat__num">10</div><div class="stat__label">Spots</div></div>
+            <div><div class="stat__num">10</div><div class="stat__label">Spots Only</div></div>
           </div>
         </div>
         <div class="hero__media">
@@ -515,9 +545,9 @@
           <button type="button" class="video-poster" data-video="Qfc-HTAwbwg" aria-label="Play Kaylee's case study video">
             <img src="../images/shot-program/poster-broadcast.webp" alt="State playoff broadcast frame — Kaylee bringing the ball up at the Huntsman Center" loading="lazy" />
             <span class="video-poster__play"><span class="video-poster__btn"><svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true"><path d="M26 15 0 30V0l26 15Z" fill="#0a0a0b"/></svg></span></span>
-            <span class="video-poster__hint">Watch the case study</span>
+            <span class="video-poster__hint">Watch the Clip · 0:42</span>
           </button>
-          <p class="proof-caption">Kaylee's a longtime member of the Shot Program.</p>
+          <p class="proof-caption">Kaylee is one of the original members of the Shot Program. She finished her Junior year one of the top shooters in state, first team all state, and her first college offers.</p>
         </div>
       </div>
     </section>
@@ -525,12 +555,13 @@
     <!-- WHO IT'S FOR -->
     <section class="center" id="who">
       <div class="wrap">
-        <p class="eyebrow">Who it's for</p>
-        <h2>We don't accept everyone.</h2>
-        <p class="sub">Limited to 10 spots. 7th grade and up. Here's who this is built for:</p>
+        <p class="eyebrow">Who can join</p>
+        <h2>It's not for everyone.</h2>
+        <p class="sub">Limited to 10 spots. 7th grade and up.</p>
         <div class="who__copy">
-          <p>The athlete who's decided their shot is the thing holding them back — and is done waiting for it to fix itself. The player whose coach says &ldquo;shoot with confidence&rdquo; but nobody has ever shown them <em>how</em> a confident shot is actually built.</p>
-          <p>This is not a drop-in class. It's ninety days of structured work with a start, a middle, and a finish line — and we only take athletes ready to do all ninety. That's why every spot starts with a call, not a checkout page.</p>
+          <p>The Shot Program isn't for everyone. You don't become an elite shooter overnight. It takes hours of repetitive and monotonous work. It requires a player with incredible drive, focus and persistence. This is for players who dream of playing Varsity, College, and Pro, and are willing to do whatever it takes to get there.</p>
+          <p>We only take 10 Athletes at a time. Helping a player build their shot requires the highest demand on our Coaches' time. Limiting it to 10 players at a time lets our Coaches give players the time they need.</p>
+          <a href="#book-a-call" class="btn btn--ghost" style="margin-top: 10px;">See If Your Athlete Qualifies →</a>
         </div>
       </div>
     </section>
@@ -539,26 +570,26 @@
     <section class="alt center" id="system">
       <div class="wrap">
         <p class="eyebrow">How it works</p>
-        <h2>Three phases. One rebuilt shot.</h2>
-        <p class="sub">A staged progression — because a shot isn't fixed all at once. It's rebuilt in order.</p>
+        <h2>Three phases. One shot.</h2>
+        <p class="sub">A shot isn't created overnight. It's built one step at a time.</p>
         <div class="phase-grid">
           <article class="phase-card">
             <p class="phase-card__num">PHASE 1</p>
-            <h3 class="phase-card__name">Discovery</h3>
+            <h3 class="phase-card__name">Discover</h3>
             <p class="phase-card__weeks">Weeks 1–4</p>
-            <p class="phase-card__body">We film your shot, break it down frame by frame, and identify the areas you can improve your shot. Then we build the mechanics — base, hand placement, release — with hands-on reps until the new motion holds.</p>
+            <p class="phase-card__body">We film your shot, break it down frame by frame, and identify the areas you can improve. Then we build the mechanics — base, hand placement, release — with hands-on reps until the new motion holds.</p>
           </article>
           <article class="phase-card">
             <p class="phase-card__num">PHASE 2</p>
             <h3 class="phase-card__name">Build</h3>
             <p class="phase-card__weeks">Weeks 5–8</p>
-            <p class="phase-card__body">Volume with the new shot. Custom workouts assigned and progress measured, so you and your parents can see the numbers move — not just feel like they're moving.</p>
+            <p class="phase-card__body">Rep your new shot. Study film of your shot, custom workouts, and rep until the adjustments to your form consistently hold under game-speed reps.</p>
           </article>
           <article class="phase-card">
             <p class="phase-card__num">PHASE 3</p>
             <h3 class="phase-card__name">Range</h3>
             <p class="phase-card__weeks">Weeks 9–12</p>
-            <p class="phase-card__body">Game speed, game range. Off the catch, off the move, off the dribble — and game film breakdown so the new shot shows up where it counts: in games.</p>
+            <p class="phase-card__body">Game speed, game range. Off the catch, off the move, off the dribble — plus game film breakdown, so the new shot shows up where it counts: in games.</p>
           </article>
         </div>
       </div>
@@ -568,15 +599,16 @@
     <section class="center">
       <div class="wrap">
         <p class="eyebrow">What's included</p>
-        <h2>Ninety days, fully instrumented.</h2>
+        <h2>Ninety days. Build your shot.</h2>
         <div class="duo" style="text-align: left;">
           <article class="card">
             <span class="card__badge">The Work</span>
             <h3 class="card__name">On the Floor</h3>
             <div class="card__price">1-on-1<span> sessions</span></div>
-            <p class="card__desc">Hands-on coaching.</p>
+            <p class="card__desc">Individual coaching.</p>
             <ul>
-              <li>One-on-one sessions across all 90 days</li>
+              <li>One-on-one work</li>
+              <li>Group work &amp; game reps</li>
               <li>Video breakdown of your shot</li>
               <li>Game film review in Phase 3</li>
             </ul>
@@ -584,13 +616,13 @@
           <article class="card">
             <span class="card__badge">The System</span>
             <h3 class="card__name">Off the Floor</h3>
-            <div class="card__price">24/7<span> in the app</span></div>
-            <p class="card__desc">The part no other gym can offer.</p>
+            <div class="card__price">24/7<span> gym access</span></div>
+            <p class="card__desc">Custom workout &amp; programming — what no other gym offers.</p>
             <ul>
-              <li>Custom workouts assigned in the TZ training app</li>
-              <li>Every session tracked and measured</li>
-              <li>Progress you and your parents can see</li>
-              <li>Maintenance plan available after graduation</li>
+              <li>Custom workouts assigned</li>
+              <li>Shot tracked and measured</li>
+              <li>Measured progress you can see</li>
+              <li>24/7 gym access</li>
             </ul>
           </article>
         </div>
@@ -600,15 +632,16 @@
     <!-- FILM ROOM -->
     <section class="alt center">
       <div class="wrap">
-        <p class="eyebrow">Inside the film room</p>
-        <h2>This is what a breakdown looks like.</h2>
+        <p class="eyebrow">Real Film Breakdown</p>
+        <h2>Inside the film room.</h2>
+        <p class="sub">What a shot breakdown looks like.</p>
         <div class="proof-media">
           <button type="button" class="video-poster video-poster--film" data-video="h04o8QER5ko" aria-label="Play a real Shot Film Breakdown">
             <span class="video-poster__film-label">The Film Room · Shot Program</span>
             <span class="video-poster__play"><span class="video-poster__btn"><svg width="26" height="30" viewBox="0 0 26 30" fill="none" aria-hidden="true"><path d="M26 15 0 30V0l26 15Z" fill="#0a0a0b"/></svg></span></span>
             <span class="video-poster__hint">Press play</span>
           </button>
-          <p class="proof-caption">Real footage from a Shot Film Breakdown — the film review every athlete in the Program gets after we shoot with them.</p>
+          <p class="proof-caption">Research shows that players who review film of their mechanics improve faster and retain form better. It closes the gap between what they <em>think</em> they're doing and what they're <em>actually</em> doing. It's a core piece of our program.</p>
         </div>
       </div>
     </section>
@@ -621,6 +654,7 @@
         <div class="case-grid" style="text-align: left;">
           <article class="case-card">
             <img src="../images/shot-program/case-cailin.webp" alt="Cailin rising into a jump shot at Training Zone while two teammates watch" loading="lazy" />
+            <span class="case-chip">39% 3PT</span>
             <div class="case-card__body">
               <h3 class="case-card__name">Cailin</h3>
               <p class="case-card__stat">From zero confidence in 8th grade to 39% from three as a varsity freshman — a 15% jump in one year.</p>
@@ -641,10 +675,11 @@
           </article>
           <article class="case-card">
             <img src="../images/shot-program/case-jayce.webp" alt="Jayce working on the shot line at Training Zone" loading="lazy" />
+            <span class="case-chip">80% 3PT at Team Camp</span>
             <div class="case-card__body">
               <h3 class="case-card__name">Jayce</h3>
               <p class="case-card__stat">After months inside the system rebuilding his shot, he hit 80% from three at his team camp.</p>
-              <p class="case-card__quote">&ldquo;Yes, he's my son. That's the point — this is the exact system I run my own kids through.&rdquo;</p>
+              <p class="case-card__quote">&ldquo;This is the exact system I run my own kids through.&rdquo;</p>
               <p class="case-card__attr">— Coach Matt</p>
             </div>
           </article>
@@ -662,8 +697,11 @@
         <div>
           <p class="eyebrow">Proof at every level</p>
           <h2>Not just kids.<br />The college level.</h2>
-          <p class="band__body">The same system that rebuilds a 7th grader's shot is the one Spencer trained in on his way to playing at the college level. Different level, same work.</p>
-          <div class="placeholder-quote">[ Spencer's testimonial goes here — what the training did for his shot and his game at the college level. ] — Spencer, [ College / Team ]</div>
+          <p class="band__body">Our shot program is for players at all levels, not just youth players. We regularly work with College and Pro players. The Shot Program is for any hooper looking to level up their shot.</p>
+          <div class="pull-quote" style="margin-top: 26px;">
+            <p class="pull-quote__text">&ldquo;I wish I'd started working with Matt sooner. The help he gave me on my shot changed everything for me.&rdquo;</p>
+            <p class="pull-quote__attr">— Spencer, Umpqua College</p>
+          </div>
         </div>
       </div>
     </section>
@@ -679,8 +717,8 @@
             <img src="../images/shot-program/training-detail.webp" alt="On-court shooting instruction" loading="lazy" />
           </div>
           <div class="lineage__story">
-            <p>Matt has spent years training under and alongside some of the best shooting coaches in the country — flying out to work with them, putting his own kids through their gyms, testing everything firsthand.</p>
-            <p>Then he did what most coaches never do: kept only what produced results he could measure, threw out the rest, and built his own system around it. That's the Shot Program — and then he went one step further and built the technology to track it, so every athlete's progress lives in data, not opinions.</p>
+            <p>Matt has spent years learning from some of the best shooting coaches in the country — putting his own kids through their programs, and testing everything firsthand.</p>
+            <p>He built his own system around it — and a 90-day program to help any player level up their shot.</p>
             <div class="pull-quote">
               <p class="pull-quote__text">&ldquo;If you're looking for a shooting coach in Utah, Matt's your guy.&rdquo;</p>
               <p class="pull-quote__attr">— Mike Dunn, shooting coach</p>
@@ -698,6 +736,7 @@
         <p class="sub">7th grade and older. Every spot starts with a call.</p>
         <div class="duo" style="text-align: left;">
           <article class="card card--gold">
+            <span class="card__badge card__badge--fill">Best Value · Save $603</span>
             <span class="card__badge">Paid in Full</span>
             <h3 class="card__name">The Shot Program</h3>
             <div class="card__price">$2,997</div>
@@ -706,8 +745,8 @@
               <li>One-on-one coached sessions</li>
               <li>Video breakdown + game film review</li>
               <li>Custom workouts, tracked in the app</li>
-              <li>Best value — save $603</li>
             </ul>
+            <a href="#book-a-call" class="btn btn--gold" style="display: block; margin-top: 22px;">Book a Call</a>
           </article>
           <article class="card">
             <span class="card__badge">Financed</span>
@@ -718,11 +757,12 @@
               <li>Everything in the full program</li>
               <li>One payment at each phase</li>
             </ul>
+            <a href="#book-a-call" class="btn btn--ghost" style="display: block; margin-top: 22px;">Book a Call</a>
           </article>
         </div>
         <div class="maint">
           <p class="maint__head">After the 90 days</p>
-          <p class="maint__body">Graduates unlock the <strong>Maintenance Plan</strong> — custom workouts, tracked metrics, and continued access to the system that rebuilt your shot. $497/mo, optional, graduates only.</p>
+          <p class="maint__body">After the 90 days, graduates unlock the <strong>Maintenance Plan</strong> — custom workouts, tracked metrics, continued access to the system that built your shot, and one-on-one work with your shot. $497/mo · optional · graduates only.</p>
         </div>
         <div class="pricing-cta">
           <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
@@ -738,12 +778,12 @@
           <span class="band__badge">From Coach Matt</span>
         </div>
         <div>
-          <p class="eyebrow">Why it's worth it</p>
-          <h2>The investment that started it all.</h2>
+          <p class="eyebrow">From Coach Matt</p>
+          <h2>Why it's worth it.</h2>
           <div class="founder-quote">
-            <p>&ldquo;When Kaylee was in 6th grade, I spent over <strong>$5,000</strong> to take her to New Jersey for 3 days to work with Mike Dunn. People thought I was crazy. It's the single most important investment we made in her journey.</p>
-            <p>Today she's one of the top shooters in the state, will finish top-3 all-time three-point shooter at her school, and has received her first offers. That initial investment put her on the path to get there.</p>
-            <p>The best part? Here you don't have to travel, and it's not 3 days — it's <strong>90 days of work</strong> to put your athlete on the right path to becoming an elite shooter. <strong>It's worth the investment.</strong>&rdquo;</p>
+            <p>&ldquo;When Kaylee was in 6th grade, I spent over <strong>$5,000</strong> to take her to New Jersey for 3 days to work with Mike Dunn. People thought I was crazy. It's the most important investment we made in her journey.</p>
+            <p>Today she's one of the top shooters in Utah, will finish as the all-time leader in 3s at her high school, and has received her first college offers. That initial investment put her on the path to get there.</p>
+            <p>The best part? You don't have to travel, and it's not 3 days — it's <strong>90 days of work</strong> to put your athlete on the best path to becoming an elite shooter. <strong>It's worth the investment.</strong>&rdquo;</p>
             <p class="founder-quote__sig">Coach Matt</p>
             <p class="founder-quote__role">Founder, Training Zone</p>
           </div>
@@ -755,9 +795,9 @@
     <!-- BOOK A CALL -->
     <section class="book center" id="book-a-call">
       <div class="wrap">
-        <p class="eyebrow">Ready to talk?</p>
+        <p class="eyebrow">Only 10 Spots · By Application</p>
         <h2>Book a call.</h2>
-        <p class="book__copy">Ten spots means every athlete starts with a conversation. Give us your info and Coach Matt will reach out — we'll talk about your athlete's shot, where it is today, and whether the program is the right fit.</p>
+        <p class="book__copy">Ten spots means every athlete starts with a conversation. Give us your info and Coach Matt will reach out — we'll talk about your athlete's shot, where it is today, and whether the program is the right fit. Or call now — <a href="tel:3857869324" style="font-weight: 700;">385-786-9324</a>.</p>
         <form
           class="tz-form tz-form--cta formkit-form"
           action="https://app.kit.com/forms/9451557/subscriptions"
@@ -767,7 +807,7 @@
           data-uid="273d13f418"
           data-format="inline"
           data-version="5"
-          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Got it. Coach Matt will reach out at the time you mentioned — usually within one business day. Check your email to confirm.","redirect_url":""}},"version":"5"}'
+          data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Request received. Coach Matt will reach out shortly. Watch for a call from a Utah number — spots are moving.","redirect_url":""}},"version":"5"}'
           min-width="400 500 600 700 800"
         >
           <input type="hidden" name="fields[sport_of_interest]" value="Shot Program" />
@@ -790,14 +830,20 @@
             </label>
             <label class="tz-form__field">
               <span class="tz-form__label">Best time to call</span>
-              <input type="text" name="fields[best_time_to_call]" placeholder="Weekday evenings, mornings, etc." />
+              <select name="fields[best_time_to_call]">
+                <option value="Anytime" selected>Anytime</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+              </select>
             </label>
           </div>
           <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
           <button type="submit" class="tz-form__submit formkit-submit" data-element="submit">
-            <span class="tz-form__submit-label">Request a call →</span>
+            <span class="tz-form__submit-label">Request a Call →</span>
             <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
           </button>
+          <p class="tz-form__micro">No spam. We only call to talk about your athlete's shot.</p>
         </form>
       </div>
     </section>
@@ -839,9 +885,10 @@
     <!-- FINAL STRIP -->
     <section class="final">
       <div class="wrap">
-        <h2>Only 10 spots. Every one starts with a call.</h2>
-        <p>90 days. One-on-one coaching. A shooter at the end of it.</p>
+        <h2>Ten spots. One conversation.</h2>
+        <p>Every spot starts with a call — not a checkout page.</p>
         <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
+        <p style="margin: 18px 0 0; color: var(--mut);"><a href="tel:3857869324" style="color: var(--gold-hi); text-decoration: none; font-weight: 700;">385-786-9324</a></p>
       </div>
     </section>
 
