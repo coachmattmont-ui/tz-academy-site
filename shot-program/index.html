@@ -25,6 +25,9 @@
     .proof-banner__caption { margin-top: 14px; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
     .proof-banner__caption strong { color: var(--text-primary); }
 
+    /* Hero photo is portrait (900x1200) — cap height so it doesn't tower over the copy column */
+    .hero .hero__image { aspect-ratio: 4 / 5; object-fit: cover; max-width: 520px; }
+
     .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 32px auto 0; }
     .phase-card { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: 26px 24px; }
     .phase-card__num { color: var(--tz-orange); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.12em; }
@@ -111,24 +114,24 @@
             src="../images/shot-program/training-1on1.webp"
             alt="One-on-one shot coaching at Training Zone — coach adjusting a young athlete's shooting form"
             class="hero__image"
-            width="1200"
-            height="900"
+            width="900"
+            height="1200"
             fetchpriority="high"
           />
         </div>
       </div>
     </section>
 
-    <!-- PROOF BANNER — Kayla broadcast -->
+    <!-- PROOF BANNER — Kaylee broadcast -->
     <section class="section section--deep">
       <p class="eyebrow">Heard on the broadcast</p>
       <h2 class="section__title">&ldquo;One of the top shooters in the state.&rdquo;</h2>
       <div class="proof-banner">
         <div class="proof-banner__media">
-          <!-- TODO(Matt): swap for the highlight video embed when the Kayla edit is ready -->
-          <img src="../images/shot-program/kayla-broadcast.webp" alt="KSL broadcast of a Utah state playoff game — the announcer calls Kayla Montgomery one of the top shooters in the state" loading="lazy" />
+          <!-- TODO(Matt): swap for the highlight video embed when the Kaylee edit is ready -->
+          <img src="../images/shot-program/kaylee-broadcast.webp" alt="KSL broadcast of a Utah state playoff game — the announcer calls Kaylee Montgomery one of the top shooters in the state" loading="lazy" />
         </div>
-        <p class="proof-banner__caption">State playoffs, Huntsman Center. The announcer's words, not ours — <strong>&ldquo;Kayla Montgomery, one of the top shooters in the state.&rdquo;</strong> Kayla trains inside the TZ Shot System.</p>
+        <p class="proof-banner__caption">State playoffs, Huntsman Center. The announcer's words, not ours — <strong>&ldquo;Kaylee Montgomery, one of the top shooters in the state.&rdquo;</strong> Kaylee trains inside the TZ Shot System.</p>
       </div>
     </section>
 
