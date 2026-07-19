@@ -226,7 +226,7 @@ def build_page(sport_key, cfg):
         <div class="hero__copy">
           <p class="eyebrow">{cfg['hero_eyebrow']}</p>
           <h1 class="hero__title">TRAIN LIKE A <span class="hero__title-accent">PRO.</span><br />STILL BE A KID.</h1>
-          <p class="hero__sub">A different way to train serious young athletes — built around your school day, not against it. Daily individual coaching, live game work, mental performance, and strength training, all in one program.</p>
+          <p class="hero__sub"><span class="hero__sub-hl">A new approach to train young athletes</span> — Daily individual coaching, film study, live read work, mental performance, strength training, all in one program, <span class="hero__sub-hl">AND... time to be a kid still.</span></p>
           <div class="hero__ctas">
             <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
             <a href="#model" class="btn btn--secondary">How It Works</a>
@@ -273,6 +273,76 @@ def build_page(sport_key, cfg):
     # ===== MAIN CONTENT (basketball gets the full academy story; soccer/vball get the slim launch section) =====
     if is_bb:
         html += f"""
+    <!-- LEAD — core sales section -->
+    <section class="section section--deep" id="lead">
+      <p class="eyebrow">Mom &amp; Dad</p>
+      <h2 class="section__title section__title--lead">Does it ever feel like too much?</h2>
+      <div class="lead__intro">
+        <p class="lead__agitate">Somewhere around 7th grade, the math stops working. Practice across town, two-a-days, homework past midnight, recovery that never actually happens. And the better your athlete gets, the worse the schedule gets — the demand cuts: sleep, family dinners, vacations, church, and friends outside the team.</p>
+        <p class="lead__agitate">You start to ask yourself: <strong>is this too much? Is it even worth it?</strong> You worry they'll burn out by junior year. But if you're like most parents, you would do anything to help them with their goals. So you keep trudging forward.</p>
+        <p class="lead__agitate">It's not your fault. The traditional schedule wasn't built for today's athlete. So we built a program that supports your athlete, and gives them back their time.</p>
+        <p class="lead__pivot">An All New Approach — <span class="accent">Your Athlete Will Love!</span></p>
+        <p class="lead__reveal">First, learn how to use a hybrid schedule — take some classes on campus, and some online through your district. Don't worry, it's easy — we'll show you how.<br /><br />Then train during the school day when the body and mind are fresh. Leave the evenings open for everything else. They'll have more time, and more rest than they know what to do with. You'll wonder why you didn't do it sooner.</p>
+      </div>
+      <blockquote class="lead__quote">
+        <p>&ldquo;I can't believe we didn't do this sooner.&rdquo;</p>
+        <cite>— Academy Mom</cite>
+      </blockquote>
+      <p class="lead__proof-kicker">How it started</p>
+      <div class="origin">
+        <div class="origin__photo">
+          <img src="{asset}images/origin/kaylee.webp" alt="Kaylee Montgomery being introduced as a starter for the Sentinels" loading="lazy" />
+        </div>
+        <div class="origin__story">
+          <p>In 7th grade, Kaylee was competing on a top-level travel team in both soccer and basketball. We watched her run out of hours — training, school, family, friends. There was no time for recovery, no time to be a kid, and she was going to have to choose between the two sports.</p>
+          <p>We had the idea to put her on a hybrid schedule. Let her sleep more, train in the mornings when she was fresh, see her friends at school in the afternoon, and have her evenings open to be a regular kid. It was a game changer.</p>
+          <p>She was able to compete at a high level in both sports, traveled with both club teams, earned first team all-state honors as a junior, earned a 4.0, earned college offers, and still had time to enjoy her family and friends.</p>
+          <p>After three years, and lots of requests, we launched the Academy.</p>
+          <div class="origin__result">
+            <p class="origin__result-label">Junior year, age 17</p>
+            <p class="origin__result-body">First Team All-State <strong>in both soccer and basketball.</strong></p>
+          </div>
+          <div class="origin__result">
+            <p class="origin__result-label">Now</p>
+            <p class="origin__result-body">Has <strong>college offers to play at the next level.</strong></p>
+          </div>
+          <p class="origin__bridge">Then we opened the Academy to a full cohort and ran the same model. Same results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ACADEMY MODEL -->
+    <section class="section section--base" id="model">
+      <p class="eyebrow">The academy model</p>
+      <h2 class="section__title">More training. More sleep.<br /><span class="hero__title-accent">Still time to be a kid.</span></h2>
+      <div class="model__copy">
+        <p>Here's how the week actually works. Your athlete trains during the school day, then takes core classes on a hybrid schedule — some on campus, some online through your district.</p>
+        <p class="model__copy-list">Time to be a kid. Time to excel in multiple sports. Time to keep up academically. Time for church or youth groups, and time for family.</p>
+        <p class="model__copy-close">Once you come to the Academy, you'll wonder why you didn't start sooner.</p>
+      </div>
+      <div class="schedule">
+        <p class="schedule__label">A typical Academy week, Monday–Thursday</p>
+        <div class="schedule__grid">
+          <div class="schedule__block schedule__block--accent">
+            <p class="schedule__when">Mornings</p>
+            <p class="schedule__what">Academy training</p>
+          </div>
+          <div class="schedule__block">
+            <p class="schedule__when">Afternoons</p>
+            <p class="schedule__what">On-campus core classes</p>
+          </div>
+          <div class="schedule__block">
+            <p class="schedule__when">Evenings</p>
+            <p class="schedule__what">Homework, family, rest</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__ctas model__ctas">
+        <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
+        <a href="#who" class="btn btn--secondary">See if it's a fit</a>
+      </div>
+    </section>
+
     <!-- WHO IT'S FOR -->
     <section class="section section--elevated" id="who">
       <p class="eyebrow">Who it's for</p>
@@ -299,60 +369,6 @@ def build_page(sport_key, cfg):
             <p class="card__body">Custom schedule built around your A/B day. 1-on-1 training, custom programming, and small group (3–6) live work. Cap of 25.</p>
           </div>
         </article>
-      </div>
-    </section>
-
-    <!-- ORIGIN STORY — built it for Kaylee first -->
-    <section class="section section--deep" id="origin">
-      <p class="eyebrow">How this started</p>
-      <h2 class="section__title">Has to be a better way.</h2>
-      <div class="origin">
-        <div class="origin__photo">
-          <img src="{asset}images/origin/kaylee.webp" alt="Kaylee Montgomery being introduced as a starter for the Sentinels" loading="lazy" />
-        </div>
-        <div class="origin__story">
-          <p>Kaylee was a 7th grader competing at a top level in both soccer and basketball. We watched her run out of hours in the day — training, school, recovery, family time, friends. The traditional schedule wasn\u2019t built for it.</p>
-          <p>So we built her a different week. Hybrid school. Mornings in the gym. Afternoons in class. Evenings free for homework, family, and being a kid. We tested it with her for three years before opening the academy.</p>
-          <div class="origin__result">
-            <p class="origin__result-label">Junior year, age 17</p>
-            <p class="origin__result-body">First Team All-State <strong>in both soccer and basketball.</strong></p>
-          </div>
-          <div class="origin__result">
-            <p class="origin__result-label">Now</p>
-            <p class="origin__result-body">Has <strong>college offers to play at the next level.</strong></p>
-          </div>
-          <p class="origin__bridge">We just wrapped year one of the Academy with the same model. Same results.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE ACADEMY MODEL -->
-    <section class="section section--base" id="model">
-      <p class="eyebrow">The academy model</p>
-      <h2 class="section__title">More training. More sleep.<br /><span class="hero__title-accent">Still a kid.</span></h2>
-      <div class="model__copy">
-        <p>The lie they tell you is that to be great — to chase real dreams — your athlete has to sacrifice the rest of their childhood.</p>
-        <p>There's actually another way. Our athletes love it.</p>
-        <p>With the Academy, your athlete still has time for all the things that matter — even a little extra sleep. Our athletes use a hybrid school schedule, taking some classes on campus and some online through their district. They train during the school day, when their mind and energy are fresh. Evenings stay open.</p>
-        <p class="model__copy-list">Time to be a kid. Time to excel in multiple sports. Time to keep up academically. Time for church or youth groups, and time for family.</p>
-        <p class="model__copy-close">Once you come to the Academy, you'll wonder why you didn't start sooner.</p>
-      </div>
-      <div class="schedule">
-        <p class="schedule__label">A typical Junior High week</p>
-        <div class="schedule__grid">
-          <div class="schedule__block schedule__block--accent">
-            <p class="schedule__when">Mon–Thurs AM</p>
-            <p class="schedule__what">Academy training</p>
-          </div>
-          <div class="schedule__block">
-            <p class="schedule__when">Afternoons</p>
-            <p class="schedule__what">On-campus core classes</p>
-          </div>
-          <div class="schedule__block">
-            <p class="schedule__when">Evenings</p>
-            <p class="schedule__what">Homework, family, rest</p>
-          </div>
-        </div>
       </div>
     </section>
 
