@@ -375,7 +375,7 @@ def build_page(sport_key, cfg):
     <!-- PILLARS (rendered by JS) -->
     <section class="section section--elevated">
       <p class="eyebrow">What athletes work on</p>
-      <h2 class="section__title">Four pillars. Every week.</h2>
+      <h2 class="section__title">Core Four. Every week.</h2>
       <p class="section__sub">Adapted for {cfg['label'].lower()}.</p>
       <div class="pillars" id="pillar-grid"></div>
     </section>

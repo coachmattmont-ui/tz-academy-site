@@ -18,13 +18,13 @@
           icon: '🎯',
           image: 'individual-skill.webp',
           title: 'Individual skill',
-          body: 'Day-one evaluation. Custom plan covering handle, footwork, finishing, and shot mechanics. Every athlete gets one-on-one feedback from a coach inside the cohort, plus regular dedicated time in the Shot Lab with our shooting coach.'
+          body: 'Week one, your athlete goes through a series of evaluations. Coaches develop a custom development plan. They\u2019ll use that to measure growth, and drive progress.'
         },
         {
           icon: '🧠',
           image: 'game-iq.webp',
-          title: 'Game IQ & reads',
-          body: 'Daily 1v1, 3v3, and 5v5 game work. Film study. Athletes practice reading the game in real time, not just drilling in isolation.'
+          title: 'IQ & Game Reads',
+          body: 'Daily 1v1, 3v3, and 5v5 game work. Athletes study film, break down actions and concepts, and regularly practice game reads in live settings and open runs.'
         },
         {
           icon: '⚡',
