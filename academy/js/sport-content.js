@@ -11,7 +11,7 @@
       label: 'Basketball',
       emoji: '🏀',
       color: '#4DC9F5',
-      url: '/',
+      url: '/academy/',
       heroAccent: 'BASKETBALL ACADEMY',
       pillars: [
         {
@@ -111,7 +111,7 @@
       label: 'Soccer',
       emoji: '⚽',
       color: '#8DC864',
-      url: '/soccer/',
+      url: '/academy/soccer/',
       heroAccent: 'SOCCER ACADEMY',
       pillars: [
         {
@@ -189,7 +189,7 @@
       label: 'Volleyball',
       emoji: '🏐',
       color: '#4DC9F5',
-      url: '/volleyball/',
+      url: '/academy/volleyball/',
       heroAccent: 'VOLLEYBALL ACADEMY',
       pillars: [
         {

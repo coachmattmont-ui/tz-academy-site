@@ -1,15 +1,15 @@
-# Cloudflare Pages _redirects
-# Format: [source] [destination] [status]
-# 301 = permanent redirect (preserves SEO juice from old URLs)
+# Cloudflare _redirects — post-restructure (trainingzoneutah.com root)
+# [source] [destination] [status]
 
-# Old Clickfunnels Academy URLs -> new Academy home
-# Once cutover is done, add the actual old paths you want to preserve
-# https://events.trainingzoneutah.com/about-tz-academy -> /
-# https://events.trainingzoneutah.com/tz-basketball-academy -> /
-/about-tz-academy /  301
-/tz-basketball-academy /  301
-/tz-academy /  301
+# Old academy-subdomain paths -> new /academy locations (fires on any host this worker serves)
+/soccer/* /academy/soccer/:splat 301
+/soccer /academy/soccer/ 301
+/volleyball/* /academy/volleyball/:splat 301
+/volleyball /academy/volleyball/ 301
+/home/* / 301
+/home / 301
 
-# Trailing slash normalization for sport pages
-/soccer /soccer/ 301
-/volleyball /volleyball/ 301
+# Old Clickfunnels Academy paths
+/about-tz-academy /academy/ 301
+/tz-basketball-academy /academy/ 301
+/tz-academy /academy/ 301
