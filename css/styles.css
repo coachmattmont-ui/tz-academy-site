@@ -28,9 +28,12 @@
   --text-faint: #444;
 
   /* Brand */
-  --tz-orange: #F58030;
-  --tz-orange-hover: #E26A1A;
-  --basketball: #F58030;
+  --accent: #4DC9F5;        /* Academy accent — blue (was TZ orange #F58030) */
+  --accent-hover: #2FB8E8;
+  --accent-ink: #0B0D12;     /* text on accent backgrounds */
+  --tz-orange: var(--accent);            /* legacy alias */
+  --tz-orange-hover: var(--accent-hover);/* legacy alias */
+  --basketball: #4DC9F5;  /* was #F58030 — full blue accent per Matt */
   --soccer: #8DC864;
   --volleyball: #4DC9F5;
 
@@ -161,12 +164,12 @@ img {
   font-size: 13px;
 }
 .nav__link.is-active {
-  color: var(--tz-orange);
+  color: var(--accent);
   font-weight: 500;
 }
 .nav__cta {
-  background: var(--tz-orange);
-  color: #fff !important;
+  background: var(--accent);
+  color: var(--accent-ink) !important;
   padding: 8px 18px;
   border-radius: var(--radius-md);
   font-size: 13px;
@@ -189,7 +192,7 @@ img {
 .hero {
   background: var(--bg-base);
   padding: 64px var(--section-pad-x);
-  border-bottom: 3px solid var(--tz-orange);
+  border-bottom: 3px solid var(--accent);
   position: relative;
   overflow: hidden;
 }
@@ -220,7 +223,7 @@ img {
   max-width: 720px;
 }
 .eyebrow {
-  color: var(--tz-orange);
+  color: var(--accent);
   font-size: 11px;
   letter-spacing: 3px;
   font-weight: 600;
@@ -236,7 +239,7 @@ img {
   overflow-wrap: break-word;
 }
 .hero__title-accent {
-  color: var(--tz-orange);
+  color: var(--accent);
 }
 .hero__sub {
   color: var(--text-muted);
@@ -272,7 +275,7 @@ img {
   text-transform: uppercase;
 }
 #countdown-stat .stat__num {
-  color: var(--tz-orange);
+  color: var(--accent);
 }
 #countdown-stat.is-live .stat__num {
   color: var(--success);
@@ -293,11 +296,11 @@ img {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 .btn--primary {
-  background: var(--tz-orange);
-  color: #fff !important;
+  background: var(--accent);
+  color: var(--accent-ink) !important;
 }
 .btn--primary:hover {
-  background: var(--tz-orange-hover);
+  background: var(--accent-hover);
 }
 .btn--secondary {
   background: transparent;
@@ -407,7 +410,7 @@ img {
 }
 .card__eyebrow {
   font-size: 11px;
-  color: var(--tz-orange);
+  color: var(--accent);
   font-weight: 600;
   letter-spacing: 1.5px;
   margin-bottom: 8px;
@@ -468,13 +471,13 @@ img {
   margin-bottom: 14px;
 }
 .model__copy p em {
-  color: var(--tz-orange);
+  color: var(--accent);
   font-style: italic;
   font-weight: 600;
 }
 /* Rhythmic list paragraph — gets a left accent + slightly tighter type */
 .model__copy-list {
-  border-left: 2px solid var(--tz-orange);
+  border-left: 2px solid var(--accent);
   padding-left: 18px;
   color: var(--text-primary) !important;
   font-weight: 500;
@@ -516,7 +519,7 @@ img {
 }
 .schedule__block--accent {
   background: var(--bg-card-soft, #1a0f06);
-  border-color: var(--tz-orange);
+  border-color: var(--accent);
   box-shadow: 0 0 0 1px rgba(245, 128, 48, 0.15);
 }
 .schedule__when {
@@ -528,7 +531,7 @@ img {
   font-weight: 600;
 }
 .schedule__block--accent .schedule__when {
-  color: var(--tz-orange);
+  color: var(--accent);
 }
 .schedule__what {
   font-size: 17px;
@@ -575,7 +578,7 @@ img {
 .origin__result {
   background: var(--bg-card);
   border: 1px solid var(--border-default);
-  border-left: 3px solid var(--tz-orange);
+  border-left: 3px solid var(--accent);
   border-radius: var(--radius-lg);
   padding: 20px 22px;
   margin: 4px 0;
@@ -595,7 +598,7 @@ img {
   margin: 0 !important;
 }
 .origin__result-body strong {
-  color: var(--tz-orange);
+  color: var(--accent);
   font-weight: 700;
 }
 .origin__bridge {
@@ -710,7 +713,7 @@ img {
 }
 .team-member__role {
   font-size: 11px;
-  color: var(--tz-orange);
+  color: var(--accent);
   font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -842,7 +845,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   content: "";
   width: 5px;
   height: 5px;
-  background: var(--tz-orange);
+  background: var(--accent);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -855,7 +858,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 }
 .included-strip__heading {
   font-size: 11px;
-  color: var(--tz-orange);
+  color: var(--accent);
   font-weight: 600;
   letter-spacing: 1.5px;
   margin-bottom: 8px;
@@ -901,7 +904,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 }
 .faq__item summary::after {
   content: "+";
-  color: var(--tz-orange);
+  color: var(--accent);
   font-size: 20px;
   font-weight: 400;
   transition: transform 0.2s ease;
@@ -951,7 +954,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   text-transform: uppercase;
 }
 .tz-form__req {
-  color: var(--tz-orange);
+  color: var(--accent);
   margin-left: 2px;
 }
 .tz-form__field input,
@@ -985,7 +988,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 .tz-form__field input:focus,
 .tz-form__field select:focus {
   outline: none;
-  border-color: var(--tz-orange);
+  border-color: var(--accent);
   background: var(--bg-card-soft);
 }
 .tz-form__field input:hover,
@@ -995,8 +998,8 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 
 .tz-form__submit {
   margin-top: 20px;
-  background: var(--tz-orange);
-  color: #fff;
+  background: var(--accent);
+  color: var(--accent-ink);
   padding: 13px 28px;
   border-radius: var(--radius-md);
   font-size: 14px;
@@ -1011,7 +1014,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   position: relative;
 }
 .tz-form__submit:hover:not(:disabled) {
-  background: var(--tz-orange-hover);
+  background: var(--accent-hover);
 }
 .tz-form__submit:disabled {
   opacity: 0.6;
@@ -1056,7 +1059,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: #fff;
+  background: var(--accent-ink);
   border-radius: 50%;
   margin: 0 1px;
   opacity: 0.5;
@@ -1109,7 +1112,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   margin: 26px 0 12px;
 }
 .lead__pivot .accent {
-  color: var(--tz-orange);
+  color: var(--accent);
 }
 .lead__reveal {
   color: var(--text-muted);
@@ -1119,7 +1122,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
 }
 .lead__proof-kicker {
   font-size: 11px;
-  color: var(--tz-orange);
+  color: var(--accent);
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -1131,7 +1134,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   padding: 30px 34px;
   background: var(--bg-card);
   border: 1px solid var(--border-default);
-  border-left: 4px solid var(--tz-orange);
+  border-left: 4px solid var(--accent);
   border-radius: var(--radius-xl);
 }
 .lead__quote p {
@@ -1151,7 +1154,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--tz-orange);
+  color: var(--accent);
 }
 .model__ctas {
   margin-top: 36px;
@@ -1189,8 +1192,8 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   background: var(--bg-base);
   padding: 80px var(--section-pad-x);
   text-align: center;
-  border-top: 3px solid var(--tz-orange);
-  border-bottom: 3px solid var(--tz-orange);
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
 }
 .final-cta .section__title {
   margin: 0 0 14px;
@@ -1243,7 +1246,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   text-align: center;
   padding: 36px 24px;
   background: var(--bg-card-soft, #1a0f06);
-  border: 1px solid var(--tz-orange);
+  border: 1px solid var(--accent);
   border-radius: var(--radius-xl);
   margin-bottom: 56px;
   max-width: 1200px;
@@ -1256,7 +1259,7 @@ body[data-sport="volleyball"] .team-member__role { color: var(--volleyball); }
   line-height: 1.3;
 }
 .launch__urgency-line strong {
-  color: var(--tz-orange);
+  color: var(--accent);
 }
 .launch__urgency-sub {
   color: var(--text-muted);

@@ -10,7 +10,7 @@
     basketball: {
       label: 'Basketball',
       emoji: '🏀',
-      color: '#F58030',
+      color: '#4DC9F5',
       url: '/',
       heroAccent: 'BASKETBALL ACADEMY',
       pillars: [
