@@ -447,65 +447,10 @@ def build_page(sport_key, cfg):
       <div class="faq" id="faq-list"></div>
     </section>
 
-    <!-- INTEREST FORM (Waiting List) -->
-    <section class="section section--elevated" id="interest">
-      <p class="eyebrow">Other sports</p>
-      <h2 class="section__title">Be first to know.</h2>
-      <p class="interest-form__copy">We're expanding the academy model into more sports. Tell us what your athlete plays and we'll let you know the moment registration opens.</p>
 """
     else:
         # Soccer / Volleyball: slim launch section, skip cohorts/origin/model/pillars/team/results/pricing/FAQ
         html += build_launch_section(cfg, asset)
-
-    # ===== BOTTOM: phone form + footer (shared by all pages) =====
-    # Note: for basketball the interest form is still open above; we close it here.
-    if is_bb:
-        html += f"""
-      <form
-        class="tz-form formkit-form"
-        action="https://app.kit.com/forms/9451552/subscriptions"
-        method="post"
-        data-tz-form="waiting-list"
-        data-sv-form="9451552"
-        data-uid="dea8684d64"
-        data-format="inline"
-        data-version="5"
-        data-options='{{"settings":{{"after_subscribe":{{"action":"message","success_message":"You\u0027re on the list. Check your email to confirm your subscription.","redirect_url":""}}}},"version":"5"}}'
-        min-width="400 500 600 700 800"
-      >
-        <div class="tz-form__grid">
-          <label class="tz-form__field">
-            <span class="tz-form__label">Email <span aria-hidden="true" class="tz-form__req">*</span></span>
-            <input type="email" name="email_address" required autocomplete="email" placeholder="you@example.com" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">First name</span>
-            <input type="text" name="fields[first_name]" autocomplete="given-name" placeholder="Your first name" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Athlete's grade</span>
-            <input type="text" name="fields[athlete_s_grade]" placeholder="e.g. 5th, 8th, 10th" />
-          </label>
-          <label class="tz-form__field">
-            <span class="tz-form__label">Sport of interest</span>
-            <select name="fields[sport_of_interest]">
-              <option value="">Pick a sport</option>
-              <option value="Football">Football</option>
-              <option value="Baseball">Baseball</option>
-              <option value="Lacrosse">Lacrosse</option>
-              <option value="Junior Academy (3rd–5th)">Junior Academy (3rd–5th)</option>
-              <option value="Other">Something else</option>
-            </select>
-          </label>
-        </div>
-        <ul class="formkit-alert formkit-alert-error tz-form__kit-errors" data-element="errors" data-group="alert" hidden></ul>
-        <button type="submit" class="tz-form__submit formkit-submit" data-element="submit">
-          <span class="tz-form__submit-label">Notify me →</span>
-          <span class="tz-form__submit-spinner formkit-spinner" aria-hidden="true"><div></div><div></div><div></div></span>
-        </button>
-      </form>
-    </section>
-"""
 
     # ===== PHONE CALL FORM (soccer/volleyball only — basketball got it
     # earlier, between pricing and FAQ) =====
