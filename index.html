@@ -156,10 +156,43 @@
   .closer p { max-width: 480px; margin: 18px auto 32px; font-size: 17px; line-height: 1.6; color: var(--text-mid); }
   .closer .phone { margin-top: 14px; font-size: 13px; color: var(--muted); }
 
+  /* Mobile nav (burger + panel) */
+  .nav-burger {
+    display: none; background: none; border: 0; padding: 8px 2px 8px 10px; cursor: pointer;
+    flex-direction: column; gap: 5px;
+  }
+  .nav-burger span {
+    display: block; width: 22px; height: 2px; background: #e8f4f8; border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; flex-direction: column; gap: 4px;
+    position: sticky; top: 0; z-index: 60;
+    background: #061f28; border-bottom: 1px solid rgba(77,201,245,0.18);
+    padding: 10px 22px 18px;
+  }
+  .mobile-menu a {
+    padding: 13px 2px; font-size: 15px; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: #e8f4f8; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu a:last-child { border-bottom: 0; }
+  .mobile-menu .mobile-menu-cta { text-align: center; margin-top: 10px; padding: 14px; border-bottom: 0; }
+
   @media (max-width: 720px) {
     .nav { padding: 16px 22px; }
     .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    .nav-cta { gap: 10px; }
+    .nav-cta .nav-login { display: none; } /* lives in the menu on mobile */
+    .mobile-menu.is-open { display: flex; }
     .hero-inner, .free-band, .section, .group-section, .closer { padding-left: 22px; padding-right: 22px; }
+    /* Free-session band: stack copy over full-width buttons */
+    .free-band { flex-direction: column; align-items: stretch; gap: 20px; }
+    .band-actions { flex-direction: column; align-items: stretch; }
+    .band-actions .btn { width: 100%; text-align: center; }
   }
 </style>
 </head>
@@ -180,9 +213,19 @@
       <div class="nav-cta">
         <a class="nav-login" href="https://book.trainingzoneutah.com" target="_blank" rel="noopener">Log In</a>
         <a class="btn btn-primary btn-sm" href="/free-session/">Free Session</a>
+        <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#programs">Programs</a>
+    <a href="#group">Group Training</a>
+    <a href="#facility">Facility</a>
+    <a href="https://book.trainingzoneutah.com" target="_blank" rel="noopener">Log In</a>
+    <a class="btn btn-primary btn-md mobile-menu-cta" href="/free-session/">Free Session</a>
+  </div>
 
   <!-- HERO -->
   <header class="hero">
@@ -302,5 +345,25 @@
     <div class="phone">385-786-9324</div>
   </section>
 
+<script>
+  (function () {
+    var burger = document.getElementById('navBurger');
+    var menu = document.getElementById('mobileMenu');
+    if (!burger || !menu) return;
+    function setOpen(open) {
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.hidden = false;
+      menu.classList.toggle('is-open', open);
+      if (!open) { menu.hidden = true; }
+    }
+    burger.addEventListener('click', function () {
+      setOpen(burger.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+  })();
+</script>
 </body>
 </html>
