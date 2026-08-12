@@ -179,6 +179,8 @@
   .plan ul { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-top: 22px; flex: 1; }
   .plan li { display: flex; gap: 10px; font-size: 14.5px; line-height: 1.45; color: #cbdde2; }
   .plan li .check { color: var(--accent); font-weight: 800; flex-shrink: 0; }
+  .plan li.excluded { color: var(--muted); }
+  .plan li .excl { color: var(--muted); font-weight: 800; flex-shrink: 0; }
   .plan .btn { margin-top: 28px; display: block; padding: 15px; }
   .plan .fineprint { margin-top: 14px; font-size: 12.5px; line-height: 1.5; color: var(--muted); text-align: center; }
 
@@ -406,9 +408,10 @@
           <li><span class="check">✓</span>Full hour, one-on-one with a coach</li>
           <li><span class="check">✓</span>Book as often or as rarely as you want</li>
           <li><span class="check">✓</span>No commitment, no contract</li>
+          <li class="excluded"><span class="excl">✕</span>Shot Plan not included</li>
         </ul>
         <a class="btn btn-outline-accent" href="tel:3857869324">Call to Book · 385-786-9324</a>
-        <p class="fineprint">Members train at a significantly lower rate.</p>
+        <p class="fineprint">The monthly Shot Plan, gym access, and group training are membership benefits. Members also train at a significantly lower rate.</p>
       </div>
     </div>
   </section>
