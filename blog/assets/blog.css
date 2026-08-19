@@ -182,3 +182,34 @@ blockquote cite{font-family:var(--mono);font-size:11px;color:var(--muted-2);font
   .site-nav a{padding:14px 2px;font-size:17px;border-bottom:1px solid var(--line-soft)}
   .site-nav a:last-child{border-bottom:0}
 }
+
+/* --- blocks introduced by "What's the Academy?" --- */
+
+/* quick-fact panel: label over value, 3-up */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin:30px 0;border-top:3px solid var(--orange)}
+.facts > div{background:var(--panel-2);padding:18px 20px}
+.facts dt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);margin-bottom:7px}
+.facts dd{margin:0;font-size:15px;line-height:1.45;color:var(--fg-2);font-weight:500}
+
+/* 4-up stat strip (base .stats is 3-up) */
+.stats--four{grid-template-columns:repeat(4,1fr)}
+
+/* endcap variant: copy above, two CTAs below, address note */
+.endcap--pair{display:block}
+.endcap--pair .endcap__copy{max-width:54ch}
+.cta-pair{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.endcap--pair .cta-pair a{background:var(--bg);color:var(--fg);font-family:var(--cond);font-weight:800;font-size:16px;letter-spacing:.1em;padding:15px 24px;text-transform:uppercase;white-space:nowrap}
+.endcap--pair .cta-pair a:hover{background:#000;color:#fff}
+.endcap--pair .cta-pair a.is-alt{background:transparent;color:var(--bg);border:2px solid rgba(20,11,6,.5)}
+.endcap--pair .cta-pair a.is-alt:hover{background:rgba(20,11,6,.12);color:var(--bg)}
+.cta-note{margin-top:20px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(20,11,6,.72)}
+
+/* author avatar */
+.author-avatar{width:52px;height:52px;flex-shrink:0;object-fit:cover;background:#161a1e}
+
+@media (max-width:900px){.stats--four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){
+  .facts{grid-template-columns:1fr}
+  .stats--four{grid-template-columns:1fr}
+  .cta-pair a{width:100%;text-align:center}
+}

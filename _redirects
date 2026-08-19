@@ -10,7 +10,8 @@
 /home / 301
 
 # Blog aliases
-/blog/what-is-the-academy.html /blog/what-is-the-academy/ 301
+/blog/what-is-the-academy/ /blog/whats-the-academy/ 301
+/blog/what-is-the-academy.html /blog/whats-the-academy/ 301
 /the-zone /blog/ 301
 
 # FAQ aliases
