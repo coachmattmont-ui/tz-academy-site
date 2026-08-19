@@ -9,6 +9,10 @@
 /home/* / 301
 /home / 301
 
+# Blog aliases
+/blog/what-is-the-academy.html /blog/what-is-the-academy/ 301
+/the-zone /blog/ 301
+
 # FAQ aliases
 /faqs /faq/ 301
 /questions /faq/ 301
