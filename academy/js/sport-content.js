@@ -156,7 +156,7 @@
         }
       ],
       testimonial: null,
-      comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
+      comingSoonMessage: 'Launching October 2026. Be one of our founding athletes.',
       faq: [
         {
           q: 'What actually happens at the academy?',
@@ -168,7 +168,7 @@
         },
         {
           q: 'When does soccer actually start?',
-          a: "September 2026. We're enrolling our first cohort now. Founding athletes lock in launch pricing and get first pick of training slots."
+          a: "October 2026. We're enrolling our first cohort now. Founding athletes lock in launch pricing and get first pick of training slots."
         },
         {
           q: 'Why does High School cost more?',
@@ -234,7 +234,7 @@
         }
       ],
       testimonial: null,
-      comingSoonMessage: 'Launching September 2026. Be one of our founding athletes.',
+      comingSoonMessage: 'Launching October 2026. Be one of our founding athletes.',
       faq: [
         {
           q: 'What actually happens at the academy?',
@@ -246,7 +246,7 @@
         },
         {
           q: 'When does volleyball actually start?',
-          a: "September 2026. We're enrolling our first cohort now. Founding athletes lock in launch pricing and get first pick of training slots."
+          a: "October 2026. We're enrolling our first cohort now. Founding athletes lock in launch pricing and get first pick of training slots."
         },
         {
           q: 'Why does High School cost more?',

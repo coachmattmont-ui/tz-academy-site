@@ -26,8 +26,8 @@ SPORTS = {
         "url_path": "/soccer/",
         "out": "academy/soccer/index.html",
         "asset_prefix": "../",
-        "title": "TZ Academy — Soccer | Launching September 2026",
-        "description": "Hybrid-school soccer academy in Herriman, Utah, launching September 2026. Led by former D1 player Nik Kizerian. 25 seats per cohort. Reserve yours now.",
+        "title": "TZ Academy — Soccer | Launching October 2026",
+        "description": "Hybrid-school soccer academy in Herriman, Utah, launching October 2026. Led by former D1 player Nik Kizerian. 25 seats per cohort. Reserve yours now.",
         "hero_eyebrow": "SOCCER ACADEMY",
         "hero_accent": "SOCCER.",
         "og_image": "/images/og/soccer.jpg",
@@ -49,8 +49,8 @@ SPORTS = {
         "url_path": "/volleyball/",
         "out": "academy/volleyball/index.html",
         "asset_prefix": "../",
-        "title": "TZ Academy — Volleyball | Launching September 2026",
-        "description": "Hybrid-school volleyball academy in Herriman, Utah, launching September 2026. Led by former D1 player Jessica Finai. 25 seats per cohort. Reserve yours now.",
+        "title": "TZ Academy — Volleyball | Launching October 2026",
+        "description": "Hybrid-school volleyball academy in Herriman, Utah, launching October 2026. Led by former D1 player Jessica Finai. 25 seats per cohort. Reserve yours now.",
         "hero_eyebrow": "VOLLEYBALL ACADEMY",
         "hero_accent": "VOLLEYBALL.",
         "og_image": "/images/og/volleyball.jpg",
@@ -152,7 +152,7 @@ def build_launch_section(cfg, asset):
     <section class="section section--elevated" id="launch">
       <div class="launch">
         <div class="launch__intro">
-          <p class="eyebrow">Launching September 2026</p>
+          <p class="eyebrow">Launching October 2026</p>
           <h2 class="section__title">{cfg['launch_headline']}</h2>
           <p class="launch__body">{cfg['launch_body']}</p>
         </div>
@@ -356,7 +356,7 @@ def build_page(sport_key, cfg):
           <div class="cohort-card__body">
             <p class="card__eyebrow">7–9th Grade</p>
             <h3 class="card__title">Junior High</h3>
-            <p class="card__body">Train 8–10am or 10am–12pm, four days a week with a hybrid school schedule. Cap of 25 athletes.</p>
+            <p class="card__body">Train 8–10am, four days a week with a hybrid school schedule. Cap of 25 athletes.</p>
           </div>
         </article>
         <article class="cohort-card">
@@ -407,7 +407,7 @@ def build_page(sport_key, cfg):
           <div class="price-card__price">$650<span class="price-card__period">/mo</span></div>
           <p class="price-card__desc">4 days/week. Cap of 25.</p>
           <ul class="price-card__features">
-            <li>Mon–Thurs, 8–10am or 10am–12pm</li>
+            <li>Mon–Thurs, 8–10am</li>
             <li>Full pillar curriculum</li>
             <li>Hybrid school schedule</li>
           </ul>
@@ -492,3 +492,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# =============================================================================
+# WARNING — TEMPLATE DRIFT (2026-08-18)
+# =============================================================================
+# This script is STALE relative to the pages it generates. The live built files
+# under academy/ contain head markup that this template does NOT produce:
+#
+#   academy/index.html            canonical, og:locale, Twitter card tags,
+#                                 the EducationalOrganization JSON-LD block
+#   academy/soccer/index.html     Twitter card tags, Course/Offer JSON-LD
+#
+# Running this script overwrites those files and DELETES that markup. A dry run
+# on 2026-08-18 removed ~50 lines of SEO metadata from academy/index.html alone.
+#
+# Until the head sections above are ported back into PAGE_TEMPLATE, treat the
+# built files in academy/ as the source of truth and edit them directly.
+# DO NOT RUN THIS SCRIPT.
+# =============================================================================
