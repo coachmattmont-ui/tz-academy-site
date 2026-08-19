@@ -1,28 +1,12 @@
 # Cloudflare Workers static-assets header rules.
-# Same mechanism as _redirects, which is already working on this project.
 #
-# Why this exists: pages were being served stale after a deploy. HTML must
-# revalidate on every request so a content fix reaches people immediately.
-# Fingerprinted/versioned assets can cache hard because their URL changes
-# when their contents change.
+# Why this exists: HTML must revalidate on every request so a content fix
+# reaches people immediately. Versioned assets can cache.
 
 /*
   Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-# Images are content-addressed by filename in practice — a new photo gets a new
-# name — so they can sit in cache for a day.
-/blog/assets/*.webp
-  Cache-Control: public, max-age=86400
-
-/blog/assets/*.jpg
-  Cache-Control: public, max-age=86400
-
-/academy/images/*
-  Cache-Control: public, max-age=86400
-
-# Stylesheets are referenced with a ?v= query string, so a change to the
-# version in the HTML busts this cache immediately.
-/blog/assets/blog.css
+/blog/assets/*
   Cache-Control: public, max-age=86400

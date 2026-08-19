@@ -9,12 +9,6 @@
 /home/* / 301
 /home / 301
 
-# Stale root sport pages from the URL restructure — orphaned, no canonical
-/soccer/ /academy/soccer/ 301
-/soccer /academy/soccer/ 301
-/volleyball/ /academy/volleyball/ 301
-/volleyball /academy/volleyball/ 301
-
 # Blog aliases
 /blog/what-is-the-academy/ /blog/whats-the-academy/ 301
 /blog/what-is-the-academy.html /blog/whats-the-academy/ 301
