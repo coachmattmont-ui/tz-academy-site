@@ -9,6 +9,11 @@
 /home/* / 301
 /home / 301
 
+# FAQ aliases
+/faqs /faq/ 301
+/questions /faq/ 301
+/help /faq/ 301
+
 # Old Clickfunnels Academy paths
 /about-tz-academy /academy/ 301
 /tz-basketball-academy /academy/ 301
