@@ -176,6 +176,29 @@
   .step h3 { font-size: 28px; line-height: 1.02; color: #fff; margin-top: 16px; }
   .step p { margin-top: 10px; font-size: 15px; line-height: 1.6; color: #b3c8ce; }
 
+  /* WHO'S COACHING */
+  .who-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 22px; align-items: start; }
+  .who-copy { background: var(--surface-2); border: 1px solid var(--hairline); border-radius: 18px; padding: 34px 30px; }
+  .who-copy h3 { font-size: 26px; line-height: 1.04; color: #fff; }
+  .who-copy h3 + p { margin-top: 10px; }
+  .who-copy p { font-size: 15px; line-height: 1.65; color: #b3c8ce; }
+  .who-copy p + h3 { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--hairline); }
+  .who-file {
+    background: linear-gradient(180deg, #0d3040, #0a2733);
+    border: 1px solid rgba(77,201,245,0.55); border-radius: 18px; padding: 32px 30px;
+  }
+  .who-file .who-file-head {
+    font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+  }
+  .who-file ul { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+  .who-file li { display: flex; gap: 12px; font-size: 15px; line-height: 1.5; color: #cbdde2; }
+  .who-file li .check { color: var(--accent); font-weight: 800; flex-shrink: 0; }
+  .who-file .who-file-foot {
+    margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(77,201,245,0.28);
+    font-size: 13.5px; line-height: 1.55; color: var(--text-dim);
+  }
+  @media (max-width: 900px) { .who-grid { grid-template-columns: 1fr; } }
+
   /* PRICING */
   .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: stretch; }
   .plan {
@@ -361,6 +384,36 @@
         <div class="step-num">4</div>
         <h3>WE TEST AND ADJUST</h3>
         <p>Week by week the trainer adjusts the program and re-tests to verify the growth is real. Everything is tracked in YourStats, so nobody is guessing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO'S COACHING -->
+  <section class="section" id="coaching" style="padding-top: 0;">
+    <div class="section-head">
+      <span class="eyebrow">Who's Coaching My Athlete?</span>
+      <h2>THE PROGRAM DOESN'T<br>CHANGE HANDS.</h2>
+      <p>Parents ask us this one a lot, and the honest answer isn't a name. What matters isn't which trainer is on the floor that day — it's whether that trainer knows exactly where your athlete is and what they're working on. That part we don't leave to chance.</p>
+    </div>
+
+    <div class="who-grid">
+      <div class="who-copy">
+        <h3>YOUR ATHLETE HAS A LEAD TRAINER</h3>
+        <p>It starts with an evaluation and a conversation with you and your athlete about where they're trying to get to. Their lead trainer owns that plan — the objectives, the skills we're building right now, and when any of it changes.</p>
+        <h3>AND MORE THAN ONE SET OF EYES</h3>
+        <p>From there your athlete may work with different trainers session to session, and that's deliberate. Every one of our trainers coaches the same plan, so more coaches seeing your athlete means fewer blind spots — not a fresh start every time. The consistency comes from the program, not from one person's calendar.</p>
+      </div>
+
+      <div class="who-file">
+        <div class="who-file-head">What every trainer sees before the session</div>
+        <ul>
+          <li><span class="check">✓</span>The goals you and your athlete set at the evaluation</li>
+          <li><span class="check">✓</span>The core skills we're developing right now</li>
+          <li><span class="check">✓</span>The current program, and where they are in it</li>
+          <li><span class="check">✓</span>Notes from their last session</li>
+          <li><span class="check">✓</span>Whether they got in the gym and did the work since</li>
+        </ul>
+        <div class="who-file-foot">It all lives in YourStats, the player development software we built and run in-house. Nobody walks onto the floor guessing, and nothing depends on one trainer remembering.</div>
       </div>
     </div>
   </section>
