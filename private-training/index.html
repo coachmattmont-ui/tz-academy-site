@@ -372,10 +372,18 @@
 .tz-nav__panel .tz-nav__cta{margin-top:14px;text-align:center;padding:15px;border-bottom:0;color:#04222e}
 @media(max-width:1000px){
   .tz-nav__links{display:none}
-  .tz-nav__burger{display:flex;margin-left:auto}
+  .tz-nav__burger{display:flex}
   .tz-nav__login{display:none}
+  .tz-nav__right{margin-left:auto}
 }
-@media(max-width:400px){.tz-nav__word{display:none}}
+/* Phones: the CTA leaves the bar so the burger is never pushed off-screen.
+   It still sits in the panel, and every page carries the CTA in its own copy. */
+@media(max-width:720px){
+  .tz-nav{padding:0 18px;gap:14px}
+  .tz-nav__right .tz-nav__cta{display:none}
+  .tz-nav__word{font-size:16px;letter-spacing:.10em}
+}
+@media(max-width:340px){.tz-nav__word{display:none}}
 /*TZ-NAV-CSS:END*/
 </style>
 </head>
