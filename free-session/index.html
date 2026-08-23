@@ -23,37 +23,29 @@
 
   <!-- Service Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Free Basketball Evaluation",
-    "description": "A free 15-minute in-person basketball evaluation at Training Zone in Herriman, Utah. A coach watches your athlete work and provides direct feedback on strengths, gaps, and next steps. No cost and no obligation.",
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Free Basketball Evaluation",
+  "description": "A free 15-minute in-person basketball evaluation at Training Zone in Herriman, Utah. A coach watches your athlete work and provides direct feedback on strengths, gaps, and next steps. No cost and no obligation.",
+  "url": "https://trainingzoneutah.com/free-session/",
+  "provider": {
+    "@type": "SportsActivityLocation",
+    "@id": "https://trainingzoneutah.com/#business",
+    "name": "Training Zone",
+    "url": "https://trainingzoneutah.com/"
+  },
+  "areaServed": "Herriman, Utah",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
     "url": "https://trainingzoneutah.com/free-session/",
-    "provider": {
-      "@type": "SportsActivityLocation",
-      "name": "Training Zone",
-      "url": "https://trainingzoneutah.com/",
-      "telephone": "+1-385-786-9324",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "5639 Mirabella Dr",
-        "addressLocality": "Herriman",
-        "addressRegion": "UT",
-        "postalCode": "84096",
-        "addressCountry": "US"
-      }
-    },
-    "areaServed": "Herriman, Utah",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://trainingzoneutah.com/free-session/",
-      "description": "Free 15-minute evaluation session"
-    }
+    "description": "Free 15-minute evaluation session"
   }
-  </script>
+}
+</script>
 
   <!-- Calendly inline widget -->
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
