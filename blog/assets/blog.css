@@ -19,28 +19,7 @@ img{display:block;max-width:100%;height:auto}
 .cond{font-family:var(--cond);font-weight:800;text-transform:uppercase}
 .mono{font-family:var(--mono);letter-spacing:.08em}
 
-/* ticker */
-.ticker{background:var(--orange);height:34px;display:flex;align-items:center;overflow:hidden}
-.ticker__label{background:var(--bg);color:var(--orange);font-family:var(--cond);font-weight:800;font-size:14px;letter-spacing:.14em;padding:0 14px;height:34px;display:flex;align-items:center;flex-shrink:0}
-.ticker__track{overflow:hidden;flex:1}
-.ticker__run{display:flex;width:max-content;animation:tzTicker 42s linear infinite}
-.ticker__item{display:flex;align-items:center;gap:10px;padding:0 22px;height:34px;font-size:13px;font-weight:600;color:#140b06;white-space:nowrap}
-.ticker__item::before{content:"";width:5px;height:5px;background:#140b06;border-radius:50%;flex-shrink:0}
-@keyframes tzTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.ticker__run{animation:none}}
 
-/* header */
-.site-head{border-bottom:1px solid var(--line);background:rgba(11,12,14,.96);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20}
-.site-head__in{display:flex;align-items:center;gap:28px;padding:14px 24px;max-width:1240px;margin:0 auto}
-.logo{display:flex;align-items:center;gap:10px}
-.logo__mark{width:32px;height:32px;background:var(--orange);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-weight:800;font-size:16px}
-.logo__type{font-family:var(--cond);font-weight:800;font-size:19px;letter-spacing:.1em;color:var(--fg)}
-.site-nav{display:flex;gap:22px;margin-left:auto;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.09em}
-.site-nav a{color:var(--muted)}
-.site-nav a:hover,.site-nav a[aria-current]{color:var(--fg)}
-.btn-cta{background:var(--orange);color:var(--bg);font-family:var(--cond);font-weight:800;font-size:14px;letter-spacing:.1em;padding:10px 16px}
-.btn-cta:hover{background:var(--orange-hi);color:var(--bg)}
-@media (max-width:900px){.site-nav{display:none}}
 
 /* hero */
 .hero{position:relative;min-height:440px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:3px solid var(--orange)}
@@ -55,7 +34,7 @@ img{display:block;max-width:100%;height:auto}
 @media (max-width:699px){.hero{display:none}}
 
 /* category strip */
-.cats{border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:66px;z-index:15}
+.cats{border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:var(--tz-nav-h,66px);z-index:15}
 .cats__in{max-width:1240px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none}
 .cats__in::-webkit-scrollbar{display:none}
 .cats a{padding:14px 16px;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.09em;white-space:nowrap;color:var(--muted-2);border-bottom:3px solid transparent;text-transform:uppercase}
@@ -137,7 +116,7 @@ blockquote cite{font-family:var(--mono);font-size:11px;color:var(--muted-2);font
 .endcap h2{font-family:var(--cond);font-weight:800;font-size:34px;line-height:1;text-transform:uppercase;margin:0 0 6px;color:var(--bg)}
 .endcap p{font-size:15px;font-weight:500;opacity:.85;margin:0}
 .endcap a{background:var(--bg);color:var(--fg);font-family:var(--cond);font-weight:800;font-size:16px;letter-spacing:.1em;padding:15px 24px;white-space:nowrap}
-.side{display:flex;flex-direction:column;gap:26px;position:sticky;top:88px}
+.side{display:flex;flex-direction:column;gap:26px;position:sticky;top:calc(var(--tz-nav-h,66px) + 22px)}
 .side__box{border:1px solid #262b34;background:var(--panel);padding:22px}
 .side__head{font-family:var(--cond);font-weight:800;font-size:15px;letter-spacing:.12em;color:var(--muted-2);margin-bottom:14px;text-transform:uppercase}
 .side__toc{display:flex;flex-direction:column;gap:11px}
@@ -167,7 +146,6 @@ blockquote cite{font-family:var(--mono);font-size:11px;color:var(--muted-2);font
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media (max-width:900px){
-  .site-head__in{flex-wrap:wrap;gap:12px}
   .logo{order:1}
   .btn-cta{order:2;margin-left:auto}
   .nav-toggle{order:3;display:flex}
