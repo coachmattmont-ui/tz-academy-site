@@ -509,4 +509,8 @@ if __name__ == "__main__":
 # Until the head sections above are ported back into PAGE_TEMPLATE, treat the
 # built files in academy/ as the source of truth and edit them directly.
 # DO NOT RUN THIS SCRIPT.
+#
+# If it is ever repaired and run, re-run build/build-footer.py afterwards:
+# a rebuild replaces the academy pages wholesale and would drop the standard
+# footer. build-footer.py is idempotent, so re-running it is always safe.
 # =============================================================================

@@ -306,6 +306,30 @@
     .band-inner .btn { width: 100%; }
   }
 </style>
+<style>
+/*TZ-FOOTER-CSS:BEGIN*/
+.tz-foot{--tzf:var(--accent,var(--gold,var(--orange,#4DC9F5)));
+  border-top:1px solid rgba(255,255,255,.10);margin-top:0;padding:52px 24px 30px;
+  font-family:inherit;font-size:15px;line-height:1.65;color:rgba(255,255,255,.62)}
+.tz-foot a{color:rgba(255,255,255,.72);text-decoration:none;transition:color .15s}
+.tz-foot a:hover{color:var(--tzf)}
+.tz-foot__in{max-width:1180px;margin:0 auto;display:grid;
+  grid-template-columns:minmax(240px,1.15fr) repeat(3,minmax(130px,.95fr));gap:34px}
+.tz-foot__name{font-size:19px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;margin-bottom:12px}
+.tz-foot address{font-style:normal;margin-bottom:12px}
+.tz-foot address a{display:inline-block}
+.tz-foot__meta{font-size:13.5px;color:rgba(255,255,255,.48);margin-top:10px}
+.tz-foot__h{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--tzf);margin-bottom:14px}
+.tz-foot__col{display:flex;flex-direction:column;gap:9px;font-size:14.5px}
+.tz-foot__legal{max-width:1180px;margin:34px auto 0;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.07);font-size:13px;color:rgba(255,255,255,.42)}
+@media(max-width:900px){.tz-foot__in{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tz-foot__in{grid-template-columns:1fr;gap:28px}
+  .tz-foot{padding:40px 22px 26px}}
+/*TZ-FOOTER-CSS:END*/
+</style>
 </head>
 <body>
 
@@ -528,9 +552,52 @@
     <div class="phone">5639 Mirabella Dr, Herriman, UT · <a href="tel:3857869324">385-786-9324</a></div>
   </section>
 
-  <footer class="footer">
-    © 2026 Training Zone. All rights reserved. · 5639 Mirabella Dr, Herriman, UT 84096 · <a href="tel:3857869324">385-786-9324</a>
-  </footer>
+<!--TZ-FOOTER:BEGIN-->
+<footer class="tz-foot">
+  <div class="tz-foot__in">
+    <div>
+      <div class="tz-foot__name">Training Zone</div>
+      <address>
+        <a href="https://maps.google.com/?cid=6350256215350330460" target="_blank" rel="noopener">5639 Mirabella Dr<br>Herriman, UT 84096</a><br>
+        <a href="tel:+13857869324">385-786-9324</a>
+      </address>
+      <div class="tz-foot__meta">Open 5am&ndash;12am daily<br>Members have 24/7 gym access</div>
+      <div class="tz-foot__meta">Serving Herriman, South Jordan, Riverton, Bluffdale and the southwest Salt Lake Valley.</div>
+    </div>
+
+    <nav class="tz-foot__col" aria-label="Programs">
+      <div class="tz-foot__h">Programs</div>
+      <a href="/private-training/">Private Training</a>
+      <a href="/shot-program/">90 Day Shot Program</a>
+      <a href="/academy/">Academy</a>
+      <a href="/academy/soccer/">Soccer Academy</a>
+      <a href="/academy/volleyball/">Volleyball Academy</a>
+    </nav>
+
+    <nav class="tz-foot__col" aria-label="Visit">
+      <div class="tz-foot__h">Visit</div>
+      <a href="/free-session/">Free Evaluation</a>
+      <a href="/contact/">Contact &amp; Directions</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/blog/">The Zone</a>
+      <a href="https://book.trainingzoneutah.com" target="_blank" rel="noopener">Book a Court</a>
+    </nav>
+
+    <nav class="tz-foot__col" aria-label="Find us">
+      <div class="tz-foot__h">Find Us</div>
+      <a href="https://maps.google.com/?cid=6350256215350330460" target="_blank" rel="noopener">Google Business Profile</a>
+      <a href="https://www.facebook.com/p/Training-Zone-Utah-61558927589881/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.yelp.com/biz/training-zone-herriman" target="_blank" rel="noopener">Yelp</a>
+    </nav>
+  </div>
+
+  <div class="tz-foot__legal">
+    &copy; 2026 Training Zone. All rights reserved. &middot;
+    5639 Mirabella Dr, Herriman, UT 84096 &middot;
+    <a href="tel:+13857869324">385-786-9324</a>
+  </div>
+</footer>
+<!--TZ-FOOTER:END-->
 
 <script>
   (function () {
