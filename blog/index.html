@@ -33,6 +33,12 @@
   "blogPost": [
     {
       "@type": "BlogPosting",
+      "headline": "Top 3 Dribbling Skill Sets for Youth Players",
+      "url": "https://trainingzoneutah.com/blog/top-3-dribbling-skill-sets/",
+      "datePublished": "2026-08-24"
+    },
+    {
+      "@type": "BlogPosting",
       "headline": "What's the 90 Day Shot Program?",
       "url": "https://trainingzoneutah.com/blog/what-is-the-90-day-shot-program/",
       "datePublished": "2026-08-20"
@@ -254,9 +260,23 @@
   <section class="wrap" style="padding-top:36px;padding-bottom:60px">
     <div class="section-head">
       <h2>Latest from the zone</h2>
-      <span class="mono" id="catCount">3 LIVE &middot; 6 COMING SOON</span>
+      <span class="mono" id="catCount">4 LIVE &middot; 6 COMING SOON</span>
     </div>
     <div class="grid">
+        <article class="card" data-cat="training">
+          <a href="/blog/top-3-dribbling-skill-sets/">
+            <div class="card__media">
+              <img src="/blog/assets/academy-featured.webp" alt="Youth player working on dribbling skill sets at Training Zone in Herriman, Utah" />
+              <span class="card__bar" style="background:var(--cat-training)"></span>
+            </div>
+          </a>
+          <div class="meta">
+            <span class="tag" style="background:var(--cat-training)">Training</span>
+            <time datetime="2026-08-24">AUG 24, 2026</time><span>&middot;</span><span>6 MIN READ</span>
+          </div>
+          <h3><a href="/blog/top-3-dribbling-skill-sets/">Top 3 Dribbling Skill Sets for Youth Players</a></h3>
+          <p>The three foundations that transfer fastest into games — 5-minute warmup, Point Guard Series, and pocket &amp; drop work.</p>
+        </article>
         <article class="card" data-cat="training">
           <a href="/blog/how-private-training-works/"><div class="card__media"><img src="/blog/assets/academy-feedback.webp" alt="A Training Zone coach giving a player feedback on her shot" /><span class="card__bar" style="background:var(--cat-training)"></span></div></a>
           <div class="meta"><span class="tag" style="background:var(--cat-training)">Training</span><time datetime="2026-08-19">AUG 19, 2026</time><span>&middot;</span><span>4 MIN READ</span></div>
@@ -383,7 +403,7 @@
       if(leadHit) shown++;
     }
     if(count) count.textContent = cat ? shown + (shown === 1 ? ' POST' : ' POSTS')
-                                      : '3 LIVE \u00b7 6 COMING SOON';
+                                      : '4 LIVE \u00b7 6 COMING SOON';
   }
   window.addEventListener('hashchange', apply);
   apply();
