@@ -32,7 +32,10 @@
     "description": "Elite basketball training facility in Herriman, Utah offering private coaching, the 90 Day Shot Program, Academy, group training, and 24/7 gym access.",
     "url": "https://trainingzoneutah.com/",
     "telephone": "+1-385-786-9324",
-    "image": "https://trainingzoneutah.com/hero.jpg",
+    "image": [
+      "https://trainingzoneutah.com/hero.jpg",
+      "https://trainingzoneutah.com/training-zone-exterior.jpg"
+    ],
     "logo": "https://trainingzoneutah.com/logo.png",
     "address": {
       "@type": "PostalAddress",
@@ -157,6 +160,9 @@
 
   .map { border-radius: 18px; overflow: hidden; border: 1px solid var(--hairline); background: #061f28; line-height: 0; }
   .map iframe { width: 100%; height: 430px; border: 0; display: block; filter: grayscale(0.25); }
+  .exterior { margin-top: 26px; border-radius: 18px; overflow: hidden; border: 1px solid var(--hairline); background: var(--surface-2); }
+  .exterior img { width: 100%; height: auto; display: block; }
+  .exterior figcaption { padding: 14px 20px 16px; font-size: 13.5px; line-height: 1.55; color: var(--text-dim); }
 
   .closer { margin-top: 56px; padding: 74px 48px; text-align: center; background: linear-gradient(180deg, #04181f, #072a36); border-top: 1px solid var(--hairline); }
   .closer h2 { font-size: clamp(40px, 6vw, 72px); line-height: .94; color: #fff; }
@@ -381,12 +387,20 @@
       </div>
     </div>
 
-    <div class="map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.1132866317753!2d-112.02832142398512!3d40.49487787142709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528577775e4041%3A0x5820a461fcac445c!2sTraining%20Zone!5e0!3m2!1sen!2sus!4v1787517257787!5m2!1sen!2sus"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        title="Map showing Training Zone at 5639 Mirabella Dr, Herriman, UT 84096"></iframe>
+    <div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.1132866317753!2d-112.02832142398512!3d40.49487787142709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528577775e4041%3A0x5820a461fcac445c!2sTraining%20Zone!5e0!3m2!1sen!2sus!4v1787517257787!5m2!1sen!2sus"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Map showing Training Zone at 5639 Mirabella Dr, Herriman, UT 84096"></iframe>
+      </div>
+
+      <figure class="exterior">
+        <img src="/training-zone-exterior.webp" width="1200" height="800" loading="lazy"
+             alt="The Training Zone building at 5639 Mirabella Dr in Herriman, Utah, with parking and the Wasatch mountains behind it" />
+        <figcaption>Look for the black and white building off Mirabella Drive. Parking is on site and free.</figcaption>
+      </figure>
     </div>
   </div>
 
