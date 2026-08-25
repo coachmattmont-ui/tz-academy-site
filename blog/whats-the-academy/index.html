@@ -72,6 +72,7 @@
 .tz-foot__h{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
   color:var(--tzf);margin-bottom:14px}
 .tz-foot__col{display:flex;flex-direction:column;gap:9px;font-size:14.5px}
+.tz-foot__tp{margin-top:8px;min-width:180px}
 .tz-foot__legal{max-width:1180px;margin:34px auto 0;padding-top:20px;
   border-top:1px solid rgba(255,255,255,.07);font-size:13px;color:rgba(255,255,255,.42)}
 @media(max-width:900px){.tz-foot__in{grid-template-columns:1fr 1fr}}
@@ -135,6 +136,11 @@
 @media(max-width:340px){.tz-nav__word{display:none}}
 /*TZ-NAV-CSS:END*/
 </style>
+<!--TZ-HEAD:BEGIN-->
+<!-- Trustpilot bootstrap. Async, so it never blocks render. Explicit https
+     rather than the protocol-relative // form Trustpilot still ships. -->
+<script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!--TZ-HEAD:END-->
 </head>
 <body>
 <!--TZ-NAV:BEGIN-->
@@ -351,6 +357,15 @@
       <a href="https://maps.google.com/?cid=6350256215350330460" target="_blank" rel="noopener">Google Business Profile</a>
       <a href="https://www.facebook.com/p/Training-Zone-Utah-61558927589881/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.yelp.com/biz/training-zone-herriman" target="_blank" rel="noopener">Yelp</a>
+
+      <!-- Trustpilot review collector -->
+      <div class="trustpilot-widget tz-foot__tp" data-locale="en-US"
+           data-template-id="56278e9abfbbba0bdcd568bc"
+           data-businessunit-id="6a8ba0ccb1b4ac4deeef6970"
+           data-style-height="52px" data-style-width="100%"
+           data-token="f8b31dbe-cc84-4635-931a-7fb51903dc8e">
+        <a href="https://www.trustpilot.com/review/trainingzoneutah.com" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
     </nav>
   </div>
 

@@ -24,12 +24,19 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BEGIN, END = "<!--TZ-FOOTER:BEGIN-->", "<!--TZ-FOOTER:END-->"
+HEAD_BEGIN, HEAD_END = "<!--TZ-HEAD:BEGIN-->", "<!--TZ-HEAD:END-->"
 CSS_BEGIN, CSS_END = "/*TZ-FOOTER-CSS:BEGIN*/", "/*TZ-FOOTER-CSS:END*/"
 
 GBP = "https://maps.google.com/?cid=6350256215350330460"
 FB = "https://www.facebook.com/p/Training-Zone-Utah-61558927589881/"
 YELP = "https://www.yelp.com/biz/training-zone-herriman"
 BOOK = "https://book.trainingzoneutah.com"
+
+HEAD = f"""{HEAD_BEGIN}
+<!-- Trustpilot bootstrap. Async, so it never blocks render. Explicit https
+     rather than the protocol-relative // form Trustpilot still ships. -->
+<script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+{HEAD_END}"""
 
 CSS = f"""{CSS_BEGIN}
 .tz-foot{{--tzf:var(--accent,var(--gold,var(--orange,#4DC9F5)));
@@ -47,6 +54,7 @@ CSS = f"""{CSS_BEGIN}
 .tz-foot__h{{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
   color:var(--tzf);margin-bottom:14px}}
 .tz-foot__col{{display:flex;flex-direction:column;gap:9px;font-size:14.5px}}
+.tz-foot__tp{{margin-top:8px;min-width:180px}}
 .tz-foot__legal{{max-width:1180px;margin:34px auto 0;padding-top:20px;
   border-top:1px solid rgba(255,255,255,.07);font-size:13px;color:rgba(255,255,255,.42)}}
 @media(max-width:900px){{.tz-foot__in{{grid-template-columns:1fr 1fr}}}}
@@ -92,6 +100,15 @@ HTML = f"""{BEGIN}
       <a href="{GBP}" target="_blank" rel="noopener">Google Business Profile</a>
       <a href="{FB}" target="_blank" rel="noopener">Facebook</a>
       <a href="{YELP}" target="_blank" rel="noopener">Yelp</a>
+
+      <!-- Trustpilot review collector -->
+      <div class="trustpilot-widget tz-foot__tp" data-locale="en-US"
+           data-template-id="56278e9abfbbba0bdcd568bc"
+           data-businessunit-id="6a8ba0ccb1b4ac4deeef6970"
+           data-style-height="52px" data-style-width="100%"
+           data-token="f8b31dbe-cc84-4635-931a-7fb51903dc8e">
+        <a href="https://www.trustpilot.com/review/trainingzoneutah.com" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
     </nav>
   </div>
 
@@ -114,6 +131,12 @@ def install(path: Path) -> str:
     else:
         assert s.count("</head>") == 1, f"{path}: no unique </head>"
         s = s.replace("</head>", f"<style>\n{CSS}\n</style>\n</head>")
+
+    # --- head snippet: replace existing block, else insert before </head> ---
+    if HEAD_BEGIN in s:
+        s = re.sub(re.escape(HEAD_BEGIN) + r".*?" + re.escape(HEAD_END), lambda _: HEAD, s, flags=re.S)
+    else:
+        s = s.replace("</head>", f"{HEAD}\n</head>")
 
     # --- HTML: replace our block, else the page's existing footer, else append ---
     if BEGIN in s:
