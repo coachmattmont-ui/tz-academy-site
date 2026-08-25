@@ -442,8 +442,8 @@
 .tz-foot__h{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
   color:var(--tzf);margin-bottom:14px}
 .tz-foot__col{display:flex;flex-direction:column;gap:9px;font-size:14.5px}
-.tz-foot__tp{margin-top:8px;min-width:180px}
-.tz-foot__social{max-width:1180px;margin:30px auto 0;display:flex;gap:12px;align-items:center}
+.tz-foot__tp{flex:0 1 270px;min-width:230px}
+.tz-foot__social{max-width:1180px;margin:30px auto 0;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
 .tz-foot__social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
   border:1px solid rgba(255,255,255,.16);border-radius:9px;color:rgba(255,255,255,.72)}
 .tz-foot__social a:hover{color:var(--tzf);border-color:var(--tzf)}
@@ -826,15 +826,6 @@
       <a href="https://maps.google.com/?cid=6350256215350330460" target="_blank" rel="noopener">Google Business Profile</a>
       <a href="https://www.facebook.com/p/Training-Zone-Utah-61558927589881/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.yelp.com/biz/training-zone-herriman" target="_blank" rel="noopener">Yelp</a>
-
-      <!-- Trustpilot review collector -->
-      <div class="trustpilot-widget tz-foot__tp" data-locale="en-US"
-           data-template-id="56278e9abfbbba0bdcd568bc"
-           data-businessunit-id="6a8ba0ccb1b4ac4deeef6970"
-           data-style-height="52px" data-style-width="100%"
-           data-token="f8b31dbe-cc84-4635-931a-7fb51903dc8e">
-        <a href="https://www.trustpilot.com/review/trainingzoneutah.com" target="_blank" rel="noopener">Trustpilot</a>
-      </div>
     </nav>
   </div>
 
@@ -851,6 +842,15 @@
     <a href="https://www.youtube.com/@TrainingZoneUtah" target="_blank" rel="noopener" aria-label="Training Zone on YouTube" title="YouTube">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
     </a>
+
+    <!-- Trustpilot review collector -->
+    <div class="trustpilot-widget tz-foot__tp" data-locale="en-US"
+         data-template-id="56278e9abfbbba0bdcd568bc"
+         data-businessunit-id="6a8ba0ccb1b4ac4deeef6970"
+         data-style-height="52px" data-style-width="100%"
+         data-token="f8b31dbe-cc84-4635-931a-7fb51903dc8e">
+      <a href="https://www.trustpilot.com/review/trainingzoneutah.com" target="_blank" rel="noopener">Trustpilot</a>
+    </div>
   </div>
 
   <div class="tz-foot__legal">
