@@ -97,6 +97,7 @@ HTML = f"""{BEGIN}
     <nav class="tz-foot__col" aria-label="Visit">
       <div class="tz-foot__h">Visit</div>
       <a href="/free-session/">Free Evaluation</a>
+      <a href="/events/">Event Space</a>
       <a href="/contact/">Contact &amp; Directions</a>
       <a href="/faq/">FAQ</a>
       <a href="/blog/">The Zone</a>

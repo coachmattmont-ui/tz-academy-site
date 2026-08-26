@@ -30,6 +30,7 @@ LINKS = [
     ("/academy/", "Academy"),
     ("/blog/", "Blog"),
     ("/faq/", "FAQ"),
+    ("/events/", "Events"),
     ("/contact/", "Contact"),
 ]
 
@@ -72,7 +73,7 @@ CSS = f"""{CSS_BEGIN}
   text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}}
 .tz-nav__panel a[aria-current="page"]{{color:var(--tzn)}}
 .tz-nav__panel .tz-nav__cta{{margin-top:14px;text-align:center;padding:15px;border-bottom:0;color:#04222e}}
-@media(max-width:1000px){{
+@media(max-width:1120px){{
   .tz-nav__links{{display:none}}
   .tz-nav__burger{{display:flex}}
   .tz-nav__login{{display:none}}
@@ -100,7 +101,7 @@ SCRIPT = """<script>
   b.addEventListener('click',function(){ set(b.getAttribute('aria-expanded')!=='true'); });
   p.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
-  addEventListener('resize',function(){ if(innerWidth>1000) set(false); });
+  addEventListener('resize',function(){ if(innerWidth>1120) set(false); });
 })();
 </script>"""
 

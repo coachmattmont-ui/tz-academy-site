@@ -9,6 +9,11 @@
 /home/* / 301
 /home / 301
 
+# Event space aliases
+/event-space /events/ 301
+/venue /events/ 301
+/rent /events/ 301
+
 # Contact aliases
 /contact-us /contact/ 301
 /directions /contact/ 301
