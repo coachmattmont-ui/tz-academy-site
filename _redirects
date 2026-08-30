@@ -9,6 +9,10 @@
 /home/* / 301
 /home / 301
 
+# Sponsorship aliases
+/sponsor /sponsors/ 301
+/sponsorship /sponsors/ 301
+
 # Event space aliases
 /event-space /events/ 301
 /venue /events/ 301
