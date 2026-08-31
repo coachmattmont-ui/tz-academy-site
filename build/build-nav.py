@@ -179,7 +179,12 @@ def install(path: Path, url_path: str) -> str:
 
 
 def main() -> int:
-    pages = sorted(p for p in ROOT.glob("**/*.html") if ".git" not in p.parts)
+    # Landing pages carry a stripped header and footer on purpose: paid traffic
+    # should not be offered seven ways to leave before it converts.
+    EXCLUDE = {"shot-camp/index.html"}
+    pages = sorted(p for p in ROOT.glob("**/*.html")
+                   if ".git" not in p.parts
+                   and p.relative_to(ROOT).as_posix() not in EXCLUDE)
     if not pages:
         print("no pages found", file=sys.stderr)
         return 1

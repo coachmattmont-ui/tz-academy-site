@@ -97,6 +97,7 @@ HTML = f"""{BEGIN}
     <nav class="tz-foot__col" aria-label="Visit">
       <div class="tz-foot__h">Visit</div>
       <a href="/free-session/">Free Evaluation</a>
+      <a href="/shot-camp/">Camps &amp; Clinics</a>
       <a href="/events/">Event Space</a>
       <a href="/sponsors/">Sponsorship</a>
       <a href="/contact/">Contact &amp; Directions</a>
@@ -179,7 +180,12 @@ def install(path: Path) -> str:
 
 
 def main() -> int:
-    pages = sorted(p for p in ROOT.glob("**/*.html") if ".git" not in p.parts)
+    # Landing pages carry a stripped header and footer on purpose: paid traffic
+    # should not be offered seven ways to leave before it converts.
+    EXCLUDE = {"shot-camp/index.html"}
+    pages = sorted(p for p in ROOT.glob("**/*.html")
+                   if ".git" not in p.parts
+                   and p.relative_to(ROOT).as_posix() not in EXCLUDE)
     if not pages:
         print("no pages found", file=sys.stderr)
         return 1

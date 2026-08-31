@@ -9,6 +9,11 @@
 /home/* / 301
 /home / 301
 
+# Camp aliases
+/camp /shot-camp/ 301
+/camps /shot-camp/ 301
+/shotcamp /shot-camp/ 301
+
 # Sponsorship aliases
 /sponsor /sponsors/ 301
 /sponsorship /sponsors/ 301
