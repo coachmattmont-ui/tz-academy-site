@@ -148,6 +148,18 @@
   .lp-foot a { color: var(--dim); }
   .lp-foot a:hover { color: var(--accent); }
 
+  .vid { position: relative; margin-top: 26px; padding-top: 56.25%; border-radius: 16px;
+    overflow: hidden; border: 1px solid var(--line); background: #061f28; }
+  .vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .revs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
+  .rev { background: var(--surface-2); border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px;
+    display: flex; flex-direction: column; }
+  .rev .stars { color: #ffc94a; font-size: 15px; letter-spacing: 2px; }
+  .rev p { margin-top: 13px; font-size: 16px; line-height: 1.65; color: #c3d6db; flex: 1; }
+  .rev cite { display: block; margin-top: 16px; font-size: 12px; font-style: normal; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--muted); }
+  @media (max-width: 700px) { .revs { grid-template-columns: 1fr; } }
+
   /* Kit form, restyled for the dark page. Kit's own inline CSS was stripped;
      these rules replace it entirely. 16px inputs stop iOS zooming on focus. */
   .tz-kit { max-width: 100%; margin-top: 24px; }
@@ -269,10 +281,24 @@
     <section class="sec">
       <h2>FROM PAST CAMPS.</h2>
       <p class="lead">Players and parents on what the camp did for their shot.</p>
-      <!-- SLOT: Oz Allan video. Send the URL (YouTube / Vimeo / file) and I'll embed it here. -->
-      <div class="slot">[ Oz Allan video &mdash; embed goes here ]</div>
-      <!-- SLOT: Google reviews specific to Shot Camp. Send the text + reviewer first names. -->
-      <div class="slot">[ Shot Camp reviews &mdash; quotes go here ]</div>
+      <div class="vid">
+        <iframe src="https://www.youtube-nocookie.com/embed/cvC9vJOhFvA" loading="lazy"
+          title="Oz Allan on the Training Zone Shot Camp"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="revs">
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>&ldquo;&hellip;recently tried the Shot Camp. It was such great experience and really allowed him to get some personalized help and also help him build his confidence. Matt&rsquo;s follow up after the camp was also very impressive.&rdquo;</p>
+          <cite>Amber D. &middot; Google review</cite>
+        </div>
+        <div class="rev">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>&ldquo;Can&rsquo;t thank you enough for what you&rsquo;ve done for her shot &mdash; she&rsquo;s shooting with so much confidence.&rdquo;</p>
+          <cite>Training Zone parent</cite>
+        </div>
+      </div>
     </section>
 
     <section class="sec" id="register">
