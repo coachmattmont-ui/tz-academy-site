@@ -98,7 +98,7 @@
         },
         {
           q: 'What if we already have a TZ membership?',
-          a: "You'll be upgraded to the Academy Membership — our top tier. Includes a Family Pass so siblings can still attend large-group trainings."
+          a: "You'll be upgraded to the Academy Membership — our top tier, which includes everything in your current plan."
         },
         {
           q: 'Why is there a cap of 25?',

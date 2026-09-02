@@ -427,7 +427,7 @@ def build_page(sport_key, cfg):
       </div>
       <div class="included-strip">
         <p class="included-strip__heading">Included with every academy membership</p>
-        <p class="included-strip__body">Full gym access (5am–midnight, Mon–Sat) · Shot Lab access · All large-group trainings · Family Pass for siblings</p>
+        <p class="included-strip__body">Full gym access (5am–midnight, Mon–Sat) · Shot Lab access · All large-group trainings</p>
       </div>
       <div class="pricing__cta-jump">
         <a href="#book-a-call" class="btn btn--primary">Book a Call</a>
